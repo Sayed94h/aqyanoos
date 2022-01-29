@@ -1,7 +1,81 @@
-<html>
-  
-  <head><title>Test website</title></head>
-  <body>
-    <h1>Test website</h1>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styleFiles/style.css">
+  <link rel="stylesheet" href="./styleFiles/sharedCSS.css">
+  <link rel="stylesheet" href="./styleFiles/footer.css">
+  <title>Welcome</title>
+</head>
+
+<body>
+  <!-- big picture -->
+  <section class="w-100 big-pic"><img src="./images/profile.jpg" alt="my profile picture" class="w-50">
+  </section>
+
+  <!-- navigation -->
+  <section class="d-flex nav">
+    <nav>
+      <a href="./index.html" class="current">HOME</a>
+      <a href="./view/projects.html">PROJECTS</a>
+      <a href="./view/about.html">ABOUT</a>
+    </nav>
+  </section>
+
+  <!-- short intro -->
+  <h2 class="hdr">Introduction</h2>
+  <hr>
+  <div class="txt-bold txt-center">Full Name</div>
+  <div class="txt-center my-5">Sayed Abdul Khalil Kazimi</div>
+  <div class="txt-bold txt-center">Origin</div>
+  <div class="txt-center my-5">Afghanistan</div>
+  <div class="txt-bold txt-center">Living</div>
+  <div class="txt-center my-5">Belgium</div>
+  <div class="txt-bold txt-center">Age</div>
+  <div id="age" class="txt-center"></div>
+
+  <h2 class="hdr">Occupations</h2>
+  <hr>
+  <div class="txt-bold txt-center">Professional job</div>
+  <div class="txt-center my-5">Full Stack Web developer</div>
+  <div class="txt-bold txt-center">Out of job</div>
+  <div class="txt-center my-5">YouTuber, TikToker, Android Developer</div>
+
+  <!-- YouTube reports: subscribers, likes, videos, topics, ... Tiktok report: followers, likes, topics, ... -->
+
+  <div class="mt-50"></div>
+  <!-- footer of the page -->
+  <footer class="footer">
+    <section class="container-footer">
+      <section>
+        <p>MAIN</p>
+        <a href="./view/index.html">HOME</a>
+        <a href="./view/projects.html">PROJECTS</a>
+        <a href="./view/about.html">ABOUT</a>
+      </section>
+      <section>
+        <p>
+          CONTACTS
+        </p>
+        <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
+        <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
+        <a href="mailto:ssayed.kazimi@gmail.com" target="_blank">GMAIL</a>
+
+      </section>
+      <section>
+        <p>MORE...</p>
+        <a href="./view/projects.html">WEB APPS</a>
+      </section>
+
+    </section>
+    <p class="copyright">
+      &copy; SAYED KHALIL KAZIMI | 2020 - <span id="current-year">2022</span>
+    </p>
+  </footer>
+
+  <script src="./apps/index.js"></script>
+</body>
+
 </html>
