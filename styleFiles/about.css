@@ -1,0 +1,149 @@
+:root {
+    --blue: #00b0f0;
+}
+
+section.note {
+    text-align: center;
+    background-color: #eee;
+    color: red;
+    padding: 9px 1px;
+    border-bottom: green 1px dotted;
+}
+
+
+/* style for the main part of the web page */
+
+article.main-article {
+    margin: 1vw 5vw;
+    line-height: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+section.profile-info {
+    width: 40vw;
+}
+
+section.hard-skills {
+    width: 48vw;
+    margin-left: 2vw;
+}
+
+section.hard-skills section.first ul li {
+    font-weight: bold;
+}
+
+section.hard-skills section.first ul li ul li {
+    font-weight: normal;
+}
+
+section.origin {
+    background-color: var(--blue);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section.left-part h3,
+section.hard-skills h3 {
+    color: var(--blue);
+}
+
+section.left-part p,
+section.left-part ul {
+    width: 96%;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+section.references a {
+    text-decoration: none;
+}
+
+section.left-part {
+    border-right: 2px var(--blue) solid;
+}
+
+
+/* for the printing part of the page */
+
+section.print {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+section.print div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1vw 5vw;
+    background-color: #fff;
+    padding: 5px 7px;
+    color: blue;
+    border: 1px gray solid;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 75px;
+}
+
+@media print {
+    header.main-header *,
+    section.aside-wrapper *,
+    section.note,
+    section.print,
+    section.EMF-container,
+    section.subscribe-wrapper,
+    footer {
+        display: none;
+    }
+    section.nav {
+        display: none;
+    }
+    @page {
+        margin: 0.5cm;
+    }
+    article.main-article section.origin {
+        background-color: #00b0f0 !important;
+        -webkit-print-color-adjust: exact;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    article.main-article {
+        margin: 1vw 2vw;
+        line-height: 25px;
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+
+/* End of printing part */
+
+
+/* 
+		max width 490px
+*/
+
+@media only screen and (max-width: 780px) {
+    /* style for the main part of the web page */
+    article.main-article {
+        margin: 1vw 5vw;
+        line-height: 25px;
+        display: flex;
+        flex-direction: column;
+    }
+    section.profile-info {
+        width: 100%;
+    }
+    section.hard-skills {
+        width: 100%;
+    }
+    section.left-part {
+        border: none;
+    }
+}
