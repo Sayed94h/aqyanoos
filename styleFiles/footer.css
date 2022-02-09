@@ -1,5 +1,5 @@
 footer.footer {
-	background: rgb(1, 1, 27);
+	background: #033;
 	padding: 2vw 4.2vw;
 	width: auto;
 }
@@ -21,7 +21,7 @@ footer.footer section.container-footer section p {
 footer.footer section.container-footer section a {
 	text-align: left;
 	text-decoration: none;
-	color: rgb(0, 245, 253);
+	color: #00f5fd;
 	margin-top: 11px;
 	font-size: 12px;
 }

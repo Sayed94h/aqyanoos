@@ -1,7 +1,7 @@
 
 
 .big-pic {display: flex; flex-direction: row; justify-content: space-around; align-items: center;
-    background-color: #003;
+    background-color: #008080;
 }
 
 .big-pic img {border-radius: 50%;}

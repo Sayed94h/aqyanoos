@@ -3,6 +3,14 @@
 
 <head>
   <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/app_icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/app_icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/app_icons/favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+
+  <link rel="icon" type="image/ico" href="./favicon.ico">
+  <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./styleFiles/style.css">
   <link rel="stylesheet" href="./styleFiles/sharedCSS.css">
@@ -12,15 +20,15 @@
 
 <body>
   <!-- big picture -->
-  <section class="w-100 big-pic"><img src="./images/profile.jpg" alt="my profile picture" class="w-50">
+  <section class="w-100 big-pic" id="home-page"><img src="./images/profile.jpg" alt="my profile picture" class="w-50">
   </section>
 
   <!-- navigation -->
   <section class="d-flex nav">
     <nav>
-      <a href="./index.html" class="current">HOME</a>
-      <a href="./view/projects.html">PROJECTS</a>
-      <a href="./view/about.html">ABOUT</a>
+      <a href="#home-page" class="current">HOME</a>
+      <a href="./main/projects.html">PROJECTS</a>
+      <a href="./main/about.html">ABOUT</a>
     </nav>
   </section>
 
@@ -51,9 +59,9 @@
     <section class="container-footer">
       <section>
         <p>MAIN</p>
-        <a href="./view/index.html">HOME</a>
-        <a href="./view/projects.html">PROJECTS</a>
-        <a href="./view/about.html">ABOUT</a>
+        <a href="#home-page">HOME</a>
+        <a href="./main/projects.html">PROJECTS</a>
+        <a href="./main/about.html">ABOUT</a>
       </section>
       <section>
         <p>
@@ -66,7 +74,8 @@
       </section>
       <section>
         <p>MORE...</p>
-        <a href="./view/projects.html">WEB APPS</a>
+        <a href="./main/projects.html">WEB APPS</a>
+        <!-- <a href="./main/eula_textEditor.html">EULA Text Editor</a> -->
       </section>
 
     </section>
@@ -75,7 +84,7 @@
     </p>
   </footer>
 
-  <script src="./apps/index.js"></script>
+  <script src="./apps/index.js" type="module"></script>
 </body>
 
 </html>

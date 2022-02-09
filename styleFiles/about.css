@@ -75,18 +75,14 @@ section.print {
 }
 
 section.print div {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     margin: 1vw 5vw;
-    background-color: #fff;
     padding: 5px 7px;
     color: blue;
     border: 1px gray solid;
     border-radius: 4px;
     cursor: pointer;
-    width: 75px;
+    width: 55px;
 }
 
 @media print {

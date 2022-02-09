@@ -13,7 +13,7 @@ body {
 .current {
     background-color: green;
     border-radius: 5px;
-    color: #003;
+    color: #70f8f8;
     padding: 3px;
 }
 
@@ -33,7 +33,7 @@ nav.main-nav {
     justify-content: center;
     align-content: center;
     align-items: center;
-    background: #003;
+    background: #033;
     position: fixed; top: 0; left: 0; right: 0;
     height: 50px;
 }
