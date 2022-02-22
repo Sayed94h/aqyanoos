@@ -6,9 +6,12 @@ body {
 .w-75 {width: 75%;}
 .w-50 {width: 50%;}
 .ms-5 {margin-left: 5px;}
+.ms-15 {margin-left: 15px;}
 .my-5 {margin-top: 5px; margin-bottom: 5px;}
 .mt-50 {margin-top: 50px;}
-.txt-bold {font-weight: bold;}
+
+.txt-c {text-align: center;}
+.txt-b {font-weight: bold;}
 
 .current {
     background-color: green;
@@ -26,6 +29,20 @@ body {
 .flex-col {flex-direction: column;}
 .justify-center {justify-content: center;}
 .justify-space-around {justify-content: space-around;}
+.cont-c {align-content: center;}
+
+.bc-d { background: #033;}
+
+.sqr-100 {
+    width: 100px;
+    height: 100px;
+}
+
+.sqr-100 img{
+    width: 100px;
+    height: 100px;
+}
+
 
 nav.main-nav {
     display: flex;
@@ -46,4 +63,39 @@ nav.main-nav a {
 
 main {
     margin-top: 60px;
+}
+
+table, tr, th, td {
+    border: 1px solid #033 ;
+    border-collapse: collapse;
+}
+
+.table-holder {
+    width: 100%;
+    overflow: scroll;
+}
+
+th, td {
+    padding: 4px;
+}
+
+td {
+    vertical-align: top;
+}
+
+#my-apps {
+    margin: 5px 15px;
+    min-width: 500px;
+}
+
+#my-apps td.des {
+    width: 30%;
+}
+
+
+#my-apps td img {
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    padding: 0;
 }
