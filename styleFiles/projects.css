@@ -15,7 +15,7 @@ article.group-projects {
 section.project-header {
 	border-bottom: 6px dotted rgba(29, 131, 8, 0.952);
 }
-section.project-header h2 {
+section.project-header h1, section.project-header h2{
 	text-align: center;
 }
 p.top-paragraph {
