@@ -1,3 +1,18 @@
+body {
+    background: #ededed;
+    margin: 0; padding: 0; font-size: 16px; font-family: Verdana, Geneva, Tahoma;
+}
+
+.w-100 {width: 100%;}
+.w-75 {width: 75%;}
+.w-50 {width: 50%;}
+.ms-5 {margin-left: 5px;}
+.ms-15 {margin-left: 15px;}
+.my-5 {margin-top: 5px; margin-bottom: 5px;}
+.mt-50 {margin-top: 50px;}
+
+.txt-c {text-align: center;}
+.txt-b {font-weight: bold;}
 
 .current {
     background-color: green;
@@ -62,13 +77,18 @@ td {
 
 #my-apps {
     margin: 5px 15px;
-    min-width: 500px;
+    min-width: 800px;
 }
 
 #my-apps td.des {
     width: 30%;
 }
 
+#my-apps th {
+    background: #033;
+    border-color:  black;
+    color: #fff;
+}
 
 #my-apps td img {
     width: 80px;
@@ -76,3 +96,21 @@ td {
     margin: 0;
     padding: 0;
 }
+
+#my-apps td.icon {
+    vertical-align: middle;
+}
+
+/* @media only screen and (max-width: 560px){
+    #my-apps {
+        width: 800px;
+    }
+
+    #my-apps td.des {
+        width: 260px;
+    }
+
+    #my-apps td.details {
+        width: 100px;
+    }
+} */
