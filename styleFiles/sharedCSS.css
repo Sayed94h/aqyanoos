@@ -25,15 +25,6 @@ body {
     color: #ffffff;
 }
 
-.d-flex {display: flex;}
-.flex-row {flex-direction: row;}
-.flex-col {flex-direction: column;}
-.justify-center {justify-content: center;}
-.justify-space-around {justify-content: space-around;}
-.cont-c {align-content: center;}
-
-.bc-d { background: #033;}
-
 .sqr-100 {
     width: 100px;
     height: 100px;

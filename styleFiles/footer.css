@@ -2,6 +2,7 @@ footer.footer {
 	background: #033;
 	padding: 2vw 4.2vw;
 	width: auto;
+	color: #fff;
 }
 
 footer.footer section.container-footer {
@@ -16,12 +17,11 @@ footer.footer section.container-footer section {
 }
 footer.footer section.container-footer section p {
 	border-bottom: 1px green solid;
-	color: white;
 }
 footer.footer section.container-footer section a {
 	text-align: left;
 	text-decoration: none;
-	color: #00f5fd;
+	color: #fff;
 	margin-top: 11px;
 	font-size: 12px;
 }
@@ -29,7 +29,6 @@ footer.footer section.container-footer section a {
 footer p.copyright {
 	text-align: center;
 	margin-top: 28px;
-	color: #fff;
 }
 /* 
 		max width 390px
