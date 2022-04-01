@@ -1,5 +1,5 @@
 :root {
-    --blue: #00b0f0;
+    --cv_header: #00b0f0;
 }
 
 section.note {
@@ -24,21 +24,21 @@ section.profile-info {
     width: 40vw;
 }
 
-section.hard-skills {
+section.experience-studies {
     width: 48vw;
     margin-left: 2vw;
 }
 
-section.hard-skills section.first ul li {
+section.experience-studies section.first ul li {
     font-weight: bold;
 }
 
-section.hard-skills section.first ul li ul li {
+section.experience-studies section.first ul li ul li {
     font-weight: normal;
 }
 
 section.origin {
-    background-color: var(--blue);
+    background-color: var(--cv_header);
     color: white;
     display: flex;
     flex-direction: column;
@@ -46,8 +46,8 @@ section.origin {
 }
 
 section.left-part h3,
-section.hard-skills h3 {
-    color: var(--blue);
+section.experience-studies h3 {
+    color: var(--cv_header);
 }
 
 section.left-part p,
@@ -62,7 +62,7 @@ section.references a {
 }
 
 section.left-part {
-    border-right: 2px var(--blue) solid;
+    border-right: 2px var(--cv_header) solid;
 }
 
 
@@ -78,7 +78,7 @@ section.print div {
     text-align: center;
     margin: 1vw 5vw;
     padding: 5px 7px;
-    color: blue;
+    color: var(--cv_header);
     border: 1px gray solid;
     border-radius: 4px;
     cursor: pointer;
@@ -92,29 +92,36 @@ section.print div {
     section.print,
     section.EMF-container,
     section.subscribe-wrapper,
-    footer {
+    footer, section.nav {
         display: none;
     }
-    section.nav {
-        display: none;
-    }
+
     @page {
-        margin: 0.5cm;
+        margin: 5px;        
     }
+
+    .page-break {
+        page-break-before: always;
+        margin-top: 10px;
+    }
+
     article.main-article section.origin {
-        background-color: #00b0f0 !important;
         -webkit-print-color-adjust: exact;
-        color: white;
+        /* background-color: var(--cv_header) !important;
+        color: var(--white);
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
     }
+
     article.main-article {
-        margin: 1vw 2vw;
-        line-height: 25px;
+        margin-top: -65px;
+        /* line-height: 25px;
         display: flex;
-        flex-direction: row;
+        flex-direction: row; */
     }
+
+
 }
 
 
@@ -128,15 +135,15 @@ section.print div {
 @media only screen and (max-width: 780px) {
     /* style for the main part of the web page */
     article.main-article {
-        margin: 1vw 5vw;
+        /* margin: 1vw 5vw;
         line-height: 25px;
-        display: flex;
+        display: flex; */
         flex-direction: column;
     }
     section.profile-info {
         width: 100%;
     }
-    section.hard-skills {
+    section.experience-studies {
         width: 100%;
     }
     section.left-part {
