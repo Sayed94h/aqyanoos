@@ -22,12 +22,17 @@
 }
 
 #logo_txt {
-    width: 200px;
-    height: 160px;
+    /* width: 200px; */
+    /* height: 160px; */
     border-radius: 15px;
     font-size: 65px;
     margin-left: 15px;
-    white-space: nowrap;
+    padding: 5px 9px;
+    white-space: nowrap;    
+}
+
+.lspc-4 {
+    letter-spacing: 4px;
 }
 
 @media only screen and (max-width: 550px){

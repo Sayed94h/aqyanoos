@@ -101,6 +101,18 @@ td {
     vertical-align: middle;
 }
 
+.page-header {
+    margin-top: 60px;
+    background: var(--bc);
+    padding: 7px;
+    text-align: center;
+    color: var(--fc);
+}
+
+.blogs {
+    margin: 20px 20px 50px 20px;
+}
+
 /* @media only screen and (max-width: 560px){
     #my-apps {
         width: 800px;
