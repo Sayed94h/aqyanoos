@@ -731,6 +731,29 @@ a {
     padding: 0;
 }
 
+.p10 {
+    padding: 10px;
+}
+
+.py-5 {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.px-5 {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.px-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.px-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 /*
     width and height
 */
