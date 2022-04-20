@@ -35,6 +35,13 @@
     letter-spacing: 4px;
 }
 
+.home-text {
+    padding-left: 20px;
+    padding-right: 20px;
+    line-height: 25px;
+    word-spacing: 3px;
+}
+
 @media only screen and (max-width: 550px){
     .showcase .first {
         flex-direction: column;
