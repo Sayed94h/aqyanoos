@@ -34,6 +34,7 @@
     --header-bc: #003333;
     --border-c: #000033;
     --fc: #ffffff;
+    --fc-d: #022;
 }
 
 body {
@@ -307,6 +308,10 @@ body {
 
 .fc-gold {
     color: #ffd700;
+}
+
+.fc-d {
+    color: var(--fc-d);
 }
 
 
