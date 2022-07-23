@@ -26,6 +26,12 @@ body {
     color: #ffffff;
 }
 
+.b-current {
+    color: #000;
+    text-shadow: 1px 1px 1px #00eeff;
+    font-weight: bold;
+}
+
 .sqr-100 {
     width: 100px;
     height: 100px;
@@ -110,10 +116,39 @@ td {
     color: var(--fc);
 }
 
-.blogs {
+.blogs, .source-codes {
     margin: 20px 20px 50px 20px;
 }
 
+.sc-wrapper textarea {
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+    border: none;
+    resize: none;
+    padding: 3px;    
+}
+
+.sc-nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 9px;
+}
+
+.sc-nav div {
+    margin-left: 15px;
+    background: #033;
+    color: #fff;
+    padding: 5px 9px;
+    border-radius: 3px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px green;
+}
+
+.sc-nav div.c {
+    background: #00eeff;
+    color: #033;
+}
 /* @media only screen and (max-width: 560px){
     #my-apps {
         width: 800px;
@@ -126,4 +161,42 @@ td {
     #my-apps td.details {
         width: 100px;
     }
-} */
+} 
+
+@media only screen and (max-width: 250px){
+    .sc-wrapper textarea {
+        width: 230px;
+    }
+}
+
+@media only screen and (max-width: 380px){
+    .sc-wrapper textarea {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .sc-wrapper textarea {
+        width: 460px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .sc-wrapper textarea {
+        width: 560px;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .sc-wrapper textarea {
+        width: 660px;
+    }
+}
+
+@media only screen and (max-width: 800px){
+    .sc-wrapper textarea {
+        width: 760px;
+    }
+}
+
+*/
