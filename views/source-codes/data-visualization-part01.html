@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../../styleFiles/helper.css">
     <link rel="stylesheet" href="../../styleFiles/sharedCSS.css">
     <link rel="stylesheet" href="../../styleFiles/footer.css">
+    <!-- for ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3193009251233672"
+        crossorigin="anonymous"></script>
     <title>Data Visualization Part 1</title>
 </head>
 
@@ -238,9 +241,11 @@ dataVisualization(dataPath2, 50, 3);
         jsView.innerHTML = jsCode;
 
         const btns = document.querySelector(".sc-nav");
-        btns.addEventListener("click", (e) => {
+        btns.addEventListener("click", (e) =>
+        {
             const t = e.target;
-            switch (t.textContent) {
+            switch (t.textContent)
+            {
                 case "HTML":
                     tTps(htmlView, "HTML");
                     break;
@@ -254,18 +259,23 @@ dataVisualization(dataPath2, 50, 3);
         });
 
         // hide all textareas
-        function tTps(p, q) {
-            document.querySelectorAll("textarea").forEach(e => {
+        function tTps (p, q)
+        {
+            document.querySelectorAll("textarea").forEach(e =>
+            {
                 e.setAttribute("hidden", "true");
             });
 
             p.removeAttribute("hidden");
 
             const cc = btns.children;
-            for (let i = 0; i < cc.length; i++) {
-                if (cc[i].textContent !== q) {
+            for (let i = 0; i < cc.length; i++)
+            {
+                if (cc[i].textContent !== q)
+                {
                     cc[i].classList.remove("c");
-                } else {
+                } else
+                {
                     cc[i].classList.add("c");
                 }
             }
