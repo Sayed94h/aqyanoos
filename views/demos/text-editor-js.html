@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            overflow: hidden;
+        }
+
+        header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            background: teal;
+            width: 100vw;
+            height: 60px;
+        }
+
+        header * {
+            margin-left: 20px;
+            color: white;
+        }
+
+        button {
+            background-color: rgba(0, 0, 0, 0.5);
+            outline: none;
+            border: none;
+            padding: 5px 10px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 99vw;
+            height: calc(100vh - 73px);
+            padding: 5px;
+            outline: none;
+            border: none;
+            resize: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+    <title>Text Editor</title>
+</head>
+
+<body>
+
+    <section>
+        <header>
+            <h1>Text Editor</h1>
+            <button id="open">Open</button>
+            <button id="save">Save</button>
+            <button id="new-file">New File</button>
+            <div><a href="/">Home</a></div>
+        </header>
+        <section>
+            <textarea name="content" id="content"></textarea>
+        </section>
+    </section>
+
+    <input type="file" class="hidden" id="openFile">
+    <script>
+
+        const openBtn = document.getElementById('open');
+        const saveBtn = document.getElementById('save');
+        const newFileBtn = document.getElementById('new-file');
+        const content_ = document.getElementById('content');
+
+        let fileName = '';
+
+        function readFile (e)
+        {
+            const openFileInput = document.getElementById("openFile");
+
+            openFileInput.click();
+
+            openFileInput.addEventListener('change', function (e)
+            {
+                const file_ = e.target.files[0];
+
+                fileName = file_.name;
+
+                const reader_ = new FileReader();
+                // you can also use 'loadend' as the event type
+                reader_.addEventListener('load', function (event)
+                {
+                    content_.value = event.target.result;
+                });
+
+                reader_.readAsText(file_);
+
+            });
+        }
+
+        function saveFile (e)
+        {
+            const contentOfFile = content_.value;
+            const blob_ = new Blob([contentOfFile], {type: 'text/plain'});
+            const url_ = URL.createObjectURL(blob_);
+            const aEl = document.createElement('a');
+            aEl.href = url_;
+            aEl.download = fileName;
+            aEl.click();
+        }
+
+        newFileBtn.onclick = function (e)
+        {
+            const userInput = prompt('Please give a name for the new file: ');
+            if (userInput)
+            {
+
+                fileName = userInput;
+            } else
+            {
+                alert('You have not give a name for the new file!');
+            }
+        };
+
+        openBtn.addEventListener('click', readFile);
+
+        saveBtn.addEventListener('click', saveFile);
+
+    </script>
+</body>
+
+</html>
