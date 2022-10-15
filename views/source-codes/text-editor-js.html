@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="How to create text editor using html css and javascript?">
+    <meta name="description"
+        content="Here I teach you how to create a text or code editor with pure html css and javascript">
+
+    <link rel="stylesheet" href="../../styleFiles/helper.css">
+    <link rel="stylesheet" href="../../styleFiles/sharedCSS.css">
+    <link rel="stylesheet" href="../../styleFiles/footer.css">
+    <!-- for ads -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3193009251233672"
+        crossorigin="anonymous"></script>
+    <title>Text / Code Editor JavaScript</title>
+</head>
+
+<body>
+
+    <!-- nav bar -->
+    <section class="nav">
+        <nav class="main-nav">
+            <a href="/">HOME</a>
+            <a href="./source-codes.html" class="current">Source Codes</a>
+        </nav>
+    </section>
+
+    <!-- main header -->
+    <header class="page-header">
+        <h1>Source Codes of my YouTube Tutorials</h1>
+    </header>
+    <main id="main" class="source-codes">
+        <article>
+            <nav>
+                <a href="./data-visualization-part01.html">Data Visualization Part 1</a> <br> <br>
+                <a href="./text-editor-js.html" class="b-current">Text Editor JS</a>
+            </nav>
+            <section class="sc">
+                <h3>A small guide</h3>
+                <p>Paste the HTML code inside "body element", CSS code inside "style element" or external css file,
+                    javascript code inside "script element" or external js file.
+                    If you use external files, then you need to link your files to your html file by using link tag
+                    for css and "script element" for javascript with the right "src" and "href" values.
+                </p>
+                <header class="sc-nav">
+                    <div class="html c">HTML</div>
+                    <div class="css">CSS</div>
+                    <div class="js">JS</div>
+                </header>
+                <div class="sc-wrapper">
+                    <textarea name="html" id="html-view" readonly></textarea>
+                    <textarea name="css" id="css-view" readonly hidden></textarea>
+                    <textarea name="js" id="js-view" readonly hidden></textarea>
+                </div>
+            </section>
+        </article>
+    </main>
+    <!-- footer of the page -->
+    <footer class="footer">
+        <section class="container-footer">
+            <section>
+                <p>MAIN</p>
+                <a href="/">HOME</a>
+                <a href="../portfolio/projects.html">PROJECTS</a>
+                <a href="./source-codes.html">Source Codes</a>
+                <a href="../main/about.html">ABOUT</a>
+            </section>
+            <section>
+                <p>
+                    CONTACTS
+                </p>
+                <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
+                <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
+
+            </section>
+            <section>
+                <p>MORE...</p>
+                <a href="../portfolio/projects.html">WEB APPS</a>
+                <a href="/#my-apps">ANDROID APPS</a>
+                <!-- <a href="./views/main/eula_textEditor.html">EULA Text Editor</a> -->
+            </section>
+
+        </section>
+        <p class="copyright">
+            &copy; SAYED KHALIL KAZIMI | <span id="current-year">2022</span>
+        </p>
+    </footer>
+
+    <script>
+        const htmlCode = '<section> \n<header>\n<h1>Text Editor</h1>\n<button id="open">Open</button>\n' +
+            ' <button id="save">Save</button>\n<button id="new-file">New File</button>\n' +
+            ' \n</header>\n<section>\n<textarea name="content" id="content"></textarea>\n' +
+            '</section>\n</section>\n<input type="file" class="hidden" id="openFile">';
+        const htmlView = document.getElementById("html-view");
+        htmlView.innerHTML = htmlCode;
+
+        const cssCode = `
+    body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: teal;
+    width: 100vw;
+    height: 60px;
+}
+
+header * {
+    margin-left: 20px;
+    color: white;
+}
+
+button {
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+textarea {
+    width: 99vw;
+    height: calc(100vh - 73px);
+    padding: 5px;
+    outline: none;
+    border: none;
+    resize: none;
+}
+
+.hidden {
+    display: none;
+}
+    `;
+
+        const cssView = document.getElementById("css-view");
+        cssView.innerHTML = cssCode;
+        const jsCode = `
+
+    const openBtn = document.getElementById('open');
+    const saveBtn = document.getElementById('save');
+    const newFileBtn = document.getElementById('new-file');
+    const content_ = document.getElementById('content');
+
+    let fileName = '';
+
+    function readFile (e)
+    {
+    const openFileInput = document.getElementById("openFile");
+
+    openFileInput.click();
+
+    openFileInput.addEventListener('change', function (e)
+    {
+    const file_ = e.target.files[0];
+
+    fileName = file_.name;
+
+    const reader_ = new FileReader();
+    // you can also use 'loadend' as the event type
+    reader_.addEventListener('load', function (event)
+    {
+    content_.value = event.target.result;
+    });
+
+    reader_.readAsText(file_);
+
+    });
+    }
+
+    function saveFile (e)
+    {
+    const contentOfFile = content_.value;
+    const blob_ = new Blob([contentOfFile], {type: 'text/plain'});
+    const url_ = URL.createObjectURL(blob_);
+    const aEl = document.createElement('a');
+    aEl.href = url_;
+    aEl.download = fileName;
+    aEl.click();
+    }
+
+    newFileBtn.onclick = function (e)
+    {
+    const userInput = prompt('Please give a name for the new file: ');
+    if (userInput)
+    {
+
+    fileName = userInput;
+    } else
+    {
+    alert('You have not give a name for the new file!');
+    }
+    };
+
+    openBtn.addEventListener('click', readFile);
+
+    saveBtn.addEventListener('click', saveFile);
+
+    `;
+
+        const jsView = document.getElementById("js-view");
+        jsView.innerHTML = jsCode;
+
+        const btns = document.querySelector(".sc-nav");
+        btns.addEventListener("click", (e) =>
+        {
+            const t = e.target;
+            switch (t.textContent)
+            {
+                case "HTML":
+                    tTps(htmlView, "HTML");
+                    break;
+                case "CSS":
+                    tTps(cssView, "CSS");
+                    break;
+                case "JS":
+                    tTps(jsView, "JS");
+                    break;
+            }
+        });
+
+        // hide all textareas
+        function tTps (p, q)
+        {
+            document.querySelectorAll("textarea").forEach(e =>
+            {
+                e.setAttribute("hidden", "true");
+            });
+
+            p.removeAttribute("hidden");
+
+            const cc = btns.children;
+            for (let i = 0; i < cc.length; i++)
+            {
+                if (cc[i].textContent !== q) {cc[i].classList.remove("c");} else
+                {
+                    cc[i].classList.add("c");
+                }
+            }
+        } </script>
+</body>
+
+</html>
