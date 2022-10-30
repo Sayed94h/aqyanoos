@@ -17,12 +17,17 @@
             flex-direction: row;
             align-items: center;
             background: teal;
-            width: 100vw;
+            width: 100%;
+            overflow: visible;
             height: 60px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 60px;
         }
 
         header * {
-            margin-left: 20px;
             color: white;
         }
 
@@ -36,16 +41,26 @@
         }
 
         textarea {
-            width: 99vw;
+            width: calc(100% - 10px);
             height: calc(100vh - 73px);
             padding: 5px;
             outline: none;
             border: none;
             resize: none;
+            position: absolute;
+            top: 73px;
         }
 
         .hidden {
             display: none;
+        }
+
+        .mrgl-8 {
+            margin-left: 8px;
+        }
+
+        .bold {
+            font-weight: bold;
         }
     </style>
     <title>Text Editor</title>
@@ -55,11 +70,11 @@
 
     <section>
         <header>
-            <h1>Text Editor</h1>
-            <button id="open">Open</button>
-            <button id="save">Save</button>
-            <button id="new-file">New File</button>
-            <div><a href="/">Home</a></div>
+            <div class="mrgl-8 bold">Text Editor</div>
+            <button id="open" class="mrgl-8">Open</button>
+            <button id="save" class="mrgl-8">Save</button>
+            <button id="new-file" class="mrgl-8">New File</button>
+            <div class="mrgl-8"><a href="/">Home</a></div>
         </header>
         <section>
             <textarea name="content" id="content"></textarea>
@@ -89,8 +104,8 @@
                 fileName = file_.name;
 
                 const reader_ = new FileReader();
-                // you can also use 'loadend' as the event type
-                reader_.addEventListener('load', function (event)
+                // you can use 'load', 'loadend' as the event type
+                reader_.addEventListener('loadend', function (event)
                 {
                     content_.value = event.target.result;
                 });
@@ -102,6 +117,11 @@
 
         function saveFile (e)
         {
+            if (!fileName)
+            {
+                newFileName();
+            }
+
             const contentOfFile = content_.value;
             const blob_ = new Blob([contentOfFile], {type: 'text/plain'});
             const url_ = URL.createObjectURL(blob_);
@@ -111,18 +131,36 @@
             aEl.click();
         }
 
-        newFileBtn.onclick = function (e)
+        function newFileName (e)
         {
-            const userInput = prompt('Please give a name for the new file: ');
+            fileName = promptResult();
+        }
+
+        function promptResult ()
+        {
+            let msg = "Please give a name for the new file and also an extension for it: ";
+            let userInput = prompt(msg);
             if (userInput)
             {
-
-                fileName = userInput;
-            } else
-            {
-                alert('You have not give a name for the new file!');
+                return userInput;
             }
-        };
+
+            const askAgian = confirm("You have not given any name for the new file. Would you like to give a name and extension?");
+            if (askAgian)
+            {
+                userInput = prompt(msg);
+                if (userInput)
+                {
+                    return userInput;
+                }
+            }
+            alert("You have not given any name and extension for your file, so the default name is Aqyanoos and the default extension is .txt");
+
+            return 'Aqyanoos.txt';
+
+        }
+
+        newFileBtn.onclick = newFileName;
 
         openBtn.addEventListener('click', readFile);
 
