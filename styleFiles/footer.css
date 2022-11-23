@@ -1,5 +1,5 @@
 footer.footer {
-	background: #033;
+	background: #008080;
 	padding: 2vw 4.2vw;
 	width: auto;
 	color: #fff;
@@ -15,9 +15,11 @@ footer.footer section.container-footer section {
 	display: flex;
 	flex-direction: column;
 }
+
 footer.footer section.container-footer section p {
 	border-bottom: 1px green solid;
 }
+
 footer.footer section.container-footer section a {
 	text-align: left;
 	text-decoration: none;
@@ -30,6 +32,7 @@ footer p.copyright {
 	text-align: center;
 	margin-top: 28px;
 }
+
 /* 
 		max width 390px
 */

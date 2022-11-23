@@ -111,7 +111,6 @@
                 });
 
                 reader_.readAsText(file_);
-
             });
         }
 
@@ -138,6 +137,7 @@
 
         function promptResult ()
         {
+            // Todo: check if the user has provided any extension for the file or not
             let msg = "Please give a name for the new file and also an extension for it: ";
             let userInput = prompt(msg);
             if (userInput)

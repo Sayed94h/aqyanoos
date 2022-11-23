@@ -39,7 +39,7 @@
                 <a href="./text-editor-js.html" class="b-current">Text Editor JS</a>
             </nav>
             <section class="sc">
-                <h3>A small guide</h3>
+                <h3>Useful information</h3>
                 <p>Paste the HTML code inside "body element", CSS code inside "style element" or external css file,
                     javascript code inside "script element" or external js file.
                     If you use external files, then you need to link your files to your html file by using link tag
@@ -87,20 +87,33 @@
 
         </section>
         <p class="copyright">
-            &copy; SAYED KHALIL KAZIMI | <span id="current-year">2022</span>
+            &copy; aqyanoos.com | <span id="current-year">2022</span>
         </p>
     </footer>
 
     <script>
-        const htmlCode = '<section> \n<header>\n<h1>Text Editor</h1>\n<button id="open">Open</button>\n' +
-            ' <button id="save">Save</button>\n<button id="new-file">New File</button>\n' +
-            ' \n</header>\n<section>\n<textarea name="content" id="content"></textarea>\n' +
-            '</section>\n</section>\n<input type="file" class="hidden" id="openFile">';
+
+        const htmlCode = `
+            
+<section>
+    <header>
+        <div class="mrgl-8 bold">Text Editor</div>
+        <button id="open" class="mrgl-8">Open</button>
+        <button id="save" class="mrgl-8">Save</button>
+        <button id="new-file" class="mrgl-8">New File</button>
+        <div class="mrgl-8"><a href="/">Home</a></div>
+    </header>
+    <section>
+        <textarea name="content" id="content"></textarea>
+    </section>
+</section>
+
+            `;
         const htmlView = document.getElementById("html-view");
-        htmlView.innerHTML = htmlCode;
+        htmlView.innerHTML = htmlCode.trim();
 
         const cssCode = `
-    body {
+body {
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -112,12 +125,17 @@ header {
     flex-direction: row;
     align-items: center;
     background: teal;
-    width: 100vw;
+    width: 100%;
+    overflow: visible;
     height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
 }
 
 header * {
-    margin-left: 20px;
     color: white;
 }
 
@@ -131,16 +149,26 @@ button {
 }
 
 textarea {
-    width: 99vw;
+    width: calc(100% - 10px);
     height: calc(100vh - 73px);
     padding: 5px;
     outline: none;
     border: none;
     resize: none;
+    position: absolute;
+    top: 73px;
 }
 
 .hidden {
     display: none;
+}
+
+.mrgl-8 {
+    margin-left: 8px;
+}
+
+.bold {
+    font-weight: bold;
 }
     `;
 
@@ -148,39 +176,44 @@ textarea {
         cssView.innerHTML = cssCode;
         const jsCode = `
 
-    const openBtn = document.getElementById('open');
-    const saveBtn = document.getElementById('save');
-    const newFileBtn = document.getElementById('new-file');
-    const content_ = document.getElementById('content');
+const openBtn = document.getElementById('open');
+const saveBtn = document.getElementById('save');
+const newFileBtn = document.getElementById('new-file');
+const content_ = document.getElementById('content');
 
-    let fileName = '';
+let fileName = '';
 
-    function readFile (e)
-    {
+function readFile (e)
+{
     const openFileInput = document.getElementById("openFile");
 
     openFileInput.click();
 
     openFileInput.addEventListener('change', function (e)
     {
-    const file_ = e.target.files[0];
+        const file_ = e.target.files[0];
 
-    fileName = file_.name;
+        fileName = file_.name;
 
-    const reader_ = new FileReader();
-    // you can also use 'loadend' as the event type
-    reader_.addEventListener('load', function (event)
+        const reader_ = new FileReader();
+        // you can use 'load', 'loadend' as the event type
+        reader_.addEventListener('loadend', function (event)
+        {
+            content_.value = event.target.result;
+        });
+
+        reader_.readAsText(file_);
+
+    });
+}
+
+function saveFile (e)
+{
+    if (!fileName)
     {
-    content_.value = event.target.result;
-    });
-
-    reader_.readAsText(file_);
-
-    });
+        newFileName();
     }
 
-    function saveFile (e)
-    {
     const contentOfFile = content_.value;
     const blob_ = new Blob([contentOfFile], {type: 'text/plain'});
     const url_ = URL.createObjectURL(blob_);
@@ -188,24 +221,42 @@ textarea {
     aEl.href = url_;
     aEl.download = fileName;
     aEl.click();
-    }
+}
 
-    newFileBtn.onclick = function (e)
-    {
-    const userInput = prompt('Please give a name for the new file: ');
+function newFileName (e)
+{
+    fileName = promptResult();
+}
+
+function promptResult ()
+{
+    // Todo: check if the user has provided any extension for the file or not
+    let msg = "Please give a name for the new file and also an extension for it: ";
+    let userInput = prompt(msg);
     if (userInput)
     {
-
-    fileName = userInput;
-    } else
-    {
-    alert('You have not give a name for the new file!');
+        return userInput;
     }
-    };
 
-    openBtn.addEventListener('click', readFile);
+    const askAgian = confirm("You have not given any name for the new file. Would you like to give a name and extension?");
+    if (askAgian)
+    {
+        userInput = prompt(msg);
+    if (userInput)
+    {
+        return userInput;
+    }
+    }
+    alert("You have not given any name and extension for your file, so the default name is Aqyanoos and the default extension is .txt");
 
-    saveBtn.addEventListener('click', saveFile);
+    return 'Aqyanoos.txt';
+}
+
+newFileBtn.onclick = newFileName;
+
+openBtn.addEventListener('click', readFile);
+
+saveBtn.addEventListener('click', saveFile);
 
     `;
 

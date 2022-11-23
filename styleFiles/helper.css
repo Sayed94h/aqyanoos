@@ -37,10 +37,6 @@
     --fc-d: #022;
 }
 
-body {
-    margin: 0; padding: 0; font-size: 16px; font-family: Verdana, Geneva, Tahoma;
-}
-
 /* tools */
 
 .closer {
@@ -319,7 +315,9 @@ body {
     background color
 */
 
-.bc-d { background: var(--bc-d);}
+.bc-d {
+    background: var(--bc-d);
+}
 
 .bc-trans-1 {
     background-color: rgba(255, 255, 255, .1);
@@ -721,12 +719,30 @@ a {
     margin: 0;
 }
 
-.ms-5 {margin-left: 5px;}
-.ms-15 {margin-left: 15px;}
-.my-5 {margin-top: 5px; margin-bottom: 5px;}
-.mt-50 {margin-top: 50px;}
-.mt-10 {margin-top: 10px;}
-.mt-15 {margin-top: 15px;}
+.ms-5 {
+    margin-left: 5px;
+}
+
+.ms-15 {
+    margin-left: 15px;
+}
+
+.my-5 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mt-15 {
+    margin-top: 15px;
+}
 
 /*
     padding
@@ -759,6 +775,7 @@ a {
     padding-left: 15px;
     padding-right: 15px;
 }
+
 /*
     width and height
 */
@@ -768,9 +785,17 @@ a {
     height: 100vh;
 }
 
-.w-100 {width: 100%;}
-.w-75 {width: 75%;}
-.w-50 {width: 50%;}
+.w-100 {
+    width: 100%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+.w-50 {
+    width: 50%;
+}
 
 .vw-10 {
     width: 100vw;
@@ -998,6 +1023,6 @@ a {
     overflow-y: hidden;
 }
 
-table , tr, th, td {
+table, tr, th, td {
     border-collapse: collapse;
 }
