@@ -10,3 +10,6 @@ document.getElementById("dif-FRhrc").innerText = difFRhrc + " Days ago";
 
 const difFRtextEditor = Math.round((new Date(today) - (new Date("2022-02-23"))) / 1000 / 60 / 60 / 24);
 document.getElementById("dif-FRtextEditor").innerText = difFRtextEditor + " Days ago";
+
+const difFRColorWorld = Math.round((new Date(today) - (new Date("2022-12-28"))) / 1000 / 60 / 60 / 24);
+document.getElementById("dif-FRCW").innerText = difFRColorWorld + " Days ago";
