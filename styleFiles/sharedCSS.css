@@ -1,16 +1,25 @@
+:root {
+    --content-link-c: rgb(0, 110, 255);
+}
+
 body {
     background: #ededed;
     margin: 0;
     padding: 0;
     font-size: 14px;
-    font-family: Verdana, Geneva, Tahoma;
+    font-family: Verdana, Tahoma;
     letter-spacing: 1px;
+    /* min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; */
 }
 
 .current {
-    background-color: #ffffff2d;
+    background-color: #055;
     border-radius: 5px;
-    padding: 3px;
+    padding: 5px;
+    color: #fff;
 }
 
 .current:hover {
@@ -35,12 +44,10 @@ body {
 }
 
 
-nav.main-nav {
+.main-nav {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-content: center;
-    align-items: center;
     background: #008080;
     position: fixed;
     top: 0;
@@ -49,7 +56,15 @@ nav.main-nav {
     height: 50px;
 }
 
-nav.main-nav a {
+.main-nav-holder {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.main-nav a {
     text-decoration: none;
     margin-left: 20px;
     color: #fff;
@@ -57,6 +72,10 @@ nav.main-nav a {
 
 .nav a:hover {
     text-decoration: underline;
+}
+
+article nav a, section nav a {
+    color: var(--content-link-c);
 }
 
 main {
@@ -110,7 +129,7 @@ td {
 .page-header {
     margin-top: 60px;
     background: var(--bc);
-    padding: 7px;
+    padding: 5px;
     text-align: center;
     color: var(--fc);
 }
@@ -149,6 +168,47 @@ td {
     color: #033;
 }
 
+/* footer */
+
+footer.footer {
+    background: #008080;
+    padding: 2vw 4.2vw;
+    width: auto;
+    color: #fff;
+}
+
+footer.footer section.container-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+footer.footer section.container-footer section {
+    display: flex;
+    flex-direction: column;
+}
+
+footer.footer section.container-footer section p {
+    font-weight: bold;
+}
+
+footer.footer section.container-footer section a {
+    text-align: left;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 11px;
+    font-size: 12px;
+}
+
+footer p.copyright {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 0.7rem;
+}
+
+/* 
+		max width 390px
+*/
 /* @media only screen and (max-width: 560px){
     #my-apps {
         width: 800px;

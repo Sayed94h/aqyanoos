@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="../../styleFiles/helper.css">
     <link rel="stylesheet" href="../../styleFiles/sharedCSS.css">
-    <link rel="stylesheet" href="../../styleFiles/footer.css">
+    <!-- <link rel="stylesheet" href="../../styleFiles/footer.css"> -->
     <!-- for ads -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3193009251233672"
         crossorigin="anonymous"></script>
@@ -19,16 +19,11 @@
 <body>
 
     <!-- nav bar -->
-    <section class="nav">
-        <nav class="main-nav">
-            <a href="/">HOME</a>
-            <a href="./source-codes.html" class="current">Source Codes</a>
-        </nav>
-    </section>
+    <section class="nav main-nav" id="main-nav"></section>
 
     <!-- main header -->
     <header class="page-header">
-        <h1>Source Codes of my YouTube Tutorials</h1>
+        <h3>Source Codes of my YouTube Tutorials</h3>
     </header>
     <main id="main" class="source-codes">
         <article>
@@ -41,7 +36,7 @@
                 <p>Paste the HTML code inside "body element", CSS code inside "style element" or external css file,
                     javascript code inside "script element" or external js file.
                     If you use external files, then you need to link your files to your html file by using link tag
-                    for css and "script element" for javascript with the right "src" and "href" values.
+                    for css and "script element" for javascript with the right "href" and "src" values.
                 </p>
                 <header class="sc-nav">
                     <div class="html c">HTML</div>
@@ -57,35 +52,7 @@
         </article>
     </main>
     <!-- footer of the page -->
-    <footer class="footer">
-        <section class="container-footer">
-            <section>
-                <p>MAIN</p>
-                <a href="/">HOME</a>
-                <a href="../portfolio/projects.html">PROJECTS</a>
-                <a href="./source-codes.html">Source Codes</a>
-                <a href="../main/about.html">ABOUT</a>
-            </section>
-            <section>
-                <p>
-                    CONTACTS
-                </p>
-                <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
-                <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
-
-            </section>
-            <section>
-                <p>MORE...</p>
-                <a href="../portfolio/projects.html">WEB APPS</a>
-                <a href="/#my-apps">ANDROID APPS</a>
-                <!-- <a href="./views/main/eula_textEditor.html">EULA Text Editor</a> -->
-            </section>
-
-        </section>
-        <p class="copyright">
-            &copy; aqyanoos.com | <span id="current-year">2022</span>
-        </p>
-    </footer>
+    <footer class="footer" id="main-footer"></footer>
 
     <script>
         const htmlCode = '\n<section id="svg-path">\n\t<section id="card"></section>\n</section>\n';
@@ -283,6 +250,8 @@ dataVisualization(dataPath2, 50, 3);
         }
 
     </script>
+
+    <script src="../../apps/genContents.js"></script>
 </body>
 
 </html>

@@ -9,7 +9,7 @@
     <link rel="manifest" href="../../site.webmanifest">
     <link rel="icon" type="image/ico" href=".../../favicon.ico">
     <link rel="shortcut icon" type="image/ico" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styleFiles/footer.css">
+    <!-- <link rel="stylesheet" href="../../styleFiles/footer.css"> -->
     <link rel="stylesheet" href="../../styleFiles/helper.css">
     <link rel="stylesheet" href="../../styleFiles/sharedCSS.css">
 
@@ -35,12 +35,7 @@
 
 <body>
     <!-- nav bar -->
-    <section class="nav">
-        <nav class="main-nav">
-            <a href="/">HOME</a>
-            <a href="#about" class="current">ABOUT</a>
-        </nav>
-    </section>
+    <section class="nav main-nav" id="main-nav"></section>
     <!-- main part of the web page -->
     <main id="about">
         <h2>
@@ -61,13 +56,6 @@
                 <p>No matter what you do, what your job is,... you need some automation, tools that would make your work
                     and
                     your life easy.</p>
-            </section>
-
-            <section>
-                <p>
-                    If you would like to know more about the founder of Aqyanoos.com click <a
-                        href="../portfolio/cv.html">here</a>.
-                </p>
             </section>
 
             <section>
@@ -119,33 +107,8 @@
     </main>
 
     <!-- footer of the page -->
-    <footer class="footer">
-        <section class="container-footer">
-            <section>
-                <p>MAIN</p>
-                <a href="/">HOME</a>
-                <a href="../portfolio/projects.html">PROJECTS</a>
-                <a href="#about">ABOUT</a>
-            </section>
-            <section>
-                <p>
-                    CONTACTS
-                </p>
-                <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
-                <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
-
-            </section>
-            <section>
-                <p>MORE...</p>
-                <a href="../portfolio/projects.html">WEB APPS</a>
-                <a href="/#my-apps">ANDROID APPS</a>
-            </section>
-
-        </section>
-        <p class="copyright">
-            &copy; aqyanoos.com | <span id="current-year">2022</span>
-        </p>
-    </footer>
+    <footer class="footer" id="main-footer"></footer>
+    <script src="../../apps/genContents.js"></script>
 </body>
 
 </html>

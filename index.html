@@ -3,6 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="apple-touch-icon" sizes="180x180" href="./images/app_icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/app_icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="./images/app_icons/favicon-16x16.png">
@@ -11,7 +13,7 @@
   <link rel="icon" type="image/ico" href="./favicon.ico">
   <link rel="shortcut icon" type="image/ico" href="./favicon.ico">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="title" content="http status code, http response code">
   <meta name="keywords"
     content="http status code, http, http code, http response code, status code, response code, backend development, android, android application">
@@ -20,7 +22,7 @@
   <link rel="stylesheet" href="./styleFiles/style.css">
   <link rel="stylesheet" href="./styleFiles/helper.css">
   <link rel="stylesheet" href="./styleFiles/sharedCSS.css">
-  <link rel="stylesheet" href="./styleFiles/footer.css">
+  <!-- <link rel="stylesheet" href="./styleFiles/footer.css"> -->
   <!-- for ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3193009251233672"
     crossorigin="anonymous"></script>
@@ -51,19 +53,7 @@
   </section>
 
   <!-- navigation -->
-  <section class="d-flex nav">
-    <nav>
-      <a href="#home-page" class="current">HOME</a>
-      <a href="./views/main/about.html">ABOUT</a>
-      <a href="./views/source-codes/source-codes.html">Source Codes</a>
-    </nav>
-  </section>
-  <hr>
-  <section class="d-flex nav">
-    <nav>
-      <a href="/views/demos/text-editor-js.html">Text Editor</a>
-    </nav>
-  </section>
+  <section id="main-nav"></section>
 
   <!-- short intro -->
   <h2 class="hdr">Aqyanoos.com is unique</h2>
@@ -153,7 +143,7 @@
         </tr>
 
         <tr>
-          <td class="txt-c">Text Editor for Android devices <br>Or<br> Code Editor for Android devices</td>
+          <td class="txt-c">Text Editor <br>Or<br> Code Editor</td>
           <td class="details">
             <span class="txt-b">First Release:</span> Feb 23, 2022 <br>
             <span class="txt-b">Published: </span><span id="dif-FRtextEditor"></span> <br>
@@ -206,37 +196,10 @@
 
   <div class="mt-50"></div>
   <!-- footer of the page -->
-  <footer class="footer">
-    <section class="container-footer">
-      <section>
-        <p>MAIN</p>
-        <a href="#home-page">HOME</a>
-        <a href="./views/portfolio/projects.html">PROJECTS</a>
-        <a href="./views/source-codes/source-codes.html">Source Codes</a>
-        <a href="./views/main/about.html">ABOUT</a>
-      </section>
-      <section>
-        <p>
-          CONTACTS
-        </p>
-        <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
-        <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
 
-      </section>
-      <section>
-        <p>MORE...</p>
-        <a href="./views/portfolio/projects.html">WEB APPS</a>
-        <a href="#my-apps">ANDROID APPS</a>
-        <!-- <a href="./views/main/eula_textEditor.html">EULA Text Editor</a> -->
-      </section>
+  <footer class="footer" id="main-footer"></footer>
 
-    </section>
-    <p class="copyright">
-      &copy; aqyanoos.com | <span id="current-year">2022</span>
-    </p>
-  </footer>
-
-  <script src="./apps/index.js" type="module"></script>
+  <script src="./apps/index.js"></script>
 </body>
 
 </html>

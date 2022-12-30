@@ -4,17 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="apple-touch-icon" sizes="180x180" href="../../images/app_icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../images/app_icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../images/app_icons/favicon-16x16.png">
-    <link rel="manifest" href="../../site.webmanifest">
 
     <link rel="icon" type="image/ico" href="../../favicon.ico">
     <link rel="shortcut icon" type="image/ico" href="../../favicon.ico">
 
     <link rel="stylesheet" href="../../styleFiles/helper.css">
     <link rel="stylesheet" href="../../styleFiles/sharedCSS.css">
-    <link rel="stylesheet" href="../../styleFiles/footer.css">
+    <!-- <link rel="stylesheet" href="../../styleFiles/footer.css"> -->
     <style>
         main {
             margin: 75px 30px;
@@ -26,14 +22,7 @@
 <body>
 
     <!-- nav bar -->
-    <section class="nav">
-        <nav class="main-nav">
-            <a href="/">HOME</a>
-            <a href="../portfolio/projects.html">PROJECTS</a>
-            <a href="../main/about.html">ABOUT</a>
-            <a href="#" class="current">EULA</a>
-        </nav>
-    </section>
+    <section class="nav main-nav" id="main-nav"></section>
 
     <main>
         <h2>End-User License Agreement (EULA) of <span class="app_name">Color World</span></h2>
@@ -140,38 +129,8 @@
     </main>
 
     <!-- footer of the page -->
-    <footer class="footer">
-        <section class="container-footer">
-            <section>
-                <p>MAIN</p>
-                <a href="/">HOME</a>
-                <a href="../portfolio/projects.html">PROJECTS</a>
-                <a href="../main/about.html">ABOUT</a>
-            </section>
-            <section>
-                <p>
-                    CONTACTS
-                </p>
-                <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
-                <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
-
-            </section>
-            <section>
-                <p>MORE...</p>
-                <a href="../portfolio/projects.html">WEB APPS</a>
-                <a href="/#my-apps">ANDROID APPS</a>
-            </section>
-
-        </section>
-        <p class="copyright">
-            &copy; aqyanoos.com | <span id="current-year">2022</span>
-        </p>
-    </footer>
-
-    <script>
-        const dd = new Date();
-        document.getElementById("current-year").innerHTML = dd.getFullYear();
-    </script>
+    <footer class="footer" id="main-footer"></footer>
+    <script src="../../apps/genContents.js"></script>
 </body>
 
 </html>
