@@ -17,7 +17,7 @@ footer.footer section.container-footer section {
 }
 
 footer.footer section.container-footer section p {
-	border-bottom: 1px green solid;
+	font-weight: bold;
 }
 
 footer.footer section.container-footer section a {
