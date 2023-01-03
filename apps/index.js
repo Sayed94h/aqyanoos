@@ -39,7 +39,7 @@ const footerContent = `
       <section>
         <p>MORE...</p>
         <a href="#my-apps">ANDROID APPS</a>
-        <!-- <a href="/views/main/eula_textEditor.html">EULA Text Editor</a> -->
+        <a href="/privacy/privacy_2.html">Privacy Policy</a>
       </section>
 
     </section>

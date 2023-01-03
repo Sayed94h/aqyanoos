@@ -5,7 +5,7 @@ function setNavContent ()
     let navContent = `
         <nav class="main-nav-holder">
                     <a href="/">HOME</a>
-                    <a href="/views/source-codes/source-codes.html" class="current">Source Codes</a>
+                    <a href="/views/source-codes/source-codes.html">Source Codes</a>
                     <a href="/views/main/about.html">ABOUT</a>
                 </nav>
         `;
@@ -25,7 +25,7 @@ function setNavContent ()
         `;
     }
 
-    if (pageTitle.includes("Data Visualization") || pageTitle.includes("Text / Code Editor"))
+    if (pageTitle.includes("Data Visualization") || pageTitle.includes("Text / Code Editor") || pageTitle.includes("Source Codes"))
     {
         navContent = `
         <nav class="main-nav-holder">
@@ -60,6 +60,7 @@ const footerContent = `
             <section>
                 <p>MORE...</p>
                 <a href="/#my-apps">ANDROID APPS</a>
+                <a href="/privacy/privacy_2.html">Privacy Policy</a>
             </section>
 
         </section>
