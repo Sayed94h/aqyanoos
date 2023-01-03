@@ -168,6 +168,18 @@ td {
     color: #033;
 }
 
+.feature-hdr {
+    margin-top: 66px;
+    padding: 150px 0 200px 0;
+    background-color: #008080;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
 /* footer */
 
 footer.footer {
