@@ -4,9 +4,9 @@ const fy = new Date().getFullYear();
 const navContent = `
 <section class="d-flex nav">
 <nav>
-  <a href="#home-page" class="current">HOME</a>
-  <a href="./views/main/about.html">ABOUT</a>
+  <a href="#home-page" class="current">Home</a>  
   <a href="./views/source-codes/source-codes.html">Source Codes</a>
+  <a href="./views/main/about.html">About</a>
 </nav>
 </section>
 <hr>
@@ -22,30 +22,31 @@ navEl.innerHTML = navContent;
 
 const footerContent = `
 <section class="container-footer">
-      <section>
-        <p>MAIN</p>
-        <a href="#home-page">HOME</a>
+    <section>
+        <div>MAIN</div>
+        <a href="/">Home</a>
         <a href="/views/source-codes/source-codes.html">Source Codes</a>
-        <a href="/views/main/about.html">ABOUT</a>
-      </section>
-      <section>
-        <p>
-          CONTACTS
-        </p>
-        <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LINKEDIN</a>
-        <a href="https://github.com/Sayed94h" target="_blank">GITHUB</a>
-
-      </section>
-      <section>
-        <p>MORE...</p>
-        <a href="#my-apps">ANDROID APPS</a>
-        <a href="/privacy/privacy_2.html">Privacy Policy</a>
-      </section>
+        <a href="/views/main/about.html">About</a>
+    </section>
+    <section>
+        <div>
+            CONTACTS
+        </div>
+        <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Sayed94h" target="_blank">Github</a>
 
     </section>
-    <p class="copyright">
-      &copy; aqyanoos.com | <span id="current-year">${fy}</span>
-    </p>
+    <section>
+        <div>MORE...</div>
+        <a href="/#my-apps">Android Apps</a>
+        <a href="/views/main/questions.html">Questions ?</a>
+        <a href="/privacy/privacy_2.html">Privacy Policy</a>
+    </section>
+
+</section>
+<div class="copyright">
+    &copy; aqyanoos.com | <span id="current-year">${fy}</span>
+</div>
 `;
 
 const footerEl = document.getElementById("main-footer");
