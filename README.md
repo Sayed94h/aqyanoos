@@ -19,9 +19,9 @@ This app helps you read, edit and create text based files.
 
 This app is a great text editor or notepad for Android devices.
 
-## Color World
+## Color Reference
 
-Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.colorworld).
+Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.colorreference).
 
 This app helps you with colors. If you deal with colors then this is a great app for you.
 With this app you get the Hex value, RGB value, HSL value and name of any color in the list in the app and there is a great color picker that helps you pick/choose any color you want.
