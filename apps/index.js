@@ -40,7 +40,7 @@ const footerContent = `
         <div>MORE...</div>
         <a href="/#my-apps">Android Apps</a>
         <a href="/views/main/questions.html">Questions ?</a>
-        <a href="/privacy/privacy.html?page=cw">Privacy Policy</a>
+        <a href="/privacy/privacy.html?page=cr">Privacy Policy</a>
     </section>
 
 </section>
@@ -59,12 +59,12 @@ ageEl ? ageEl.innerHTML = fy - 1994 : "";
 const today = Date.now();
 //new Date(today)
 const difFRhrc = Math.round((today - (new Date("2022-02-09"))) / 1000 / 60 / 60 / 24);
-document.getElementById("dif-FRhrc").innerText = difFRhrc + " Days ago";
+document.getElementById("dif-FRhrc").innerHTML = difFRhrc + " Days ago";
 
 const difFRtextEditor = Math.round((today - (new Date("2022-02-23"))) / 1000 / 60 / 60 / 24);
-document.getElementById("dif-FRtextEditor").innerText = difFRtextEditor + " Days ago";
+document.getElementById("dif-FRtextEditor").innerHTML = difFRtextEditor + " Days ago";
 
-// const difFRColorWorld = Math.round((today - (new Date("2022-12-28"))) / 1000 / 60 / 60 / 24);
-// document.getElementById("dif-FRCW").innerText = difFRColorWorld + " Days ago";
+const difFRColorWorld = Math.round((today - (new Date("2023-01-9"))) / 1000 / 60 / 60 / 24);
+document.getElementById("dif-FRCW").innerHTML = difFRColorWorld + " Days ago";
 
 

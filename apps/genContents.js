@@ -23,7 +23,7 @@ function setNavContent (p_)
     const pageTitle = document.title;
     const queryString = window.location.href;
     const pageType = queryString.split("?")[1];
-    let pt = "cw";
+    let pt = "cr";
     if (pageType)
     {
         //console.log('query string: ', pageType);
@@ -32,11 +32,11 @@ function setNavContent (p_)
         {
             pt = type_;
             const appName = document.querySelectorAll(".app_name");
-            if (type_ === "cw")
+            if (type_ === "cr")
             {
                 appName.forEach(el =>
                 {
-                    el.innerHTML = "Color World";
+                    el.innerHTML = "Color Reference";
                 });
             }
 
