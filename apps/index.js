@@ -5,7 +5,7 @@ const navContent = `
 <section class="d-flex nav">
 <nav>
   <a href="#home-page" class="current">Home</a>  
-  <a href="./views/source-codes/source-codes.html">Source Codes</a>
+  <a href="./views/source-codes/source-codes.html">Tutorials</a>
   <a href="./views/main/about.html">About</a>
 </nav>
 </section>
@@ -13,6 +13,8 @@ const navContent = `
 <section class="d-flex nav">
 <nav>
   <a href="/online-text-editor-online-code-editor-online-notepad.html">Online Text / Code Editor</a>
+  <a href="/how-to-convert-hex-hexadecimal-to-decimal-integer.html">Hex to Decimal</a>
+  <a href="/how-to-convert-decimal-integer-to-hex-dexadecimal.html" class="">Decimal to Hex</a>
 </nav>
 </section>
 `;
@@ -25,7 +27,7 @@ const footerContent = `
     <section>
         <div>MAIN</div>
         <a href="/">Home</a>
-        <a href="/views/source-codes/source-codes.html">Source Codes</a>
+        <a href="/views/source-codes/source-codes.html">Tutorials</a>
         <a href="/views/main/about.html">About</a>
     </section>
     <section>
