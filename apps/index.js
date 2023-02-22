@@ -58,15 +58,32 @@ footerEl.innerHTML = footerContent;
 const ageEl = document.getElementById("age");
 ageEl ? ageEl.innerHTML = fy - 1994 : "";
 
-const today = Date.now();
+// const today = Date.now();
+// const dateNumber = (d) => Math.round((Date.now() - new Date(d)) / 1000 / 60 / 60 / 24);
 //new Date(today)
-const difFRhrc = Math.round((today - (new Date("2022-02-09"))) / 1000 / 60 / 60 / 24);
-document.getElementById("dif-FRhrc").innerHTML = difFRhrc + " Days ago";
 
-const difFRtextEditor = Math.round((today - (new Date("2022-02-23"))) / 1000 / 60 / 60 / 24);
-document.getElementById("dif-FRtextEditor").innerHTML = difFRtextEditor + " Days ago";
+function toYr (d)
+{
+    const days = Math.round((Date.now() - new Date(d)) / 1000 / 60 / 60 / 24);
+    if (days > 364)
+    {
+        let yr = Math.floor(days / 365);
+        yr = yr + " year" + (yr > 1 ? "s" : "");
+        let days_ = days % 365;
+        days_ = days_ > 0 ? " and " + days_ + " day" + (days_ > 1 ? "s" : "") : "";
+        return yr + days_ + " ago";
+    } else
+    {
+        return days > 1 ? days + " days ago" : " Today";
+    }
+};
 
-const difFRColorWorld = Math.round((today - (new Date("2023-01-9"))) / 1000 / 60 / 60 / 24);
-document.getElementById("dif-FRCW").innerHTML = difFRColorWorld + " Days ago";
+document.getElementById("dif-FRhrc").innerHTML = toYr("2022-02-09");
+
+document.getElementById("dif-FRtextEditor").innerHTML = toYr("2022-02-23");
+
+document.getElementById("dif-FRCR").innerHTML = toYr("2023-01-9");
+
+document.getElementById("dif-FRDB").innerHTML = toYr("2023-02-22");
 
 
