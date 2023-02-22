@@ -11,10 +11,10 @@ const navContent = `
 </section>
 <hr>
 <section class="d-flex nav">
-<nav>
-  <a href="/online-text-editor-online-code-editor-online-notepad.html">Online Text / Code Editor</a>
-  <a href="/how-to-convert-hex-hexadecimal-to-decimal-integer.html">Hex to Decimal</a>
-  <a href="/how-to-convert-decimal-integer-to-hex-dexadecimal.html" class="">Decimal to Hex</a>
+<nav class="home-second-nav">
+  <a href="https://www.youtube.com/@aqyanoos" target="_blank">YouTube</a> <span>|</span>
+  <a href="/online-text-editor-online-code-editor-online-notepad.html">Online Text Editor</a> <span>|</span>
+  <a href="/how-to-convert-hex-hexadecimal-to-decimal-integer.html">Hex / Decimal Convertor</a>
 </nav>
 </section>
 `;
