@@ -26,7 +26,6 @@ function setNavContent (p_)
     let pt = "cr";
     if (pageType)
     {
-        //console.log('query string: ', pageType);
         const type_ = pageType.split("=")[1];
         if (type_)
         {
@@ -64,7 +63,8 @@ function setNavContent (p_)
         tutorialListEl.innerHTML = `
         <a href="./data-visualization-part01.html" class="tl-item dvp1">Data Visualization Part 1</a><br> <br>
         <a href="./text-editor-js.html" class="tl-item tejs">Text Editor JS</a> <br> <br>
-        <a href="./hex-to-decimal.html" class="tl-item chtd">Convert Hex to decimal</a>        
+        <a href="./hex-to-decimal.html" class="tl-item chtd">Convert Hex to decimal</a>  <br><br>   
+        <a href="./custom-video-player-html-css-javascript.html" class="tl-item cvply">Custom Video Player Like YouTube</a>        
 
         `;
     }
@@ -105,6 +105,12 @@ function setNavContent (p_)
             {
                 link.setAttribute("class", "current");
                 document.querySelector(".chtd").classList.add("b-current");
+            }
+
+            if (page.Name === "Tutorials" && pageTitle.includes("Custom Video Player"))
+            {
+                link.setAttribute("class", "current");
+                document.querySelector(".cvply").classList.add("b-current");
             }
 
             navContent.appendChild(link);
@@ -151,4 +157,37 @@ function setFooterContent (qs)
 
     const footerEl = document.getElementById("main-footer");
     footerEl.innerHTML = footerContent;
+}
+
+function aqyanoosCustomAlert (title, description)
+{
+    const secEl = document.createElement('section');
+    secEl.className = "custom-alert";
+    secEl.innerHTML = `
+    <section class="ca-container">
+            <div class="ca-title">${title}</div>
+            <hr>
+            <div class="ca-description">${description}</div>
+            
+            <div class="ca-ok" onclick="document.querySelector('.custom-alert').remove()">OK</div>
+        </section>
+    `;
+
+    document.body.appendChild(secEl);
+}
+
+function copyToClipboardWeb(txt){
+    navigator.permissions.query({name: "clipboard-write"}).then((result) =>
+    {
+        if (result.state === "granted" || result.state === "prompt")
+        {
+            navigator.clipboard.writeText(txt).then(() =>
+            {
+                aqyanoosCustomAlert("Copy Code", "You have successfully copied the code to clipboard");
+            }, () =>
+            {
+                aqyanoosCustomAlert("Copy Code", "Copying code to clipboard failed, please try again!");
+            });
+        }
+    });
 }

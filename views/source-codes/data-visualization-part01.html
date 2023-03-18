@@ -37,11 +37,13 @@
                     <div class="html c">HTML</div>
                     <div class="css">CSS</div>
                     <div class="js">JS</div>
+                    <div class="btn copy-raw-code"
+                        onclick="copyToClipboardWeb(document.querySelector('.raw-code').value)">Copy</div>
                 </header>
                 <div class="sc-wrapper">
-                    <textarea name="html" id="html-view" readonly></textarea>
-                    <textarea name="css" id="css-view" readonly hidden></textarea>
-                    <textarea name="js" id="js-view" readonly hidden></textarea>
+                    <textarea name="html" id="html-view" class="raw-code" readonly></textarea>
+                    <!-- <textarea name="css" id="css-view" readonly hidden></textarea>
+                    <textarea name="js" id="js-view" readonly hidden></textarea> -->
                 </div>
             </section>
         </article>
@@ -51,8 +53,8 @@
 
     <script>
         const htmlCode = '\n<section id="svg-path">\n\t<section id="card"></section>\n</section>\n';
-        const htmlView = document.getElementById("html-view");
-        htmlView.innerHTML = htmlCode;
+        const rawCodeHolder = document.querySelector(".raw-code");
+        rawCodeHolder.innerHTML = htmlCode;
 
         const cssCode = `
 section#svg-path {
@@ -108,8 +110,6 @@ line {
     display: none;
 }`;
 
-        const cssView = document.getElementById("css-view");
-        cssView.innerHTML = cssCode;
         const jsCode = `
 
 const svgPathParent = document.getElementById("svg-path");
@@ -200,49 +200,32 @@ function dataVisualization(array, frequency, linecount) {
 dataVisualization(dataPath2, 50, 3);
 `;
 
-        const jsView = document.getElementById("js-view");
-        jsView.innerHTML = jsCode;
-
         const btns = document.querySelector(".sc-nav");
         btns.addEventListener("click", (e) =>
         {
             const t = e.target;
-            switch (t.textContent)
-            {
-                case "HTML":
-                    tTps(htmlView, "HTML");
-                    break;
-                case "CSS":
-                    tTps(cssView, "CSS");
-                    break;
-                case "JS":
-                    tTps(jsView, "JS");
-                    break;
-            }
-        });
 
-        // hide all textareas
-        function tTps (p, q)
-        {
-            document.querySelectorAll("textarea").forEach(e =>
+            if (!t.className.includes("copy-raw-code"))
             {
-                e.setAttribute("hidden", "true");
-            });
+                const currents_ = document.querySelector(".c");
+                currents_.classList.remove("c");
 
-            p.removeAttribute("hidden");
+                t.classList.add("c");
 
-            const cc = btns.children;
-            for (let i = 0; i < cc.length; i++)
-            {
-                if (cc[i].textContent !== q)
+                switch (t.textContent)
                 {
-                    cc[i].classList.remove("c");
-                } else
-                {
-                    cc[i].classList.add("c");
+                    case "HTML":
+                        rawCodeHolder.innerHTML = htmlCode.trim();
+                        break;
+                    case "CSS":
+                        rawCodeHolder.innerHTML = cssCode;
+                        break;
+                    case "JS":
+                        rawCodeHolder.innerHTML = jsCode;
+                        break;
                 }
             }
-        }
+        });
 
     </script>
 

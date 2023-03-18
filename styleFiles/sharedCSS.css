@@ -162,7 +162,14 @@ td {
     padding: 5px 9px;
     border-radius: 3px;
     cursor: pointer;
-    box-shadow: 2px 2px 5px green;
+    box-shadow: 0px 0px 3px 2px green;
+}
+
+.sc-nav div.btn {
+    background: #1831f1;
+    border-radius: 2px;
+    padding: 6px 11px;
+    box-shadow: 0px 0px 3px 2px #267df8;
 }
 
 .sc-nav div.c {

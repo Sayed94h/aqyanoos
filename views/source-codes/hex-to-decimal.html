@@ -40,11 +40,13 @@
                     <div class="html c">HTML</div>
                     <div class="css">CSS</div>
                     <div class="js">JS</div>
+                    <div class="btn copy-raw-code"
+                        onclick="copyToClipboardWeb(document.querySelector('.raw-code').value)">Copy</div>
                 </header>
                 <div class="sc-wrapper">
-                    <textarea name="html" id="html-view" readonly></textarea>
-                    <textarea name="css" id="css-view" readonly hidden></textarea>
-                    <textarea name="js" id="js-view" readonly hidden></textarea>
+                    <textarea name="html" id="html-view" class="raw-code" readonly></textarea>
+                    <!-- <textarea name="css" id="css-view" readonly hidden></textarea>
+                    <textarea name="js" id="js-view" readonly hidden></textarea> -->
                 </div>
             </section>
         </article>
@@ -65,15 +67,13 @@
 </section>
 
             `;
-        const htmlView = document.getElementById("html-view");
-        htmlView.innerHTML = htmlCode.trim();
+        const rawCodeHolder = document.querySelector(".raw-code");
+        rawCodeHolder.innerHTML = htmlCode.trim();
 
         const cssCode = `
 /*No CSS*/
     `;
 
-        const cssView = document.getElementById("css-view");
-        cssView.innerHTML = cssCode;
         const jsCode = `
 function convertToDecimal (hexAsText)
 {
@@ -95,46 +95,34 @@ function convertToDecimal (hexAsText)
 }
     `;
 
-        const jsView = document.getElementById("js-view");
-        jsView.innerHTML = jsCode;
-
         const btns = document.querySelector(".sc-nav");
         btns.addEventListener("click", (e) =>
         {
             const t = e.target;
-            switch (t.textContent)
+
+            if (!t.className.includes("copy-raw-code"))
             {
-                case "HTML":
-                    tTps(htmlView, "HTML");
-                    break;
-                case "CSS":
-                    tTps(cssView, "CSS");
-                    break;
-                case "JS":
-                    tTps(jsView, "JS");
-                    break;
+                const currents_ = document.querySelector(".c");
+                currents_.classList.remove("c");
+
+                t.classList.add("c");
+
+                switch (t.textContent)
+                {
+                    case "HTML":
+                        rawCodeHolder.innerHTML = htmlCode.trim();
+                        break;
+                    case "CSS":
+                        rawCodeHolder.innerHTML = cssCode;
+                        break;
+                    case "JS":
+                        rawCodeHolder.innerHTML = jsCode;
+                        break;
+                }
             }
         });
 
-        // hide all textareas
-        function tTps (p, q)
-        {
-            document.querySelectorAll("textarea").forEach(e =>
-            {
-                e.setAttribute("hidden", "true");
-            });
-
-            p.removeAttribute("hidden");
-
-            const cc = btns.children;
-            for (let i = 0; i < cc.length; i++)
-            {
-                if (cc[i].textContent !== q) {cc[i].classList.remove("c");} else
-                {
-                    cc[i].classList.add("c");
-                }
-            }
-        } </script>
+    </script>
 
     <script src="../../apps/genContents.js"></script>
 </body>
