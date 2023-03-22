@@ -1,5 +1,6 @@
-const fy = new Date().getFullYear();
+"use strict";
 
+const fy = new Date().getFullYear(), pageTitle = document.title;
 const pages = [
     {
         Name: "Home",
@@ -10,7 +11,7 @@ const pages = [
         Path: "/views/source-codes/source-codes.html"
     },
     {
-        Name: "Questions ?",
+        Name: "Questions",
         Path: "/views/main/questions.html"
     }, {
         Name: "About",
@@ -20,7 +21,6 @@ const pages = [
 
 function setNavContent (p_)
 {
-    const pageTitle = document.title;
     const queryString = window.location.href;
     const pageType = queryString.split("?")[1];
     let pt = "cr";
@@ -30,30 +30,7 @@ function setNavContent (p_)
         if (type_)
         {
             pt = type_;
-            const appName = document.querySelectorAll(".app_name");
-            if (type_ === "cr")
-            {
-                appName.forEach(el =>
-                {
-                    el.innerHTML = "Color Reference";
-                });
-            }
-
-            if (type_ === "db")
-            {
-                appName.forEach(el =>
-                {
-                    el.innerHTML = "Dream Board";
-                });
-            }
-
-            if (type_ === "cw")
-            {
-                appName.forEach(el =>
-                {
-                    el.innerHTML = "Color World";
-                });
-            }
+            setAppName(type_);
         }
     }
 
@@ -83,40 +60,18 @@ function setNavContent (p_)
             link.setAttribute("href", page.Path);
 
             link.innerHTML = page.Name;
+            link.classList.add(page.Name + "_page");
 
             if (pageTitle.includes(page.Name))
             {
-                link.setAttribute("class", "current");
-            }
-
-            if (page.Name === "Tutorials" && pageTitle.includes("Data Visualization"))
-            {
-                link.setAttribute("class", "current");
-                document.querySelector(".dvp1").classList.add("b-current");
-            }
-
-            if (page.Name === "Tutorials" && pageTitle.includes("Text / Code Editor"))
-            {
-                link.setAttribute("class", "current");
-                document.querySelector(".tejs").classList.add("b-current");
-            }
-
-            if (page.Name === "Tutorials" && pageTitle.includes("Convert Hex to Decimal"))
-            {
-                link.setAttribute("class", "current");
-                document.querySelector(".chtd").classList.add("b-current");
-            }
-
-            if (page.Name === "Tutorials" && pageTitle.includes("Custom Video Player"))
-            {
-                link.setAttribute("class", "current");
-                document.querySelector(".cvply").classList.add("b-current");
+                link.classList.add("current");
             }
 
             navContent.appendChild(link);
         });
 
         navEl.appendChild(navContent);
+        setActiveSubNav();
     }
 
     setFooterContent(pt);
@@ -139,7 +94,6 @@ function setFooterContent (qs)
             CONTACTS
         </div>
         <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Sayed94h" target="_blank">Github</a>
 
     </section>
     <section>
@@ -176,7 +130,8 @@ function aqyanoosCustomAlert (title, description)
     document.body.appendChild(secEl);
 }
 
-function copyToClipboardWeb(txt){
+function copyToClipboardWeb (txt)
+{
     navigator.permissions.query({name: "clipboard-write"}).then((result) =>
     {
         if (result.state === "granted" || result.state === "prompt")
@@ -188,6 +143,52 @@ function copyToClipboardWeb(txt){
             {
                 aqyanoosCustomAlert("Copy Code", "Copying code to clipboard failed, please try again!");
             });
+        }
+    });
+}
+
+function setAppName (pageType)
+{
+    const appName = document.querySelectorAll(".app_name");
+    const nameDic = {
+        cr: "Color Reference",
+        db: "Dream Board",
+        cw: "Color World",
+        hrc: "HTTP Response Code",
+        te: "Text Editor"
+    };
+
+    if (nameDic[pageType])
+    {
+        appName.forEach(el =>
+        {
+            el.innerHTML = nameDic[pageType];
+        });
+
+        // if (nameDic[pageType] === "Dream Board")
+        // {
+        //     const dataSafety = document.querySelector(".data-safety");
+        //     dataSafety.classList.add("hidden");
+        // }
+    }
+}
+
+function setActiveSubNav ()
+{
+    const subNav = [
+        {name: "Data Visualization", klas: ".dvp1"},
+        {name: "Text / Code Editor", klas: ".tejs"},
+        {name: "Convert Hex to Decimal", klas: ".chtd"},
+        {name: "Custom Video Player", klas: ".cvply"},
+    ];
+
+    subNav.forEach(x =>
+    {
+        if (pageTitle.includes(x.name))
+        {
+            const tut = document.querySelector(".Tutorials_page");
+            tut.classList.add("current");
+            document.querySelector(x.klas).classList.add("b-current");
         }
     });
 }

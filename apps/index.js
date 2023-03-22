@@ -35,7 +35,6 @@ const footerContent = `
             CONTACTS
         </div>
         <a href="https://be.linkedin.com/in/sayed-kazimi-0507/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Sayed94h" target="_blank">Github</a>
 
     </section>
     <section>
@@ -78,12 +77,22 @@ function toYr (d)
     }
 };
 
-document.getElementById("dif-FRhrc").innerHTML = toYr("2022-02-09");
+const appDetails = [
+    {id: "dif-FRhrc", yr: "2022-02-09"},
+    {id: "dif-FRtextEditor", yr: "2022-02-23"},
+    {id: "dif-FRCR", yr: "2023-01-9"},
+    {id: "dif-FRDB", yr: "2023-02-22"},
+];
 
-document.getElementById("dif-FRtextEditor").innerHTML = toYr("2022-02-23");
+appDetails.forEach(app =>
+{
+    document.getElementById(app.id).innerHTML = toYr(app.yr);
+});
 
-document.getElementById("dif-FRCR").innerHTML = toYr("2023-01-9");
+// document.getElementById("dif-FRtextEditor").innerHTML = toYr("2022-02-23");
 
-document.getElementById("dif-FRDB").innerHTML = toYr("2023-02-22");
+// document.getElementById("dif-FRCR").innerHTML = toYr("2023-01-9");
+
+// document.getElementById("dif-FRDB").innerHTML = toYr("2023-02-22");
 
 
