@@ -154,7 +154,7 @@ function setAppName (pageType)
         cr: "Color Reference",
         db: "Dream Board",
         cw: "Color World",
-        hrc: "HTTP Response Code",
+        hrc: "HTTP Response / Status Code",
         te: "Text Editor"
     };
 
