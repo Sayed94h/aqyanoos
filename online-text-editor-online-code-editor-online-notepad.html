@@ -49,13 +49,15 @@
 
         textarea {
             width: calc(100% - 10px);
-            height: calc(100vh - 73px);
+            height: calc(100vh - 110px);
             padding: 5px;
+            padding-bottom: 40px;
             outline: none;
             border: none;
             resize: none;
             position: absolute;
-            top: 73px;
+            top: 63px;
+            background: rgb(106, 229, 248);
         }
 
         .hidden {
@@ -69,6 +71,26 @@
         .bold {
             font-weight: bold;
         }
+
+        @media screen and (min-width: 550px) {
+            textarea {
+                font-size: 17px;
+            }
+
+            .te-title {
+                font-size: 38px;
+                margin-left: 20px;
+                margin-right: 20px;
+            }
+
+            .mrgl-8 {
+                margin-left: 15px;
+            }
+
+            .te-nav-h {
+                margin-left: 20px;
+            }
+        }
     </style>
     <title>Online Text Editor - Online Code Editor</title>
 </head>
@@ -77,11 +99,11 @@
 
     <section>
         <header>
-            <div class="mrgl-8 bold">Text Editor</div>
+            <div class="mrgl-8 bold te-title">Text Editor</div>
             <button id="open" class="mrgl-8">Open</button>
             <button id="save" class="mrgl-8">Save</button>
             <button id="new-file" class="mrgl-8">New File</button>
-            <div class="mrgl-8"><a href="/">Home</a></div>
+            <div class="mrgl-8 te-nav-h"><a href="/">Home</a></div>
         </header>
         <section>
             <textarea name="content" id="content"></textarea>

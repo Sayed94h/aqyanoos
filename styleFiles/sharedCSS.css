@@ -6,13 +6,9 @@ body {
     background: #ededed;
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-family: Verdana, Tahoma;
     letter-spacing: 1px;
-    /* min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; */
 }
 
 .current {

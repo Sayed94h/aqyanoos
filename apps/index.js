@@ -89,10 +89,12 @@ appDetails.forEach(app =>
     document.getElementById(app.id).innerHTML = toYr(app.yr);
 });
 
-// document.getElementById("dif-FRtextEditor").innerHTML = toYr("2022-02-23");
-
-// document.getElementById("dif-FRCR").innerHTML = toYr("2023-01-9");
-
-// document.getElementById("dif-FRDB").innerHTML = toYr("2023-02-22");
-
-
+// const apps_ = [
+//     {
+//         name: "",
+//         details: "",
+//         des: "",
+//         installLink: "",
+//         logo: ""
+//     }
+// ]
