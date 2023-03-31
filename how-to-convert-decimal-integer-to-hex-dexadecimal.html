@@ -166,7 +166,7 @@
         <div class="bold my-9">
             Enter Decimal Number or integer
         </div>
-        <input type="text" placeholder="Please enter hex number" onchange="convertToHex(this.value)">
+        <input type="text" placeholder="Please enter decimal number" onchange="convertToHex(this.value)">
         <button onclick="convertToHex(document.querySelector('input').value)">Submit</button>
         <div>
             <h3>Result in Hex or Hexadecimal</h3>
@@ -188,7 +188,7 @@
                 hexNumber = Number(decimalAsText);
                 if (!hexNumber)
                 {
-                    alert("Please enter values between 0 - 9 and A-F");
+                    alert("Please enter values between 0 - 9");
                     return;
                 }
 

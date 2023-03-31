@@ -151,11 +151,11 @@ function setAppName (pageType)
 {
     const appName = document.querySelectorAll(".app_name");
     const nameDic = {
-        cr: "Color Reference",
-        db: "Dream Board",
-        cw: "Color World",
-        hrc: "HTTP Response / Status Code",
-        te: "Text Editor"
+        cr: " Color Reference ",
+        db: " Dream Board ",
+        cw: " Color World ",
+        hrc: " HTTP Response / Status Code ",
+        te: " Text Editor "
     };
 
     if (nameDic[pageType])
