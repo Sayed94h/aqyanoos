@@ -10,3 +10,7 @@ ignore
 
 apps
 
+node_modules
+package-lock.json
+
+

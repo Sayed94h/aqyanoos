@@ -1,0 +1,83 @@
+#about, #questions {
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-bottom: 80px;
+    margin-top: 60px;
+}
+
+#privacy-policy {
+    margin: 15px 30px 50px 30px;
+}
+
+/* for text editor */
+
+.body-te-sfd {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    overflow: hidden;
+}
+
+header.te-sfd {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: teal;
+    width: 100%;
+    overflow: visible;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+}
+
+header.te-sfd * {
+    color: white;
+}
+
+button.te-sfd {
+    background-color: rgba(0, 0, 0, 0.5);
+    outline: none;
+    border: none;
+    padding: 5px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+textarea.te-sfd {
+    width: calc(100% - 10px);
+    height: calc(100vh - 110px);
+    padding: 5px;
+    padding-bottom: 40px;
+    outline: none;
+    border: none;
+    resize: none;
+    position: absolute;
+    top: 63px;
+    background: rgb(106, 229, 248);
+}
+
+
+@media screen and (min-width: 550px) {
+    textarea.te-sfd {
+        font-size: 17px;
+    }
+
+    .te-title {
+        font-size: 38px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .text-editor-js .ms-8 {
+        margin-left: 15px;
+    }
+
+    .te-nav-h {
+        margin-left: 20px;
+    }
+}
+
+/* end text editor */
