@@ -1,15 +1,15 @@
 # Aqyanoos.com
 
-# Android apps
+## Our Android apps
 
 
-## HTTP Response code
+### 1. HTTP Response code
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.httpresponsecode).
 
 This app helps you search, learn and practice HTTP reponse codes or http status codes. This app is a great reference for http status codes. There is also a very helpful QUIZ game inside the app about status codes.
 
-### Dream Board
+### 2. Dream Board
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.dreamboard).
 
@@ -24,7 +24,7 @@ This is a drawing application or a digital board that helps you draw anything yo
 5. Change board's dimension(width and height) to any dimension you want.
 6. Save your drawing on your device as image.
 
-## Color Reference
+### 3. Color Reference
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.colorreference).
 
@@ -41,7 +41,7 @@ With this app you can get the Hex value, RGB value, HSL value and name of any co
 6. Copy color values to clipboard and use it anywhere you want.
 
 
-## Text Editor or Code Editor
+### 4. Notepad or Text/Code Editor
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.texteditor).
 
@@ -49,11 +49,17 @@ This app helps you read, edit and create text based files.
 
 This app is a great text editor or notepad for Android devices.
 
+### 5. Fake Camera Detector
 
-## github page link:
+Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.fakecameradetector).
+
+This Android App can detect how many cameras are there on your smartphone so that you know if any of those cameras on your devics is fake or real. This App detects all physical and logical cameras so don't be shocked if you see a big number. 
+
+
+#### github page link:
 [https://sayed94h.github.io/aqyanoos/](https://sayed94h.github.io/aqyanoos/)
 
-## custom domain name:
+#### custom domain name:
 [https://aqyanoos.com](https://aqyanoos.com)
 
 
