@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: Verdana, Arial, Tahoma;
+    background: #eeeeee;
+    background-color: #eee;
+    color: #000;
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+article.main {
+    padding: 20px 10px;
+}
+
+.nav-top {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 10px 5px;
+    background: #005050;
+    color: #fff;
+}
+
+.nav-top a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+iframe {
+    margin: 10px calc(15%);
+    width: 70%;
+    height: calc(100vw * 0.7 * 9 / 16);
+}
+
+.px-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.quote {
+    margin: 10px;
+    font-style: italic;
+    background: #05aa05;
+    color: #fff;
+    padding: 5px;
+}
+
+.quote a {
+    color: #47eff8;
+}
+
+.mt-60 {
+    margin-top: 60px;
+}
+
+.spacer {
+    margin: 20px 0;
+}
+
+a {
+    color: #3197fd;
+    text-decoration: none;
+}
+
+.related-courses {
+    background: #ddd;
+    box-shadow: 0 0 3px 5px #86e9ff;
+    padding: 10px 15px;
+    margin: 15px;
+}
+
+.related-courses ul {
+    line-height: 35px;
+}
+
+::selection {
+    background: #005050;
+    color: #fff;
+}
+
+.course-img {
+    width: 90%;
+    height: auto;
+    margin: 10px 5%;
+    overflow: visible;
+}
+
+
+/* for mobile devices */
+@media only screen and (max-width: 900px) {
+    iframe {
+        margin: 10px calc(1%);
+        width: 98%;
+        height: calc(100vw * 0.98 * 9 / 16);
+    }
+
+    .related-courses {
+        padding: 5px;
+        margin: 15px 5px;
+    }
+
+    .nav-top a {
+        font-size: 14px;
+    }
+}
