@@ -297,9 +297,7 @@
             for (const [key, value] of fD) {
                 uIn[key] = value;
             }
-
-            console.log("user input: ", uIn);
-
+            
             qrTxt += uIn.qrCodeText + "\n";
 
             settings["text"] = qrTxt;
@@ -316,7 +314,6 @@
                 settings["logoBackgroundTransparent"] = uIn.logoBgColor === '#00000000';
             }
 
-            console.log("Settings: ", settings);
             var qrcode = new QRCode(qrCodeContainer, settings);
 
             downloadBtn.classList.remove("hidden");

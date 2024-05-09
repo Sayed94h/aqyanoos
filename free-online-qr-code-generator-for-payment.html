@@ -352,8 +352,6 @@
                 uIn[key] = value;
             }
 
-            // console.log("user input: ", uIn);
-
             qrTxt += uIn.bic ? uIn.bic + "\n" : "\n";
             qrTxt += uIn.name + "\n";
             qrTxt += uIn.iban + "\n";
@@ -377,7 +375,6 @@
                 settings["logoBackgroundTransparent"] = uIn.logoBgColor ? !uIn.logoBgColor.includes("#") : false;
             }
 
-            console.log(settings);
             var qrcode = new QRCode(qrCodeContainer, settings);
 
             downloadBtn.classList.remove("hidden");
