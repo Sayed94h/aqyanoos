@@ -224,8 +224,17 @@
                             <label for="logoWidth">Logo Width and Height</label>
                             <input type="number" id="logoWidth" name="logoWidth" value="70" class="settingsin">
                         </div>
+                        <div class=" mt-10">
+                            <div class="italic mb-5">If Checked then the Logo Background Color will not have any effect.</div>
+                            <div class="d-flex flex-wrap">
+                                <label for="logoBgColorTrans" class="bold">Logo Background Transparent: </label>
+                            <input type="checkbox" checked name="logoBgColorTrans" id="logoBgColorTrans" class="settingsin">
+                            </div>
+
+                        </div>
+
                         <div class="bold mt-10">
-                            <label for="logoBgColor">Logo Background(By default transparent)</label>
+                            <label for="logoBgColor">Logo Background Color</label>
                             <input type="color" id="logoBgColor" name="logoBgColor" class="settingsin">
                         </div>
 
@@ -354,6 +363,8 @@
                 uIn[key] = value;
             }
 
+            const checkbox_ = document.querySelector("input[type='checkbox']")
+
             qrTxt += uIn.bic ? uIn.bic + "\n" : "\n";
             qrTxt += uIn.name + "\n";
             qrTxt += uIn.iban + "\n";
@@ -374,9 +385,10 @@
                 settings["logoWidth"] = uIn.logoWidth || 70;
                 settings["logoHeight"] = uIn.logoWidth || 70;
                 settings["logoBackgroundColor"] = uIn.logoBgColor || '#00000000';
-                settings["logoBackgroundTransparent"] = uIn.logoBgColor ? !uIn.logoBgColor.includes("#") : false;
+                settings["logoBackgroundTransparent"] = checkbox_.checked;
             }
 
+            // console.log("settings: ", settings, uIn)
             var qrcode = new QRCode(qrCodeContainer, settings);
 
             downloadBtn.classList.remove("hidden");
@@ -432,6 +444,9 @@
                 const settingsInputs = document.querySelectorAll("input.settingsin");
                 settingsInputs.forEach(e => {
                     e.value = e.defaultValue;
+                    if(e.type === "checkbox"){                        
+                        e.checked = true
+                    }
                 });
 
                 settings["logo"] = null;
