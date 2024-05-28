@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+       
+       .demo-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+       }
+        .container {
+            
+            width: 90%;
+            font-family: Verdana, Tahoma, Arial;            
+            box-shadow: 0 0 5px 8px #ddd;
+            padding: 10px 15px;
+            border-radius: 10px;
+            background: #fff;
+            margin-bottom: 70px;
+        }
+
+        #qrcode {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .mt-10 {
+            margin-top: 10px;
+        }
+
+        #qrcodeText {
+            width: 100%;
+            height: 30px;
+            min-height: 30px;
+            resize: vertical;
+            margin-top: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type='number'] {
+            width: 100px;
+            text-align: center;
+        }
+
+        input[type='checkbox'] {
+            width: 20px;
+            height: 20px;
+        }
+
+        .info {
+            background: #e99d04;
+            color: #fff;
+            font-style: italic;
+            padding: 5px;
+        }
+
+        .btn-d {
+            padding: 7px 20px;
+            background: #059505;
+            color: #fff;
+            outline: none;
+            border: none;
+            box-shadow: 0 0 2px 3px #068506;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        #download-btn {
+            background: #0084ff;
+            box-shadow: 0 0 2px 3px #0274df;
+        }
+
+        #generate-btn {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .italic {
+            font-style: italic;
+        }
+
+    </style>
+    <!-- <meta property="article:publisher" content="https://www.facebook.com/CodingAqyanoos"> -->
+    <!-- <meta property="article:modified_time" content="2024-01-17T10:38:34+00:00"> -->
+
+    <!-- meta tags that don't need change -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:site_name" content="Aqyanoos">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@CodingAqyanoos">
+
+    <!-- link tags that don't need change -->
+
+    <link rel="icon" type="image/ico" href="/favicon.ico" >
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- meta tags that need small change -->
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aqyanoos.com/how-to-make-qr-code-generator-html-css-js.html">
+
+    <!-- tags that need full change -->
+
+    <title>How to Make QR Code Generator using HTML CSS and JS (JavaScript)?</title>
+
+    <meta name="title" content="How to Make QR Code Generator using HTML CSS and JS (JavaScript)?">
+    <meta property="og:title" content="How to Make QR Code Generator using HTML CSS and JS (JavaScript)?">
+    <meta name="twitter:title" content="How to Make QR Code Generator using HTML CSS and JS (JavaScript)?">
+
+    <meta name="description" content="In this course you will learn how to make your own QR Code Generator Website using HTML, CSS and JS (JavaScript). With Favorite color, size and add your logo">
+    <meta property="og:description" content="In this course you will learn how to make your own QR Code Generator Website using HTML, CSS and JS (JavaScript). With Favorite color, size and add your logo">
+    <meta name="twitter:description" content="In this course you will learn how to make your own QR Code Generator Website using HTML, CSS and JS (JavaScript). With Favorite color, size and add your logo">
+
+    <meta name="keywords" content="How to create a QR Code Generator website with only using HTML CSS JS - JavaScript - Web Development Project for Beginners - build make generate - Maker Free Online Service IT ICT AI Tools Software App">
+    <meta name="twitter:image" content="https://aqyanoos.com/images/free-qr-code-generator-for-payment.png">
+    <meta name="twitter:image:alt" content="How to create a QR Code Generator website with only using HTML CSS JS - JavaScript - Web Development Project for Beginners - build make generate - Maker Free Online Service IT ICT AI Tools Software App">
+
+    <script src="easy.qrcode.min.js"></script>
+    <!-- for development -->
+    <script defer="defer" src="/static/js/main.js"></script>
+    <!-- for production -->
+    <!-- <script defer="defer" src="/static/js/main.js"></script> -->
+    <link href="/static/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="page">
+        <!-- side menu -->
+        <section class="menu-wrapper">
+            
+    <div class="menu-wrapper-content">
+                <div class="menu-wrapper-content-hdr">
+                    <div><a href="/"><img src="/images/android-chrome-512x512.png" alt="Aqyanoos company logo"></a></div>
+                    <div class="side-menu-close-btn side-menu-action-btn">X</div>
+                </div>
+                <nav class="menu-wrapper-content-items">
+                    <div class="bold">Main</div>
+                    <div class="side-menu-items">
+                        <a href="/" class="Home_page">Home</a><div class="line-bar"> | </div>
+                        <a href="/#/services" class="side-menu-action-btn" rel="noreferrer noopener nofollow">Services</a><div class="line-bar"> | </div>
+                        <a href="/#/contact" class="side-menu-action-btn" rel="noreferrer noopener nofollow">Contact</a><div class="line-bar"> | </div>
+                        <a href="/jobs/full-stack-dot-net-developer-job-internship.html" class="side-menu-action-btn" >Jobs</a><div class="line-bar"> | </div>
+                        <a href="/#/privacy-policy" class="side-menu-action-btn" rel="noreferrer noopener nofollow">Privacy Policy</a><div class="line-bar"> | </div>
+                        <a href="/#/about" class="side-menu-action-btn" rel="noreferrer noopener nofollow">About</a>
+                    </div>
+
+                    <div class="bold">Online Courses</div>
+                    <div class="side-menu-items">
+                        <a href="/#/tutorials-source-code" class="side-menu-action-btn" rel="noreferrer noopener nofollow">Source Code</a><div class="line-bar"> | </div>
+                        <a href="/#/tutorials" class="side-menu-action-btn" rel="noreferrer noopener nofollow">Tutorials</a><div class="line-bar"> | </div>
+                        <a href="https://www.youtube.com/@CodingAqyanoos" class="side-menu-action-btn" target="_blank" rel="noreferrer noopener nofollow">YouTube</a>
+                    </div>
+                    <div class="bold">Tools</div>
+                    <div><a href="/online-text-or-code-editor-notepad.html" >Online Notepad</a></div>
+                    <div>
+                        <a href="/best-free-android-apps.html">Free Useful Apps</a>
+                    </div>
+                    <div>
+                        <a href="/free-online-qr-code-generator-for-payment.html" >QR-Code Generator for Payment</a>
+                    </div>
+                    <div>
+                        <a href="/free-online-qr-code-generator.html" >QR-Code Generator - Any Text</a>
+                    </div>
+                    <div><a href="/#/how-to-convert-decimal-to-hex" class="side-menu-action-btn" rel="noreferrer noopener nofollow">Hex / Decimal Convertor</a></div>
+                    <div class="bold">More...</div>
+                    
+                    <div><a href="/best-books-for-programmers-amazon.html" >Best Books for You</a></div>
+                    <div><a href="/best-laptop-for-students-amazon.html" >Top Laptops for You</a></div>
+                    <div><a href="/#/support" rel="noreferrer noopener nofollow">Support</a></div>
+
+                </nav>
+            </div>
+    
+        </section>
+        <section class=" top-menu-rest">
+            <div class="menu-icon  ">
+                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  
+                    x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100"
+                    enable-background="new 0 0 100 100"  >
+                    <g>
+                        <path fill="#fff" d="M17.563,30.277h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.018,2.259-2.268h0.01
+    l0-10.459h0c-0.002-1.251-1.017-2.265-2.269-2.265l0,0H19.821v0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269
+    c0,0.039,0.01,0.076,0.012,0.115L17.563,30.277z"></path>
+                        <path fill="#fff" d="M80.179,42.504L80.179,42.504H19.821v0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269c0,0.039,0.01,0.076,0.012,0.115
+    l0,10.34h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.018,2.259-2.268h0.01l0-10.459h0
+    C82.446,43.518,81.431,42.504,80.179,42.504z"></path>
+                        <path fill="#fff" d="M80.179,67.454L80.179,67.454H19.821l0,0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269c0,0.039,0.01,0.076,0.012,0.115
+    l0,10.34h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.019,2.259-2.269h0.01l0-10.459h0
+    C82.446,68.468,81.431,67.454,80.179,67.454z"></path>
+                    </g>
+                </svg>
+            </div>
+        </section>
+        <!-- top main menu -->
+        <section class=" main-nav top-main-menu">
+            
+    <nav class="main-nav-holder">
+        <a href="/" class="Home_page">Home</a>
+        <a class="Services_page " href="/#/services" rel="noreferrer noopener nofollow">Services</a>
+        <a class="Tutorials_page " href="/#/tutorials-source-code" rel="noreferrer noopener nofollow">Source Codes</a>
+        <a class="Privacy_page  hidden" href="/#/tutorials-source-code" rel="noreferrer noopener nofollow">Privacy Policy</a>
+        <a class="Contact_page " href="/#/contact" rel="noreferrer noopener nofollow">Contact</a>
+        <a class="About_page " href="/#/about" rel="noreferrer noopener nofollow">About</a>
+    </nav>
+    
+        </section>
+        <!-- page header - for now just a spacer because the top-nav is positioned fixed -->
+        <div class="page-header">
+            <span3000></span3000>
+        </div>
+        <!-- some specific page related navigation links -->
+        <div class="page-specific-links mx-20">
+            <span4000></span4000>
+            <a href="/#/tutorials?name=3">Back to the List</a>
+        </div>
+        <!-- main article -->
+        <article id="main" class="main-content">
+            <header class="article-title">
+                <h1 title="">How to Make QR Code Generator using HTML CSS and JS (JavaScript)?</h1>
+            </header>
+            <p class="article-short-description">
+                In this course you will learn how to make your own QR Code Generator Website using HTML, CSS and JS (JavaScript). 
+                With Favorite color, size and add your logo. 
+                You can use the below QR Code Generator to make QR Code images with any color, any size, with your own logo and finally download it.
+            </p>
+            <p class="article-description">
+                There is also a video course for this article on my <a href="https://www.youtube.com/@CodingAqyanoos" target="_blank" rel="noreferrer noopener nofollow">YouTube Channel</a> 
+                that you can watch <a href="https://youtu.be/31DEiu6eQRM" target="_blank" rel="noreferrer noopener nofollow">here</a>. The source code 
+                is below the demo. Scroll down <span class="fs-3">&#8595;</span> .
+            </p>
+            <div class="article-content ">
+                <div class="demo-wrapper">
+                    <section class="container">
+                        <header class="txt-center">
+                            <h2>QR Code Generator Website</h2>
+                        </header>
+                        <div>
+                            <div id="qrcode">
+                                <img src="/images/free-qr-code-generator-for-payment.png" alt="QR-Code-Generator">
+                            </div>
+                            <div class="hidden mt-10 download-btn-container">
+                                <div class="mt-10 italic">Your QR Code is ready to be downloaded.</div>
+                                <button id="download-btn" class="btn-d mt-10">Download</button>
+                            </div>
+                
+                            <section>
+                                <h2>Customize Your QR Code</h2>
+                                <form action="#" id="qrcode-settings">
+                                    <div>
+                                        <label for="qrcodeText">Enter Your Text</label>
+                                    </div>
+                                    <textarea id="qrcodeText" name="text">https://aqyanoos.com</textarea>
+                
+                                    <div class="mt-10">
+                                        <label for="bgColor">Background Color</label>
+                                        <input type="color" id="bgColor" name="bgColor" value="#ffffff">
+                                    </div>
+                
+                                    <div class="mt-10">
+                                        <label for="txtColor">Text Color</label>
+                                        <input type="color" id="txtColor" name="txtColor" value="#000000">
+                                    </div>
+                
+                                    <div class="mt-10">
+                                        <label for="qrcodeWidth">QR Code Width and Height</label>
+                                        <input type="number" id="qrcodeWidth" name="qrcodeWidth" value="256">
+                                    </div>
+                
+                                    <div class="mt-10">
+                                        <label for="customLogo">Your Logo</label>
+                                        <input type="file" id="customLogo" name="customLogo">
+                                    </div>
+                
+                                    <div class="mt-10">
+                                        <label for="logoWidth">Logo Width and Height</label>
+                                        <input type="number" id="logoWidth" name="logoWidth" value="70">
+                                    </div>
+                
+                                    <div class="flex mt-10">
+                                        <label for="isTransparent">Logo Transparent: </label>
+                                        <input type="checkbox" id="isTransparent" name="isTransparent" checked>
+                                    </div>
+                
+                                    <p class="info">
+                                        If Checked, the logo background color will not have any effect.
+                                    </p>
+                                    <div class="mt-10">
+                                        <label for="logoBg">Logo Background </label>
+                                        <input type="color" id="logoBg" name="logoBg">
+                                    </div>
+                
+                                    <div class="mt-10">
+                                        <button id="generate-btn" type="submit" class="btn-d">Generate</button>
+                                    </div>
+                                </form>
+                
+                            </section>
+                        </div>
+                    </section>
+                </div>
+                <div>
+                    <strong>Download the necessary files:</strong> <br>
+                    
+                     <div class="my-10">
+                        <a href="/easy.qrcode.min.js" download="easy.qrcode.js" >easy.qrcode.js</a> (The related JavaScript Library).
+                     </div>
+                     <div class="my-10">
+                        <a href="/images/free-qr-code-generator-for-payment.png" download="test-qr-code.png">test-qr-code.png</a>
+                     </div>
+                     <p>
+                        Click on the following buttons, then click on the code and Select All the content <span class="code-1">[CTRL + A]</span>, Copy <span class="code-1">[CTRL + C]</span>, 
+                        Create a new file and Paste <span class="code-1">[CTRL +V]</span> in the corresponding file (index.html or script.js).
+                        If something is not clear or if there is any issue, watch the video <a href="https://youtu.be/31DEiu6eQRM" target="_blank" rel="noreferrer noopener nofollow">here</a>.
+                     </p>
+
+                </div>
+                
+                <div class="d-flex sc-nav">
+                    
+                    <div class=" ms-5 c" id="html-btn" onclick="injectContent(event)">index.html</div>
+                    <div class=" ms-15" id="js-btn" onclick="injectContent(event)">script.js</div>
+                </div>
+                <div class="sc-wrapper">
+                    <textarea name="html" id="html-view" class="raw-code" readOnly value={defaultContent}></textarea>
+                </div>
+            </div>
+
+            <footer class="article-footer related-content">
+                <h3>Some other interesting related articles for you</h3>
+                <hr>
+                <div>
+                    <a href="/free-online-qr-code-generator-for-payment.html" >QR Code Generator for Bank Payment</a>
+                </div>
+                <hr>
+                <div>
+                    <a href="/free-online-qr-code-generator.html" >QR Code Generator for any Text or Link</a>
+                </div>
+                <hr>
+                <div>
+                     <a href="https://github.com/coding-aqyanoos/how-to-make-qr-code-generator-using-html-css-javascript" target="_blank" rel="noreferrer noopener nofollow">The Source code on Github</a>
+                </div>
+                <hr>
+                
+                <div>
+                    <a href="https://youtu.be/31DEiu6eQRM" target="_blank" rel="noreferrer noopener nofollow">The Full Course on YouTube</a>
+               </div>
+               <hr>
+            </footer>
+
+        </article>
+
+        <div class="source-space"></div>
+        <!-- page main footer -->
+        <footer class="footer page-main-footer" id="main-footer">
+            
+    <section class="container-footer">
+                    <section>
+                        <div>MAIN</div>
+                        <a href="/">Home</a>
+                        <a href="/#/services" rel="noreferrer noopener nofollow">Services</a>
+                        <a href="/#/tutorials-source-code" rel="noreferrer noopener nofollow">Source Code</a>
+                        <a href="/#/tutorials" rel="noreferrer noopener nofollow">Tutorials</a>
+                        <a href="/#/privacy-policy" rel="noreferrer noopener nofollow">Privacy Policy</a>
+                        <a href="/#/about" rel="noreferrer noopener nofollow">About</a>
+                    </section>
+                    <section>
+                        <div>CONTACTS</div>
+                        <a href="/#/contact">Contact Page</a>
+                        <a href="https://www.youtube.com/@CodingAqyanoos" target="_blank" rel="noreferrer noopener nofollow">YouTube</a>
+                        <a href="https://www.facebook.com/CodingAqyanoos" target="_blank" rel="noreferrer noopener nofollow">Facebook</a>
+                        <a href="https://twitter.com/CodingAqyanoos" target="_blank" rel="noreferrer noopener nofollow">Twitter</a>
+                        <a href="https://www.linkedin.com/company/aqyanoos" target="_blank" rel="noreferrer noopener nofollow">LinkedIn</a>                        
+                    </section>
+                    <section>
+                        <div>TOOLS</div>
+                        <a href="/online-text-or-code-editor-notepad.html">Online Notepad</a>
+                        <a href="/#/how-to-convert-decimal-to-hex" rel="noreferrer noopener nofollow">Hex / Decimal Convertor</a>
+                        <a href="/best-free-android-apps.html">Free Useful Apps</a>
+                        <a href="/free-online-qr-code-generator-for-payment.html">QR-Code Generator for Payment</a>
+                        <a href="/free-online-qr-code-generator.html">QR-Code Generator - Any Text</a>
+                    </section>
+                    <section>
+                        <div>MORE...</div>
+                        
+                        <a href="/#/admin" rel="noreferrer noopener nofollow">Admin</a>
+                        <a href="/jobs/full-stack-dot-net-developer-job-internship.html" >Jobs</a>
+                        <a href="/sitemap.html">Sitemap</a>
+                        <a href="/best-laptop-for-students-amazon.html">Best Laptops for You</a>
+                        <a href="/best-books-for-programmers-amazon.html">Best Books for You</a>
+                        <a href="/#/support" rel="noreferrer noopener nofollow">Support</a>
+                    </section>
+                </section>
+                <hr >
+            <div class="d-flex flex-wrap f-col content-c aln-content-c fs-xs">
+                <div>
+                    <strong>VAT: </strong> <span>BE 1006 604 236</span>
+                </div>
+                <div class="d-flex flex-wrap space-between">
+                    <div><strong>Opening Hours: </strong></div> <div class="ms-5"> Monday to Friday from 08:30 - 17:30</div>
+                </div>               
+            </div>
+            <hr >
+                <div class="copyright">© Aqyanoos | 2020 - 2024. All rights reserved.</div>
+    
+        </footer>
+    </section>
+    
+    <script src="qr-code-scritps.js"></script>
+</body>
+
+</html>
