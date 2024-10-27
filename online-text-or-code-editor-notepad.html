@@ -79,16 +79,18 @@
         <!-- <section class=" main-nav top-main-menu"></section> -->
         <!-- page header - for now just a spacer because the top-nav is positioned fixed -->
         <header class="te-page-header">
-            <h1>Online Text or Code Editor - Notepad</h1>
-            <p>
-                Free Online Notepad , Text or Code Editor without any ads with clean and customizable user interface and with Automatic Back-up.
-            </p>
+            <div class="te-page-hdr-wrap">
+                <h1>Online Text or Code Editor - Notepad</h1>
+                <p>
+                    Free Online Notepad , Text or Code Editor without any ads with clean and customizable user interface and with Automatic Back-up.
+                </p>
+                <div class="te-x-hdr">❌</div>
+            </div>
         </header>
-
 
         <!-- some specific page related navigation links -->
         <section class="page-specific-links"></section>
-        <section class="te-nav">
+        <div class="te-nav">
             <div class="online-te-hdr">
                 <h2 class="ms-8 te-title">Notepad</h2>
                 <div class="online-te-file-name-display small-screen"></div>
@@ -101,11 +103,74 @@
                 <div class="ms-8 te-nav-h"><a href="/">Home</a></div>
                 <div class="online-te-file-name-display"></div>
             </nav>
-        </section>
-        <hr>
-        <section class="te-textarea-holder">
+        </div>
+        <!-- shortcut settings -->
+        <div class="te-short-settings">
+            <div class="ms-5">
+                <select name="fontFamily">
+                    <option value="...">Font Family</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Calibri">Calibri</option>
+                    <option value="Trebuchet MS">Trebuchet MS</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Brush Script MT">Brush Script MT</option>
+                    <option value="Garamond">Garamond</option>
+                    <option value="Monospace">Monospace</option>
+                    <option value="Cursive">Cursive</option>
+                    <option value="Geneva">Geneva</option>
+                    <option value="Helvetica">Helvetica</option>
+                    <option value="sans-serif">Sans-Serif</option>
+                    <option value="Lucida Sans">Lucida Sans</option>
+                    <option value="Impact">Impact</option>
+                    <option value="Dubai">Dubai</option>
+                    <option value="Dubai Light">Dubai Light</option>
+                    <option value="Leelawadee UI">Leelawadee UI</option>
+                    <option value="Microsoft Himalaya">Microsoft Himalaya</option>
+                </select>
+            </div>
+            <div>
+                <input type="number" name="textSize" class="teFontS" value="16">
+            </div>
+
+            <div>
+                <input type="color" name="textColor" class="teFontC" value="#000000">
+            </div>
+
+            <div>
+                <select name="textAlign" style="width: 65px;">
+                    <option value="...">Alignment</option>
+                    <option value="left">Left</option>
+                    <option value="center">Center</option>
+                    <option value="right">Right</option>
+                </select>
+            </div>
+
+            <div>
+                <select name="textDirection">
+                    <option value="...">Direction</option>
+                    <option value="rtl">Right to Left</option>
+                    <option value="ltr">Left to Right</option>
+                </select>
+            </div>
+
+            <div class="mobile">
+                <button id="mob-stl-btn" onclick="document.querySelector('.mob-stl-wrap').classList.remove('hidden')">Style</button>
+            </div>
+
+            <div class="tablet laptop txtStl-xyz flex txt-select-none pointer">
+                <div class="bold " value="bold" name="textBold">B</div>
+                <div class="italic" value="italic" name="textItalic">I</div>
+                <div class="underlined" value="underline" name="textUnderlined">U</div>
+            </div>
+
+        </div>
+        <div class="te-textarea-holder">
             <textarea name="content" id="content" placeholder="Write here...Welcome to our website. Enjoy using this online rich Notepad."></textarea>
-        </section>
+        </div>
 
         <input type="file" class="hidden te-sfd" id="openFile">
         <section class="settings-trigger">
@@ -134,7 +199,15 @@
         to have a good experience. <br> Have great times.
         -->
     </section>
-
+    <!-- popup for text style on mobile -->
+    <div class="mob-stl-wrap hidden">
+        <div class="mob-stl-cont txtStl-xyz flex">
+            <div class="bold " value="bold" name="textBold">B</div>
+            <div class="italic" value="italic" name="textItalic">I</div>
+            <div class="underlined" value="underline" name="textUnderlined">U</div>
+        </div>
+        <div class="mob-stl-close" onclick="this.parentElement.classList.add('hidden')">X</div>
+    </div>
     <section class="te-settings hidden">
         <section class="te-settings-container">
             <header>
@@ -150,15 +223,15 @@
             <section class="te-style-wrapper">
                 <form action="#" class="te-style-form" id="te-style-form">
                     <div class="lbl bold">Text Style</div>
-                    <div class="radio mt-10">
-                        <label for="bold">Bold</label>
-                        <input type="radio" name="textStyle" id="bold" value="bold">
+                    <div class="st-checks-b mt-10">
+                        <label for="bold" class="bold">B</label>
+                        <input type="checkbox" name="textBold" id="bold" value="bold">
 
-                        <label for="italic">Italic</label>
-                        <input type="radio" name="textStyle" id="italic" value="italic">
+                        <label for="italic" class="italic">I</label>
+                        <input type="checkbox" name="textItalic" id="italic" value="italic">
 
-                        <label for="normal">Normal</label>
-                        <input type="radio" name="textStyle" id="normal" value="normal">
+                        <label for="underline" class="underlined">U</label>
+                        <input type="checkbox" name="textUnderlined" id="underline" value="underline">
                     </div>
 
                     <div class="lbl bold mt-10">
@@ -178,12 +251,12 @@
 
                     <div class="lbl bold mt-10">Padding</div>
                     <div class="my-5">
-                        <label for="padding-top">Top</label>
-                        <input type="number" name="pt" id="padding-top" value="10">
-                        <label for="padding-bottom">Bottom</label>
-                        <input type="number" name="pb" id="padding-bottom" value="40">
-                        <label for="padding-right-left">Right & Left</label>
-                        <input type="number" name="prl" id="padding-right-left" value="10">
+                        <label for="paddingTop">Top</label>
+                        <input type="number" name="paddingTop" id="paddingTop" value="10">
+                        <label for="paddingBottom">Bottom</label>
+                        <input type="number" name="paddingBottom" id="paddingBottom" value="40">
+                        <label for="paddingRL">Right & Left</label>
+                        <input type="number" name="paddingRL" id="paddingRL" value="10">
                     </div>
 
                     <div class="lbl bold mt-10">Spacing</div>
@@ -215,6 +288,10 @@
                         <option value="sans-serif">Sans-Serif</option>
                         <option value="Lucida Sans">Lucida Sans</option>
                         <option value="Impact">Impact</option>
+                        <option value="Dubai">Dubai</option>
+                        <option value="Dubai Light">Dubai Light</option>
+                        <option value="Leelawadee UI">Leelawadee UI</option>
+                        <option value="Microsoft Himalaya">Microsoft Himalaya</option>
                     </select>
                     <span> Or Enter Custom Font Family: </span> <input type="text" name="customFontFamily">
                     <p class="te-note">
@@ -260,12 +337,13 @@
 
                     <div class="d-flex space-between ms-15 me-15 my-15">
                         <button id="te-settings-cancel" type="button" class="btn btn-cancel">Cancel</button>
-                        <button id="te-settings-close" type="submit" class="btn btn-ok">OK</button>
+                        <button id="te-settings-submit" type="submit" class="btn btn-ok">OK</button>
                     </div>
                 </form>
             </section>
         </section>
     </section>
+
 </body>
 
 </html>
