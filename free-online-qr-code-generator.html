@@ -194,20 +194,29 @@
                             <input type="color" name="qrCodeDColor" id="qrCodeDColor" value="#000000" class="setin">
                         </div>
 
-                        <div class="bold mt-10">
-                            <label for="qrCodeWidth">QR-Code Width and Height</label>
+                        <div class="bold mt-15">
+                            <label for="qrCodeWidth">QR-Code Height</label>
                             <input type="number" id="qrCodeWidth" name="qrCodeWidth" value="256" class="setin">
+                            <label for="qrCodeHeight" class="ms-15">QR-Code Height</label>
+                            <input type="number" id="qrCodeHeight" name="qrCodeHeight" value="256" class="setin">
+                        </div>
+                        
+                        <div class="bold mt-15">
+                            <label for="qrQuietZone">QR-Code Margin (Edge)</label>
+                            <input type="number" id="qrQuietZone" name="qrQuietZone" value="10" class="setin">
                         </div>
 
                         <div class="bold mt-15 mb-15">
                             <label for="custom-logo">Your Logo</label>
                             <input type="file" name="logoPic" id="custom-logo" class="setin">
                         </div>
-                        <div class="bold mt-10">
-                            <label for="logoWidth">Logo Width and Height</label>
+                        <div class="bold mt-15">
+                            <label for="logoWidth">Logo Width</label>
                             <input type="number" id="logoWidth" name="logoWidth" value="70" class="setin">
+                            <label for="logoHeight" class="ms-15">Logo Height</label>
+                            <input type="number" id="logoHeight" name="logoHeight" value="70" class="setin">                            
                         </div>
-                        <div class=" mt-10">
+                        <div class=" mt-15">
                             <div class="italic mb-5">If Checked then the Logo Background Color will not have any effect.</div>
                             <div class="d-flex flex-wrap">
                                 <label for="logoBgColorTrans" class="bold">Logo Background Transparent: </label>
@@ -216,7 +225,7 @@
                             
                         </div>
 
-                        <div class="bold mt-10">
+                        <div class="bold mt-15">
                             <label for="logoBgColor">Logo Background Color</label>
                             <input type="color" id="logoBgColor" name="logoBgColor" class="setin">
                         </div>
@@ -247,7 +256,7 @@
                 </div>
                 <hr>
                 <div>
-                    <a href="https://youtu.be/31DEiu6eQRM" target="_blank" rel="noreferrer noopener nofollow"> 
+                    <a href="https://youtu.be/31DEiu6eQRM?si=cdwg8MlIQtK-zwqZ" target="_blank" rel="noreferrer noopener nofollow"> 
                         The Video: How to Make a QR Code Generator Step-by-Step? <span class="link-icon">
         <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
         </span></a>
@@ -315,7 +324,7 @@
         let qrTxt = "";
         const generateQrcodeForm = document.getElementById("qr-code-generator"),
             downloadBtn = document.querySelector(".download-btn");
-        const settings = { typeNumber: 4 }, uIn = {};
+        const settings = { typeNumber: 4, quietZone: 10 }, uIn = {};
         generateQrcodeForm.onsubmit = function (e) {
             e.preventDefault();
             qrTxt = "";
@@ -336,14 +345,16 @@
 
             settings["text"] = qrTxt;
             settings["width"] = uIn.qrCodeWidth || 256;
-            settings["height"] = uIn.qrCodeWidth || 256;
+            settings["quietZone"] = uIn.qrQuietZone || 10;
+            settings["height"] = uIn.qrCodeHeight || 256;
             settings["colorDark"] = uIn.qrCodeDColor || "#000000";
+            settings["quietZoneColor"] = uIn.qrCodeLColor || "#fff";
             settings["colorLight"] = uIn.qrCodeLColor || "#ffffff";
 
             if (uIn.logoPic.name) {
                 settings["logo"] = URL.createObjectURL(uIn.logoPic);
                 settings["logoWidth"] = uIn.logoWidth || 70;
-                settings["logoHeight"] = uIn.logoWidth || 70;
+                settings["logoHeight"] = uIn.logoHeight || 70;
                 settings["logoBackgroundColor"] = uIn.logoBgColor || '#00000000';
                 settings["logoBackgroundTransparent"] = checkbox_.checked;
             }
