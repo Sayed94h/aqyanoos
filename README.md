@@ -11,7 +11,7 @@ This app helps you search, learn and practice HTTP reponse codes or http status 
 
 ### 2. Painting and Drawing App
 
-Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.paintin_drawing).
+Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.drawing_painting).
 
 This is a drawing and painting application or a digital board that helps you draw anything you want.
 
