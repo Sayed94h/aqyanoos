@@ -9,20 +9,21 @@ Check the app on Google Play by clicking [here](https://play.google.com/store/ap
 
 This app helps you search, learn and practice HTTP reponse codes or http status codes. This app is a great reference for http status codes. There is also a very helpful QUIZ game inside the app about status codes.
 
-### 2. Dream Board
+### 2. Drawing and Painting App
 
-Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.dreamboard).
+Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.drawing_painting).
 
-This is a drawing application or a digital board that helps you draw anything you want.
+This is a drawing application or a digital board for drawing anything you like.
 
 #### Features
 
-1. Change board's background color to any color you want.
-2. Change pen size to any size you want.
-3. Change pen color to any color you want.
-4. Change pen color transparency.
+1. Draw with any background color to any color you want.
+2. Draw with any pen size to any size you want.
+3. Draw with any pen color to any color you want.
+4. Draw with any pen color transparency.
 5. Change board's dimension(width and height) to any dimension you want.
 6. Save your drawing on your device as image.
+7. Open images, crop, draw on them...save to your mobile.
 
 ### 3. Color Reference
 
@@ -37,7 +38,7 @@ With this app you can get the Hex value, RGB value, HSL value and name of any co
 2. Pick any color you want and get its Hex and RGB value.
 3. Covert Hex to RGB.
 4. Convert RGB to Hex.
-5. Preview any color by name or value(if you dont know how a color looks like then you can preview it using the color tools inside this app).
+5. Preview any color by name or value(if you don't know how a color looks like then you can preview it using the color tools inside this app).
 6. Copy color values to clipboard and use it anywhere you want.
 
 
@@ -45,15 +46,16 @@ With this app you can get the Hex value, RGB value, HSL value and name of any co
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.texteditor).
 
-This app helps you read, edit and create text based files.
-
 This app is a great text editor or notepad for Android devices.
+It's fully customizable. You can change the font size, color, font family, text direction and alignment, bold, italic, underlined, you can set paddings, you can change the background color of the Text Editor,...and much more. 
+Install the app and explore it by yourself. Enjoy and have fun!
+
 
 ### 5. Fake Camera Detector
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.fakecameradetector).
 
-This Android App can detect how many cameras are there on your smartphone so that you know if any of those cameras on your devics is fake or real. This App detects all physical and logical cameras so don't be shocked if you see a big number. 
+This Android App can detect how many cameras are there on your smartphone so that you know if any of those cameras on your devices is fake or real. This App detects all physical and logical cameras so don't be shocked if you see a big number. 
 
 
 #### github page link:
