@@ -17,6 +17,10 @@
             margin: 9px;
             padding: 7px;
         }
+        
+        ul {
+            list-style: url("/images/star.png");
+        }
 
 
         /* Math Game */
@@ -700,7 +704,15 @@
     <!-- <script defer="defer" src="/static/js/main.js"></script> -->
     <link href="/static/css/main.css" rel="stylesheet">
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LTKXK80NDZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-LTKXK80NDZ');
+</script>
 <body>
     <section class="page">
         <!-- side menu -->
@@ -828,7 +840,7 @@
                         </div>
                         <div class="game-console">
                             <div class="game-header">
-                                <p>A Small Math Game</p>
+                                <p>A Cool Math Game</p>
                                 <p>Please don't use any calculator. Calculate everything in your head. Try to find an easy way to calculate it fast. Be focused, this improves your concentrations. <span class="red-text">Important!</span> the answer is rounded to integer, so no decimal answer! Example: 1.4 = 1, 1.5 = 2, 1.8 = 2, ...</p>
                             </div>
                             <form class="math-form">
@@ -868,7 +880,25 @@
                     <p id="show-error"></p>
                 </div>
                 <hr>
-                <section class="mean-median-mode">
+                <div class="my-15">
+                    <strong>On this page:</strong> <br> 
+                    <ul>
+                        <li>
+                            <a href="#mean-median-mode">Mean, Median and Mode</a>
+                        </li>
+                        <li>
+                            <a href="#key-code-finder">Keycode Finder</a>
+                        </li>
+                        <li>
+                            <a href="#binary-to-decimal">Binary to decimal convertor</a>
+                        </li>
+                        <li>
+                            <a href="#decimal-to-binary">Decimal to binary convertor</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <section class="mean-median-mode" id="mean-median-mode">
                     <header>
                         <h4>Find the mean, median or mode of a series of numbers</h4>
                         <p>Choose the option you want and then enter the numbers separated by a comma.</p>
@@ -888,7 +918,7 @@
                         <div id="3ms-result"></div>
                     </div>
                 </section>
-                <section class="keycode-wrapper">
+                <section class="keycode-wrapper" id="key-code-finder">
                     <h4>You can use the below text box to find the keycode for each key on your keyboard.</h4>
                     <div class="keycode-container">
                         <div>
@@ -901,7 +931,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="binary-wrapper">
+                <section class="binary-wrapper" id="binary-to-decimal">
                     <h4>You can use the below text box to convert Binary to Decimal.</h4>
                     <div class="binary-container">
                         <div>
@@ -914,7 +944,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="binary-wrapper">
+                <section class="binary-wrapper" id="decimal-to-binary">
                     <h4>You can use the below text box to convert Decimal to Binary.</h4>
                     <div class="binary-container">
                         <div>
