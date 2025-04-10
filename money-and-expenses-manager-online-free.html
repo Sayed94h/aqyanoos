@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+
     <!-- <meta property="article:publisher" content="https://www.facebook.com/CodingAqyanoos"> -->
     <!-- <meta property="article:modified_time" content="2024-01-17T10:38:34+00:00"> -->
 
@@ -17,7 +17,7 @@
 
     <!-- link tags that don't need change -->
 
-    <link rel="icon" type="image/ico" href="/favicon.ico" >
+    <link rel="icon" type="image/ico" href="/favicon.ico" />
     <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
@@ -46,16 +46,16 @@
     <meta name="twitter:image:alt" content="The best free online App for money and expenses management. Budget tracker - Finance manager - An easy way to manage your earnings or income and spending in one place. A simple method to control and monitor your money ">
 
     <!-- for development -->
-    <script defer="defer" src="/static/js/main.js"></script>
+    <script defer="defer" src="shared-static.js"></script>
     <!-- for production -->
     <!-- <script defer="defer" src="/static/js/main.js"></script> -->
     <link href="/static/css/main.css" rel="stylesheet">
-    
+
     <style>
         body {
             font-size: 14px;
         }
-        
+
         #CISMM-rows .edit-col .edit {
             background-image: url("/images/edit.png");
         }
@@ -191,13 +191,13 @@
                 <g>
                     <path fill="#fff" d="M17.563,30.277h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.018,2.259-2.268h0.01
                         l0-10.459h0c-0.002-1.251-1.017-2.265-2.269-2.265l0,0H19.821v0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269
-                        c0,0.039,0.01,0.076,0.012,0.115L17.563,30.277z" >
+                        c0,0.039,0.01,0.076,0.012,0.115L17.563,30.277z"></path>
                     <path fill="#fff" d="M80.179,42.504L80.179,42.504H19.821v0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269c0,0.039,0.01,0.076,0.012,0.115
                         l0,10.34h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.018,2.259-2.268h0.01l0-10.459h0
-                        C82.446,43.518,81.431,42.504,80.179,42.504z" >
+                        C82.446,43.518,81.431,42.504,80.179,42.504z"></path>
                     <path fill="#fff" d="M80.179,67.454L80.179,67.454H19.821l0,0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269c0,0.039,0.01,0.076,0.012,0.115
                         l0,10.34h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.019,2.259-2.269h0.01l0-10.459h0
-                        C82.446,68.468,81.431,67.454,80.179,67.454z" >
+                        C82.446,68.468,81.431,67.454,80.179,67.454z"></path>
                 </g>
             </svg>
         </div>
@@ -272,7 +272,17 @@
                     <div id="total">0</div>
                 </div>
                 <hr>
-
+                <details class="mt-50">
+                    <summary>Some Shortcuts on the Chart (click to open)</summary>
+                    <ol>
+                        <li><strong>K:</strong> Thousand = 1000</li>
+                        <li><strong>M:</strong> Million = 1,000,000</li>
+                        <li><strong>B:</strong> Billion = 1,000,000,000</li>
+                        <li><strong>T:</strong> Trillion = 1,000,000,000,000</li>
+                        <li><strong>QD:</strong> Quadrillion = 1,000,000,000,000,000</li>
+                        <li><strong>QT:</strong> Quintillion = 1,000,000,000,000,000,000</li>
+                    </ol>
+                </details>
                 <details class="my-20">
                     <summary>Backup and Restore (Click to Open)</summary>
                     <div>
@@ -282,14 +292,14 @@
                             to export your data and import it back, to do not lose your data.
                             In the future we will store your data on our database and you don't have to worry about importing or exporting your data.
                         </p>
-                        <div class="flex">
+                        <div class="flex mt-30">
                             <div class="flex aln-c btn" id="import-data">
                                 <div>Import</div>
                                 <div class="ms-15">
                                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 100 100">
                                         <g>
-                                            <path d="M85.886,49.615H67.685c-2.218,0-4.185,1.374-4.865,3.406c-1.803,5.375-6.957,8.983-12.819,8.983   c-5.864,0-11.016-3.608-12.818-8.983c-0.682-2.032-2.647-3.406-4.867-3.406h-18.2c-2.825,0-5.115,2.2-5.115,4.919v28.054   c0,2.714,2.29,4.917,5.115,4.917h71.771c2.827,0,5.114-2.203,5.114-4.917V54.534C91,51.815,88.712,49.615,85.886,49.615z" >
-                                            <path d="M35.81,34.276h6.653v17.188c0,0.735,0.617,1.326,1.376,1.326h12.317c0.762,0,1.376-0.591,1.376-1.326V34.276h6.658   c0.514,0,0.986-0.279,1.221-0.716c0.238-0.442,0.197-0.971-0.102-1.374L51.072,13.048c-0.257-0.346-0.677-0.553-1.119-0.553H49.95   c-0.445,0-0.859,0.207-1.119,0.558L34.686,32.187c-0.297,0.403-0.334,0.932-0.1,1.374C34.821,34.002,35.296,34.276,35.81,34.276z" >
+                                            <path d="M85.886,49.615H67.685c-2.218,0-4.185,1.374-4.865,3.406c-1.803,5.375-6.957,8.983-12.819,8.983   c-5.864,0-11.016-3.608-12.818-8.983c-0.682-2.032-2.647-3.406-4.867-3.406h-18.2c-2.825,0-5.115,2.2-5.115,4.919v28.054   c0,2.714,2.29,4.917,5.115,4.917h71.771c2.827,0,5.114-2.203,5.114-4.917V54.534C91,51.815,88.712,49.615,85.886,49.615z"></path>
+                                            <path d="M35.81,34.276h6.653v17.188c0,0.735,0.617,1.326,1.376,1.326h12.317c0.762,0,1.376-0.591,1.376-1.326V34.276h6.658   c0.514,0,0.986-0.279,1.221-0.716c0.238-0.442,0.197-0.971-0.102-1.374L51.072,13.048c-0.257-0.346-0.677-0.553-1.119-0.553H49.95   c-0.445,0-0.859,0.207-1.119,0.558L34.686,32.187c-0.297,0.403-0.334,0.932-0.1,1.374C34.821,34.002,35.296,34.276,35.81,34.276z"></path>
                                         </g>
                                     </svg>
                                 </div>
@@ -299,8 +309,8 @@
                                 <div class="ms-15">
                                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="50px" height="50px" viewBox="0 0 100 100">
                                         <g>
-                                            <path d="M94.284,65.553L75.825,52.411c-0.389-0.276-0.887-0.312-1.312-0.093c-0.424,0.218-0.684,0.694-0.685,1.173l0.009,6.221   H57.231c-0.706,0-1.391,0.497-1.391,1.204v11.442c0,0.707,0.685,1.194,1.391,1.194h16.774v6.27c0,0.478,0.184,0.917,0.609,1.136   c0.425,0.219,0.853,0.182,1.242-0.096l18.432-13.228c0.335-0.239,0.477-0.626,0.477-1.038c0-0.002,0-0.002,0-0.002   C94.765,66.179,94.621,65.793,94.284,65.553z" >
-                                            <path d="M64.06,78.553h-6.49h0c-0.956,0-1.73,0.774-1.73,1.73h-0.007v3.01H15.191V36.16h17.723c0.956,0,1.73-0.774,1.73-1.73   V16.707h21.188l0,36.356h0.011c0.021,0.937,0.784,1.691,1.726,1.691h6.49c0.943,0,1.705-0.754,1.726-1.691h0.004v-0.038   c0,0,0-0.001,0-0.001l0-0.001l0-40.522h-0.005V8.48c0-0.956-0.774-1.73-1.73-1.73h-2.45v0H32.914v0h-1.73L5.235,32.7v2.447v1.013   v52.912v2.447c0,0.956,0.774,1.73,1.73,1.73h1.582h53.925h1.582c0.956,0,1.73-0.774,1.73-1.73v-2.448h0.005l0-8.789l0-0.001   C65.79,79.328,65.015,78.553,64.06,78.553z" >
+                                            <path d="M94.284,65.553L75.825,52.411c-0.389-0.276-0.887-0.312-1.312-0.093c-0.424,0.218-0.684,0.694-0.685,1.173l0.009,6.221   H57.231c-0.706,0-1.391,0.497-1.391,1.204v11.442c0,0.707,0.685,1.194,1.391,1.194h16.774v6.27c0,0.478,0.184,0.917,0.609,1.136   c0.425,0.219,0.853,0.182,1.242-0.096l18.432-13.228c0.335-0.239,0.477-0.626,0.477-1.038c0-0.002,0-0.002,0-0.002   C94.765,66.179,94.621,65.793,94.284,65.553z"></path>
+                                            <path d="M64.06,78.553h-6.49h0c-0.956,0-1.73,0.774-1.73,1.73h-0.007v3.01H15.191V36.16h17.723c0.956,0,1.73-0.774,1.73-1.73   V16.707h21.188l0,36.356h0.011c0.021,0.937,0.784,1.691,1.726,1.691h6.49c0.943,0,1.705-0.754,1.726-1.691h0.004v-0.038   c0,0,0-0.001,0-0.001l0-0.001l0-40.522h-0.005V8.48c0-0.956-0.774-1.73-1.73-1.73h-2.45v0H32.914v0h-1.73L5.235,32.7v2.447v1.013   v52.912v2.447c0,0.956,0.774,1.73,1.73,1.73h1.582h53.925h1.582c0.956,0,1.73-0.774,1.73-1.73v-2.448h0.005l0-8.789l0-0.001   C65.79,79.328,65.015,78.553,64.06,78.553z"></path>
                                         </g>
                                     </svg>
                                 </div>
@@ -308,93 +318,96 @@
                         </div>
                     </div>
                 </details>
-                <div class="CISMM-new-pop pop-wrap hidden">
-                    <div class="pop-wrap-child">
-                        <div class="pop-title">Add New Item</div>
-                        <form action="#" class="CISMM-form">
-                            <div class="mt-15 hidden item-id">
-                                <label for="CISMM-id" class="bold">#</label>
-                                <input type="number" id="CISMM-id" name="id" readonly>
-                            </div>
-                            <div class="mt-15">
-                                <label for="CISMM-title" class="bold">Title</label>
-                                <input type="text" id="CISMM-title" class="w-80" name="title" placeholder="Afghani Kabab">
-                            </div>
-
-                            <div class="mt-15">
-                                <label for="CISMM-description" class="bold">Description</label>
-                            </div>
-                            <textarea id="CISMM-description" rows="5" class="w-100 resize-y" name="description" placeholder="Paid 20 dollar for delicious Afghani kebab at Sami's Kabab House in NY city "></textarea>
-
-
-                            <div class="mt-15">
-                                <label for="CISMM-amount" class="bold">Amount</label>
-                                <input type="number" id="CISMM-amount" name="amount" placeholder="20">
-                            </div>
-
-                            <div class="mt-15">
-                                <label for="CISMM-date" class="bold">Occurrence Date</label>
-                                <input type="date" id="CISMM-date" name="date">
-                            </div>
-
-                            <div class="mt-15 line-h-2">
-                                <label for="CISMM-category" class="bold">Category</label>
-
-                                <select class="CISMM-category" id="CISMM-category" name="category"></select> <span>Or</span>
-                                <input type="text" id="CISMM-category-n" name="category-n" class="w-2" placeholder="New Category">
-                            </div>
-                            <p class="quote fs-xs">It's best to categorize your income or expenses to visualize it in the charts.
-                                Create categories such as Income-Work, Income-Other-Source, Clothes,
-                                Travel, Children, Grocery, Car,...</p>
-
-                            <div class="flex space-btw aln-c px-15 mt-20 mb-20">
-                                <button class="btn bg-yellow CISMM-cancel-btn">Cancel</button>
-                                <button class="btn bg-yellow CISMM-ce-btn hidden">Cancel</button>
-                                <button class="btn bg-green white l-spc-2 CISMM-sub-btn">ADD</button>
-                                <button class="btn bg-green white l-spc-2 CISMM-sub-edit-btn hidden">EDIT</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+                
+                <p class="quote mt-30">
+                    For any problem or questions, please send us a message via the <a href="/#/contact" rel="noreferrer noopener nofollow">contact form</a>.
+                </p>
             </div>
 
             <footer class="article-footer related-content">
                 <h3>Some other interesting online tools for you</h3>
                 <hr>
                 <div>
-                    <a href="/stylish-font-generator-for-instagram-copy-and-paste.html" target="_blank">Stylish and Beautiful Font Generator <span class="link-icon">
+                    <a href="/stylish-font-generator-for-instagram-copy-and-paste.html">Stylish and Beautiful Font Generator <span class="link-icon">
         <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
         </span></a>
                 </div>
                 <hr>
                 <div>
-                    <a href="/online-text-or-code-editor-notepad.html" target="_blank">Online Notepad / Text Editor <span class="link-icon">
-        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
-        </span></a>
-                </div>
-                <hr>
-
-                <div>
-                    <a href="/free-online-qr-code-generator-for-payment.html" target="_blank">QR-Code Generator for Payment <span class="link-icon">
+                    <a href="/online-text-or-code-editor-notepad.html">Online Notepad / Text Editor <span class="link-icon">
         <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
         </span></a>
                 </div>
                 <hr>
                 <div>
-                    <a href="/free-online-qr-code-generator.html" target="_blank">QR-Code Generator - Any Text <span class="link-icon">
+                    <a href="/free-online-qr-code-generator-for-payment.html">QR-Code Generator for Payment <span class="link-icon">
         <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
         </span></a>
                 </div>
                 <hr>
-
                 <div>
-                    <a href="online-math-exercises-and-tools.html" target="_blank">Math Game and Software <span class="link-icon">
+                    <a href="/free-online-qr-code-generator.html">QR-Code Generator - Any Text <span class="link-icon">
+        <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
+        </span></a>
+                </div>
+                <hr>
+                <div>
+                    <a href="online-math-exercises-and-tools.html">Math Game and Software <span class="link-icon">
         <svg viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path></svg>
         </span></a>
                 </div>
                 <hr>
             </footer>
         </article>
+        
+        <div class="CISMM-new-pop pop-wrap hidden">
+            <div class="pop-wrap-child">
+                <div class="pop-title">Add New Item</div>
+                <form action="#" class="CISMM-form">
+                    <div class="mt-15 hidden item-id">
+                        <label for="CISMM-id" class="bold">#</label>
+                        <input type="number" id="CISMM-id" name="id" readonly>
+                    </div>
+                    <div class="mt-15">
+                        <label for="CISMM-title" class="bold">Title</label>
+                        <input type="text" id="CISMM-title" class="w-80" name="title" placeholder="Afghani Kabab">
+                    </div>
+
+                    <div class="mt-15">
+                        <label for="CISMM-description" class="bold">Description</label>
+                    </div>
+                    <textarea id="CISMM-description" rows="5" class="w-100 resize-y" name="description" placeholder="Paid 20 dollar for delicious Afghani kebab at Sami's Kabab House in NY city "></textarea>
+
+
+                    <div class="mt-15">
+                        <label for="CISMM-amount" class="bold">Amount</label>
+                        <input type="number" id="CISMM-amount" name="amount" placeholder="20">
+                    </div>
+
+                    <div class="mt-15">
+                        <label for="CISMM-date" class="bold">Occurrence Date</label>
+                        <input type="date" id="CISMM-date" name="date">
+                    </div>
+
+                    <div class="mt-15 line-h-2">
+                        <label for="CISMM-category" class="bold">Category</label>
+
+                        <select class="CISMM-category" id="CISMM-category" name="category"></select> <span>Or</span>
+                        <input type="text" id="CISMM-category-n" name="category-n" class="w-2" placeholder="New Category">
+                    </div>
+                    <p class="quote fs-xs">It's best to categorize your income or expenses to visualize it in the charts.
+                        Create categories such as Income-Work, Income-Other-Source, Clothes,
+                        Travel, Children, Grocery, Car,...</p>
+
+                    <div class="flex space-btw aln-c px-15 mt-20 mb-20">
+                        <button class="btn bg-yellow CISMM-cancel-btn">Cancel</button>
+                        <button class="btn bg-yellow CISMM-ce-btn hidden">Cancel</button>
+                        <button class="btn bg-green white l-spc-2 CISMM-sub-btn">ADD</button>
+                        <button class="btn bg-green white l-spc-2 CISMM-sub-edit-btn hidden">EDIT</button>
+                    </div>
+                </form>
+            </div>
+        </div>
 
         <div class="hidden fp">
             <input type="file" id="openFile" accept="text/plain">
