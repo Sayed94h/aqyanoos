@@ -245,6 +245,14 @@ const injectContent = (e, target) => {
     }
 };
 
+if(document.getElementById("html-btn")){
+    document.getElementById("html-btn").onclick = injectContent
+}
+
+if(document.getElementById("js-btn")){
+    document.getElementById("js-btn").onclick = injectContent
+}
+
 injectContent(false, document.getElementById("html-btn"))
 
 // for demo

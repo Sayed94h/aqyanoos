@@ -135,9 +135,7 @@
 
     <script src="easy.qrcode.min.js"></script>
     <!-- for development -->
-    <script defer="defer" src="/static/js/main.js"></script>
-    <!-- for production -->
-    <!-- <script defer="defer" src="/static/js/main.js"></script> -->
+    <script defer="defer" src="shared-static.js"></script>
     <link href="/static/css/main.css" rel="stylesheet">
 </head>
 <!-- Google tag (gtag.js) -->
@@ -367,8 +365,8 @@
                 
                 <div class="d-flex sc-nav">
                     
-                    <div class=" ms-5 c" id="html-btn" onclick="injectContent(event)">index.html</div>
-                    <div class=" ms-15" id="js-btn" onclick="injectContent(event)">script.js</div>
+                    <div class=" ms-5 c" id="html-btn">index.html</div>
+                    <div class=" ms-15" id="js-btn">script.js</div>
                 </div>
                 <div class="sc-wrapper">
                     <textarea name="html" id="html-view" class="raw-code" readOnly value={defaultContent}></textarea>
