@@ -228,14 +228,24 @@
             <div class="article-content ">
                 <button id="CISMM-add-btn" class="btn fs-6 bg-green white">+</button>
                 <hr>
-                <div class="">
+                <div>
+                    <div>Compare and visualize your earnings and expenses:</div>
+                    <select name="chart-period" id="chart-period">
+                        <option value=".">Select...</option>
+                        <option value="1">All (Default)</option>
+                        <option value="2">Income vs Expenses</option>
+                        <option value="3">This Year</option>
+                        <option value="4">Last Year</option>
+                        <option value="5">Last 30 Days</option>
+                        <option value="6">Last 7 Days</option>
+                    </select>
+                </div>
                     <div class="chart-holder ">
                         <div class="bar-chart">
                             <svg id="columnChart"></svg>
                         </div>
                         <div class="chart-lbls flex flex-wrap aln-c txt-c"></div>
                     </div>
-                </div>
                 <hr>
                 <div class="CISMM-filter flex aln-c flex-wrap line-h-2 my-15">
                     <div class=" ftr-ic bg-c"></div>
@@ -395,7 +405,7 @@
                     </div>
                     <p class="quote fs-xs">It's best to categorize your income or expenses to visualize it in the charts.
                         Create categories such as Income-Work, Income-Other-Source, Clothes,
-                        Travel, Children, Grocery, Car,...</p>
+                        Travel, Children, Grocery, Car,...The Category for earnings must include the word "income".</p>
 
                     <div class="flex space-btw aln-c px-15 mt-20 mb-20">
                         <button class="btn bg-yellow CISMM-cancel-btn">Cancel</button>
@@ -475,8 +485,8 @@
     
         </footer>
     </section>
-    <script src="mm01.js"></script>
-    <!-- <script src="mudiriat-pol-anlain.js"></script> -->
+     <script src="mm01.js"></script> 
+    <!--<script src="mudiriat-pol-anlain.js"></script>-->
 </body>
 
 </html>
