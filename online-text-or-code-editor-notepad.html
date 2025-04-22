@@ -59,31 +59,7 @@
 </script>
 <body class="te">
     <section class="page">
-        <!-- side menu -->
-        <!-- <section class="menu-wrapper"></section> -->
-        <!-- toggle side menu -->
-        <!-- <section class=" top-menu-rest">
-            <div class="menu-icon  ">
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"  
-                    x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100"
-                    enable-background="new 0 0 100 100"  >
-                    <g>
-                        <path fill="#fff" d="M17.563,30.277h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.018,2.259-2.268h0.01
-    l0-10.459h0c-0.002-1.251-1.017-2.265-2.269-2.265l0,0H19.821v0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269
-    c0,0.039,0.01,0.076,0.012,0.115L17.563,30.277z"></path>
-                        <path fill="#fff" d="M80.179,42.504L80.179,42.504H19.821v0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269c0,0.039,0.01,0.076,0.012,0.115
-    l0,10.34h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.018,2.259-2.268h0.01l0-10.459h0
-    C82.446,43.518,81.431,42.504,80.179,42.504z"></path>
-                        <path fill="#fff" d="M80.179,67.454L80.179,67.454H19.821l0,0c0,0,0,0,0,0c-1.253,0-2.269,1.017-2.269,2.269c0,0.039,0.01,0.076,0.012,0.115
-    l0,10.34h0.012c0,1.245,1.004,2.254,2.246,2.267v0.002h60.359v-0.001c1.248-0.006,2.259-1.019,2.259-2.269h0.01l0-10.459h0
-    C82.446,68.468,81.431,67.454,80.179,67.454z"></path>
-                    </g>
-                </svg>
-            </div>
-        </section> -->
-        <!-- top main menu -->
-        <!-- <section class=" main-nav top-main-menu"></section> -->
-        <!-- page header - for now just a spacer because the top-nav is positioned fixed -->
+        
         <header class="te-page-header">
             <div class="te-page-hdr-wrap">
                 <h1>Online Text or Code Editor - Notepad</h1>
@@ -174,7 +150,7 @@
             </div>
 
         </div>
-        <div class="te-textarea-holder">
+        <div class="te-textarea-holder flex cont-c aln-c">
             <textarea name="content" id="content" placeholder="Write here...Welcome to our website. Enjoy using this online rich Notepad."></textarea>
         </div>
 
@@ -198,12 +174,6 @@
                 </g>
             </svg>
         </section>
-        <!-- <section class="welcome-alert-wrapper"></section>
-        Thank you for visiting our website and Enjoy using this Notepad. There are no Ads around
-        here Only for
-        you
-        to have a good experience. <br> Have great times.
-        -->
     </section>
     <!-- popup for text style on mobile -->
     <div class="mob-stl-wrap hidden">
@@ -220,9 +190,9 @@
                 <h3>Configure Your Online Notepad</h3>
                 <p>
                     Customize your online Notepad or Text Editor the way you like.
-                    Now we Backup the content of your file on your Browser so that you don't lose your work when closing the Browser accidentally.
-                    If you manually clear the Browser's storage or uninstall the Browser then the Backup will get cleared as well.
-                    We Appreciate your support. Click <a href="/#/support">here</a>.
+                    We backup your text on your Browser. You can close the browser, come back later and work further without losing your work.
+                    Save your work before manually clearing the Browser's storage or uninstalling the Browser.
+                    <span class="italic">Support our work <a href="/#/support?p=te">here</a>.</span>
                 </p>
             </header>
             <hr>
@@ -301,7 +271,7 @@
                     </select>
                     <span> Or Enter Custom Font Family: </span> <input type="text" name="customFontFamily">
                     <p class="te-note">
-                        &gt; Your Custom font family works if your Browser supports the font family. If the input for Custom Font Family is not empty, the font family from the Select Menu will not work.
+                        &gt; Your Custom font family works if your Browser supports it. If you give Custom Font Family, the font family from the Select Menu will not work.
                     </p>
 
                     <div class="lbl bold mt-10">Text Direction</div>
@@ -350,6 +320,7 @@
         </section>
     </section>
 <script src="te01.js"></script>
+<!-- <script src="txt-note.js"></script> -->
 </body>
 
 </html>
