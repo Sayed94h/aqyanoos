@@ -41,6 +41,7 @@ if (window.location.href) {
                             aqyanoosCustomAlert("Copied Successfully", "The page link copied to the clipboard. You can share / send it by pasting on WhatsApp, Messenger, Email,...");
                         }, () => {
                             // aqyanoosCustomAlert("Copy failed, please try again!");
+                            console.log("Copy failed, please try again!")
                         });
                     }
                 });
