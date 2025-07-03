@@ -2,12 +2,13 @@
 
 ## Our Android apps
 
+We have built the following Mobile Apps that you can install on your phone / tablet or any Android smart device and use.
 
 ### 1. HTTP Response code
 
 Check the app on Google Play by clicking [here](https://play.google.com/store/apps/details?id=com.aqyanoos.httpresponsecode).
 
-This app helps you search, learn and practice HTTP reponse codes or http status codes. This app is a great reference for http status codes. There is also a very helpful QUIZ game inside the app about status codes.
+This app helps you search, learn and practice HTTP response codes or http status codes. This app is a great reference for http status codes. There is also a very helpful QUIZ game inside the app about status codes.
 
 ### 2. Drawing and Painting App
 
@@ -57,12 +58,14 @@ Check the app on Google Play by clicking [here](https://play.google.com/store/ap
 
 This Android App can detect how many cameras are there on your smartphone so that you know if any of those cameras on your devices is fake or real. This App detects all physical and logical cameras so don't be shocked if you see a big number. 
 
+## Free Online Software:
 
-#### github page link:
-[https://sayed94h.github.io/aqyanoos/](https://sayed94h.github.io/aqyanoos/)
+We have also built many useful and helpful online web Apps, Tools and Software that you can use for free.
 
-#### custom domain name:
-[https://aqyanoos.com](https://aqyanoos.com)
+Check them out [here](https://aqyanoos.com/free-online-tools-software-apps.html). 
+
+
+##### Thank you for visiting this page. Have a wonderful time.
 
 
 
