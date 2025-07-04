@@ -8,8 +8,8 @@ document.querySelector(".menu-icon") &&
 let sideMenuEl = document.querySelector(".menu-wrapper");
 sideMenuEl && sideMenuEl.addEventListener("click", function (e) { if (e.target.className.includes("menu-wrapper open")) e.target.classList.remove("open") });
 if (window.location.href) {
-    const p_ = ["CSS-Selectors", "MongoDB-in-ASP", "Support","About", "Contact", "Services", "Make-QR-Code-Generator", 
-        "Host-React-App", "Expenses-Manager", "Files", "Convert-Decimal","Convert-Hex",
+    const p_ = ["CSS-Selectors", "MongoDB-in-ASP", "Support", "About", "Contact", "Services", "Make-QR-Code-Generator",
+        "Host-React-App", "Expenses-Manager", "Files", "Convert-Decimal", "Convert-Hex",
         "Font-Generator", "QR-Code-Generator", "Math-Exercises", "Response-Code-List", "Painting-App", "Color-Tools",
         "Notepad-App", "Developer-Job", "Dark-Web", "Cryptocurrency", "Detox-Smoothie"]
     let cP = document.querySelector(".SourceCode_page")
