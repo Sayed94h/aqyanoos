@@ -4,15 +4,14 @@ function toggleMenu() {
 }
 document.querySelector(".menu-icon") &&
     (document.querySelector(".menu-icon").onclick = toggleMenu,
-        document.querySelector(".menu-icon-lg").onclick = toggleMenu,
         document.querySelectorAll(".side-menu-action-btn").forEach(e => { e.onclick = toggleMenu }));
 let sideMenuEl = document.querySelector(".menu-wrapper");
 sideMenuEl && sideMenuEl.addEventListener("click", function (e) { if (e.target.className.includes("menu-wrapper open")) e.target.classList.remove("open") });
 if (window.location.href) {
     const p_ = ["CSS-Selectors", "MongoDB-in-ASP", "Support","About", "Contact", "Services", "Make-QR-Code-Generator", 
         "Host-React-App", "Expenses-Manager", "Files", "Convert-Decimal","Convert-Hex",
-        "Font-Generator", "QR-Code-Generator", "Math-Exercises", "Android-Apps", "Response-Code-List", "Painting-App", "Color-Tools",
-        "Notepad-App", "Developer-Job", "Dark-Web", "Online-Tools", "Cryptocurrency", "Detox-Smoothie"]
+        "Font-Generator", "QR-Code-Generator", "Math-Exercises", "Response-Code-List", "Painting-App", "Color-Tools",
+        "Notepad-App", "Developer-Job", "Dark-Web", "Cryptocurrency", "Detox-Smoothie"]
     let cP = document.querySelector(".SourceCode_page")
 
     if (cP) {
@@ -40,8 +39,7 @@ if (window.location.href) {
                         navigator.clipboard.writeText(window.location.href).then(() => {
                             aqyanoosCustomAlert("Copied Successfully", "The page link copied to the clipboard. You can share / send it by pasting on WhatsApp, Messenger, Email,...");
                         }, () => {
-                            // aqyanoosCustomAlert("Copy failed, please try again!");
-                            console.log("Copy failed, please try again!")
+                            console.log("*-*-*-Copy failed, please try again!")
                         });
                     }
                 });
