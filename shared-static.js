@@ -3,8 +3,8 @@ function toggleMenu() {
     if (m_) m_.classList.toggle("open");
 }
 document.querySelector(".menu-icon") &&
-    (document.querySelector(".menu-icon").onclick = toggleMenu,
-        document.querySelectorAll(".side-menu-action-btn").forEach(e => { e.onclick = toggleMenu }));
+    (document.querySelectorAll(".menu-icon").forEach(mi => {mi.onclick = toggleMenu}),
+        document.querySelector(".side-menu-close-btn").onclick = toggleMenu);
 let sideMenuEl = document.querySelector(".menu-wrapper");
 sideMenuEl && sideMenuEl.addEventListener("click", function (e) { if (e.target.className.includes("menu-wrapper open")) e.target.classList.remove("open") });
 if (window.location.href) {
