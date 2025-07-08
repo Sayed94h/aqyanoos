@@ -30,7 +30,8 @@
             <h2 class="lh-40">End-User License Agreement (EULA) of <span class="app_name"> Color Reference </span></h2>
             <p>This End-User License Agreement ("EULA") is a legal agreement between you and <span
                     class="company_name">Aqyanoos</span>. Our EULA was created by <a href="https://www.eulatemplate.com"
-                    target="_blank" rel="noreferrer nofollow">EULA Template</a> for <span class="app_name"> Color Reference
+                    target="_blank" rel="noreferrer nofollow">EULA Template</a> for <span class="app_name"> Color
+                    Reference
                 </span>.</p>
             <p>This EULA agreement governs your acquisition and use of our <span class="app_name"> Color Reference
                 </span>software ("Software") directly from <span class="company_name">Aqyanoos</span> or indirectly
@@ -126,7 +127,8 @@
                         collects Android advertising (ad) ID, app set ID, and, if applicable, other identifiers related
                         to signed-in accounts on the device...<a
                             href="https://developers.google.com/admob/android/privacy/play-data-disclosure"
-                            target="_blank" rel="noreferrer noopener nofollow">read more on Google Ads Policy page</a>...All
+                            target="_blank" rel="noreferrer noopener nofollow">read more on Google Ads Policy
+                            page</a>...All
                         these data and information are collected to provide good accurate services, following the rules
                         and laws of countries in different locations and not for any other purposes.<br><span
                             class="company_name">Aqyanoos</span> as the developer and as the owner of the <span
@@ -190,29 +192,28 @@
             const appN = document.querySelectorAll(".app_name")
             const val_ = keys_.get("id")
             let name_ = ""
+
             if (val_.includes("color-reference")) {
-                pMetaD("Color Reference")
                 name_ = " Color Reference "
             }
 
             if (val_.includes("drawing-and-painting-app")) {
-                pMetaD("Drawing and Painting App")
                 name_ = " Drawing and Painting App "
             }
 
             if (val_.includes("http-response-status-code")) {
-                pMetaD("HTTP Response / Status Code")
                 name_ = " HTTP Response / Status Code "
             }
 
             if (val_.includes("text-editor")) {
-                pMetaD("Text Editor - Notepad")
                 name_ = " Text Editor - Notepad "
             }
 
+            pMetaD(name_)
+
             appN.forEach(n => {
-                    n.innerHTML = name_
-                })
+                n.innerHTML = name_
+            })
         }
 
         function pMetaD(appName) {
@@ -220,7 +221,7 @@
             const mT = document.querySelector("meta[name='title']");
             const mD = document.querySelector("meta[name='description']");
 
-            mT.content = "Privacy Policy -- " + appName;
+            mT.content = "Privacy Policy - " + appName;
             mD.content = "Privacy Policy - End-User License Agreement (EULA) of " + appName;
         }
     </script>
