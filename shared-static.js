@@ -1,67 +1,8 @@
-function toggleMenu() {
-    const m_ = document.querySelector(".menu-wrapper");
-    if (m_) m_.classList.toggle("open");
-}
-document.querySelector(".menu-icon") &&
-    (document.querySelectorAll(".menu-icon").forEach(mi => {mi.onclick = toggleMenu}),
-        document.querySelector(".side-menu-close-btn").onclick = toggleMenu);
-let sideMenuEl = document.querySelector(".menu-wrapper");
-sideMenuEl && sideMenuEl.addEventListener("click", function (e) { if (e.target.className.includes("menu-wrapper open")) e.target.classList.remove("open") });
-if (window.location.href) {
-    const p_ = ["CSS-Selectors", "MongoDB-in-ASP", "Support", "About", "Contact", "Services", "Make-QR-Code-Generator",
-        "Host-React-App", "Expenses-Manager", "Files", "Convert-Decimal", "Convert-Hex",
-        "Font-Generator", "QR-Code-Generator", "Math-Exercises", "Response-Code-List", "Painting-App", "Color-Tools",
-        "Notepad-App", "Developer-Job", "Dark-Web", "Cryptocurrency", "Detox-Smoothie"]
-    let cP = document.querySelector(".SourceCode_page")
-
-    if (cP) {
-        for (let i = 0; i < p_.length; i++) {
-            if (window.location.href.includes(p_[i].toLowerCase())) {
-                cP.innerHTML = p_[i] === "Expenses-Manager" ? "Money Manager" : p_[i]
-                cP.href = window.location.href
-                cP.classList.add("current")
-                break;
-            }
-        }
-    }
-
-    if (document.querySelector(".art-share")) {
-        document.querySelector(".art-share").onclick = function () {
-            if (navigator.share) {
-                navigator.share({
-                    title: document.title,
-                    text: 'Check this out!',
-                    url: window.location.href,
-                }).catch(err => console.log('Error sharing:', err));
-            } else {
-                navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
-                    if (result.state === "granted" || result.state === "prompt") {
-                        navigator.clipboard.writeText(window.location.href).then(() => {
-                            aqyanoosCustomAlert("Copied Successfully", "The page link copied to the clipboard. You can share / send it by pasting on WhatsApp, Messenger, Email,...");
-                        }, () => {
-                            console.log("*-*-*-Copy failed, please try again!")
-                        });
-                    }
-                });
-            }
-        }
-    }
-
-    function aqyanoosCustomAlert(title, description) {
-        if (document.querySelector('.custom-alert')) {
-            document.querySelector('.custom-alert').remove();
-        }
-
-        const secEl = document.createElement('section');
-        secEl.className = "custom-alert";
-        secEl.innerHTML = `
+function toggleMenu(){var e=document.querySelector(".menu-wrapper");e&&e.classList.toggle("open")}document.querySelector(".menu-icon")&&(document.querySelectorAll(".menu-icon").forEach(e=>{e.onclick=toggleMenu}),document.querySelector(".side-menu-close-btn").onclick=toggleMenu);let sideMenuEl=document.querySelector(".menu-wrapper");if(sideMenuEl&&sideMenuEl.addEventListener("click",function(e){e.target.className.includes("menu-wrapper open")&&e.target.classList.remove("open")}),window.location.href){let o=["CSS-Selectors","MongoDB-in-ASP","Support","About","Contact","Services","Make-QR-Code-Generator","Host-React-App","Expenses-Manager","Files","Convert-Decimal","Convert-Hex","Font-Generator","QR-Code-Generator","Math-Exercises","Response-Code-List","Painting-App","Color-Tools","Notepad-App","Developer-Job","Dark-Web","Cryptocurrency","Detox-Smoothie","Resume-Builder"],t=document.querySelector(".SourceCode_page");if(t)for(let e=0;e<o.length;e++)if(window.location.href.includes(o[e].toLowerCase())){t.innerHTML="Expenses-Manager"===o[e]?"Money Manager":o[e].replace("-"," "),t.href=window.location.href,t.classList.add("current");break}function aqyanoosCustomAlert(e,o){document.querySelector(".custom-alert")&&document.querySelector(".custom-alert").remove();var t=document.createElement("section");t.className="custom-alert",t.innerHTML=`
     <section class="ca-container">
-            <div class="ca-title">${title}</div>
+            <div class="ca-title">${e}</div>
             <hr>
-            <div class="ca-description">${description}</div>
+            <div class="ca-description">${o}</div>
             <div class="ca-ok" onclick="document.querySelector('.custom-alert').remove()">OK</div>
         </section>
-    `;
-        document.body.appendChild(secEl);
-    }
-}
+    `,document.body.appendChild(t)}function copyToClipboardWeb(o,t){navigator.permissions.query({name:"clipboard-write"}).then(e=>{"granted"!==e.state&&"prompt"!==e.state||navigator.clipboard.writeText(o).then(()=>{aqyanoosShortAlert(t||"Copied to the clipboard successfully.")},()=>{aqyanoosShortAlert("Copy failed, please try again!")})})}function aqyanoosShortAlert(e,o){document.querySelector(".custom-alert")&&document.querySelector(".custom-alert").remove();let t=document.createElement("section");t.className="custom-alert "+(o||" "),t.innerHTML=`<div class="ca-container s"><div class="ca-description">${e}</div></div>`,document.body.appendChild(t),setTimeout(()=>{t.remove()},2e3)}document.querySelector(".art-share")&&(document.querySelector(".art-share").onclick=function(){navigator.share?navigator.share({title:document.title,text:"Check this out!",url:window.location.href}).catch(e=>console.log("Error sharing:",e)):navigator.permissions.query({name:"clipboard-write"}).then(e=>{"granted"!==e.state&&"prompt"!==e.state||navigator.clipboard.writeText(window.location.href).then(()=>{aqyanoosCustomAlert("Copied Successfully","The page link copied to the clipboard. You can share / send it by pasting on WhatsApp, Messenger, Email,...")},()=>{console.log("*-*-*-Copy failed, please try again!")})})}),window.copyToClipboardWeb=copyToClipboardWeb,window.aqyanoosShortAlert=aqyanoosShortAlert}
