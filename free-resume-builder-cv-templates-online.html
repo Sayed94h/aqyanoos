@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:site_name" content="Aqyanoos">
     <meta property="og:locale" content="en_US">
-
+<meta http-equiv="Content-Language" content="en">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@CodingAqyanoos">
 
@@ -41,9 +41,8 @@
     <meta name="twitter:image" content="https://aqyanoos.com/images/free-resume-builder-cv-templates-online.png">
     <meta property="og:image" content="https://aqyanoos.com/images/free-resume-builder-cv-templates-online.png">
     <script defer="defer" src="shared-static.js"></script>
-    <link rel="stylesheet" href="resStl.css">
-    <!-- <link rel="stylesheet" href="helper.css"> -->
     <link href="/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="resStl.css">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LTKXK80NDZ"></script>
     <script>
@@ -53,6 +52,12 @@
 
         gtag('config', 'G-LTKXK80NDZ');
     </script>
+    <style>
+        iframe.skiptranslate {
+            visibility: hidden !important;
+            display: none !important;
+        }
+    </style>
     <style id="customStyle"></style>
 </head>
 
@@ -174,9 +179,7 @@
     
             </div>
 
-            <div class="page-header">
-                
-            </div>
+            <!-- <div class="page-header"></div> -->
 
             <div class="page-specific-links">
                 
@@ -195,6 +198,12 @@
         </div>
 
         <article id="main" class="main-content">
+            <div class="flex flex-e aln-0c">
+                <div class="flex flex-e aln-c">
+                    <div class="my-10 bold bg-bc white p5 me-10">Translate Website</div>
+                    <div id="gte" class="ms-8 my-10 bdr-1 bdr-2 p3"></div>
+                </div>
+            </div>
             <div class="gad-wrap-3">
                 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3193009251233672" crossorigin="anonymous"></script>
@@ -204,11 +213,9 @@
 <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
             </div>
+            
             <header class="header">
-                <div class="flex flex-wrap spc-btw">
-                    <h1>Free Resume Builder | Online CV Maker with Templates | AI</h1>
-                    <div id="gte" class="ms-8 my-10 bdr-1 bdr-2 p3"></div>
-                </div>
+                <h1>Free Resume Builder | Online CV Maker with Templates | AI</h1>
                 <p class="article-description">
                     This resume builder is fast and easy. Fill your info, select a template, download as PDF or print.
                     That's it. Free online CV maker / generator with templates. Build your resume in a minute fast and
@@ -221,13 +228,13 @@
                 </p>
             </header>
             <details class="tips my-20">
-                <summary class="bold">Tips and Tutorial (Click to Open)</summary>
+                <summary class="link">Tips and Tutorial before You Start (Click to Open)</summary>
                 <section class="mt-20 ms-8 mb-30">
                     <h3>Some helpful tips before you start building your resume:</h3>
                     <p>
-                        You can translate the site into your own language by manually selecting your language from the
-                        Menu
-                        at the top-right corner of the screen. It's Google translator so it might not translate 100%
+                        You can translate the site into your own language by manually selecting your language in the
+                        language form above.
+                        It's Google translator so it might not translate 100%
                         accurate but still it's the best online translator.
                     </p>
                     <p>
@@ -266,7 +273,10 @@
                     <p>
                         If the you set a new color for the template and it does not appear on the template, refresh the
                         site and it
-                        will appear.
+                        will appear. To refresh the site on a computer: click on this icon <img
+                            src="/images/refresh-icon.png" alt="refresh icon" class="icon">
+                        next to the link-bar
+                        on the browser and if using your phone: click on the same icon inside the Menu of your browser.
                     </p>
                     <p>
                         I hope this online resume builder (CV maker) helps you make a perfect resume. You will get your
@@ -325,18 +335,6 @@
                                 <label for="summary">Professional Summary</label>
                                 <textarea id="summary" rows="4" maxlength="250"
                                     placeholder="Experienced professional with..."></textarea>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="ii2" id="st6" placeholder="LinkedIn"> <br>
-                                <input type="text" id="linkedin" placeholder="https://linkedin.com/in/username">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="ii2" id="st7" placeholder="GitHub"> <br>
-                                <input type="text" id="github" placeholder="https://github.com/username">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="ii2" id="st8" placeholder="Portfolio"> <br>
-                                <input type="text" id="portfolio" placeholder="https://portfolio.com/username">
                             </div>
                         </div>
 
@@ -456,37 +454,38 @@
                                     placeholder="English (Fluent), Spanish (Intermediate)"></textarea>
                             </div>
 
-                            <div class="bold my-10">
-                                Custom Fields for Additional Skills
-                            </div>
-                            <hr>
-                            <div id="skill-fields" class="mt-10">
-                                <div class="form-group">
-                                    <div id="hs-4" class="sls"></div>
-                                    <label for="hs-4-i">Title / Category</label>
-                                    <input type="text" class="skt" id="hs-4-i" placeholder="E.G: Technologies">
-                                    <label for="sk1" class="mt-10">Content</label>
-                                    <textarea id="sk1" class="skc" rows="2"
-                                        placeholder="MS Office, Adobe Photoshop,..."></textarea>
-                                </div>
+                            <details class="mt-10">
+                                <summary class="link">Custom Fields for Additional Skills</summary>
+                                <div id="skill-fields" class="mt-20">
+                                    <div class="form-group">
+                                        <div id="hs-4" class="sls"></div>
+                                        <label for="hs-4-i">Title / Category</label>
+                                        <input type="text" class="skt" id="hs-4-i" placeholder="E.G: Technologies">
+                                        <label for="sk1" class="mt-10">Content</label>
+                                        <textarea id="sk1" class="skc" rows="2"
+                                            placeholder="MS Office, Adobe Photoshop,..."></textarea>
+                                    </div>
 
-                                <div class="form-group mt-10">
-                                    <div id="hs-5" class="sls"></div>
-                                    <label for="hs-5-i">Title / Category</label>
-                                    <input type="text" id="hs-5-i" class="skt" placeholder="E.G: Music">
-                                    <label for="sk2" class="mt-10">Content</label>
-                                    <textarea id="sk2" rows="2" class="skc" placeholder="Guitar, Piano,..."></textarea>
-                                </div>
+                                    <div class="form-group mt-10">
+                                        <div id="hs-5" class="sls"></div>
+                                        <label for="hs-5-i">Title / Category</label>
+                                        <input type="text" id="hs-5-i" class="skt" placeholder="E.G: Music">
+                                        <label for="sk2" class="mt-10">Content</label>
+                                        <textarea id="sk2" rows="2" class="skc"
+                                            placeholder="Guitar, Piano,..."></textarea>
+                                    </div>
 
-                                <div class="form-group mt-10">
-                                    <div id="hs-6" class="sls "></div>
-                                    <label for="hs-6-i">Title / Category</label>
-                                    <input type="text" id="hs-6-i" class="skt" placeholder="E.G: Sport">
-                                    <label for="sk3" class="mt-10">Content</label>
-                                    <textarea id="sk3" class="skc" rows="2"
-                                        placeholder="Professional Swimming, Climbing,..."></textarea>
+                                    <div class="form-group mt-10">
+                                        <div id="hs-6" class="sls "></div>
+                                        <label for="hs-6-i">Title / Category</label>
+                                        <input type="text" id="hs-6-i" class="skt" placeholder="E.G: Sport">
+                                        <label for="sk3" class="mt-10">Content</label>
+                                        <textarea id="sk3" class="skc" rows="2"
+                                            placeholder="Professional Swimming, Climbing,..."></textarea>
+                                    </div>
                                 </div>
-                            </div>
+                            </details>
+
                         </div>
 
                         <div class="tab-content" id="other-tab">
@@ -521,36 +520,51 @@
                                 <input type="text" class="ii2" id="st5" placeholder="References"> <br>
                                 <textarea id="references" rows="3" placeholder="Available upon request"></textarea>
                             </div>
+                            <div class="form-group">
+                                <input type="text" class="ii2" id="st6" placeholder="LinkedIn"> <br>
+                                <input type="text" id="linkedin" placeholder="https://linkedin.com/in/username">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="ii2" id="st7" placeholder="GitHub"> <br>
+                                <input type="text" id="github" placeholder="https://github.com/username">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="ii2" id="st8" placeholder="Portfolio"> <br>
+                                <input type="text" id="portfolio" placeholder="https://portfolio.com/username">
+                            </div>
                         </div>
                     </div>
 
                     <div class="preview-section">
                         <div class="template-selector">
-                            <h3>Choose Template</h3>
-                            <div class="template-options">
-                                <div class="template-option selected" data-template="t1">
-                                    <div class="template-thumbnail t1"></div>
-                                    <span>K</span>
+                            <details>
+                                <summary class="link">Choose Template</summary>
+                                <div class="mt-15 template-options">
+                                    <div class="template-option selected" data-template="t1">
+                                        <div class="template-thumbnail t1"></div>
+                                        <span>K</span>
+                                    </div>
+                                    <div class="template-option" data-template="t2">
+                                        <div class="template-thumbnail t2"></div>
+                                        <span>A</span>
+                                    </div>
+                                    <div class="template-option" data-template="t3">
+                                        <div class="template-thumbnail t3"></div>
+                                        <span>B</span>
+                                    </div>
+                                    <div class="template-option" data-template="t4">
+                                        <div class="template-thumbnail t4"></div>
+                                        <span>U</span>
+                                    </div>
+                                    <div class="template-option" data-template="t5">
+                                        <div class="template-thumbnail t5"></div>
+                                        <span>L</span>
+                                    </div>
                                 </div>
-                                <div class="template-option" data-template="t2">
-                                    <div class="template-thumbnail t2"></div>
-                                    <span>A</span>
-                                </div>
-                                <div class="template-option" data-template="t3">
-                                    <div class="template-thumbnail t3"></div>
-                                    <span>B</span>
-                                </div>
-                                <div class="template-option" data-template="t4">
-                                    <div class="template-thumbnail t4"></div>
-                                    <span>U</span>
-                                </div>
-                                <div class="template-option" data-template="t5">
-                                    <div class="template-thumbnail t5"></div>
-                                    <span>L</span>
-                                </div>
-                            </div>
-                            <details class="ms-8 mt-20 mb-10">
-                                <summary class="bold">Customize Your Resume Template</summary>
+                            </details>
+
+                            <details class=" mt-20 mb-10">
+                                <summary class="link">Customize Your Resume Template</summary>
                                 <div class="my-20 ms-15 t-custom-s" id="t-custom-s">
                                     <div class="mt-20 flex spc-btw in-wrap">
                                         <div class="in-sec">
@@ -729,8 +743,9 @@
 
     <script type="text/javascript">
         function googleTranslateElementInit() {
-            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'gte');
+            new google.translate.TranslateElement({ pageLanguage: 'en'}, 'gte');
         }
+        // ,layout: google.translate.TranslateElement.InlineLayout.SIMPLE
     </script>
 
     <script type="text/javascript"
