@@ -75,10 +75,10 @@
         ${e} .section-title {${t?`border-bottom-color: ${t};`+r(t):""}${c(1.09)}}
         ${e} .resume-name {${r(t)}${c(1.58)}}
         ${e} .resume-photo {${t?`border-color: ${t};box-shadow: -9px 0px 2px 6px ${t}91;`:""}}
-        .resume-title {${c(1.25)}}.experience-company,.education-institution {${c(.9)}}
-        .experience-dates,.education-dates {${c(.8)}}.experience-title,.education-degree,
-        .experience-description,.education-description,.skills-list,.resume-summary,.resume-section p,div.cusRef {${c(1)}}
-        .ref-sec div,.resume-contact div {${c(.71)}}div.cusRef {${c(1)}}`}else o.innerHTML=""}document.querySelectorAll("#skills-tab div.sls").forEach(e=>{e&&(e.innerHTML=`Select a list style:<select ><option value="x">Select</option>
+        .resume-title {${c(1.25)}}.experience-company,.education-institution {${c(.85)}}
+        .experience-dates,.education-dates {${c(.8)}}.experience-title,.education-degree{${c(1)}}
+        .experience-description,.education-description,.skills-list,.resume-summary,.resume-section p,div.cusRef {${c(.9)}}
+        .ref-sec div,.resume-contact div {${c(.71)}}`}else o.innerHTML=""}document.querySelectorAll("#skills-tab div.sls").forEach(e=>{e&&(e.innerHTML=`Select a list style:<select ><option value="x">Select</option>
 <option value="x1">•</option><option value="x2">✓</option><option value="x3">-</option>
 <option value="x4">○</option><option value="x5">⁘</option><option value="x6">■</option>
 <option value="x7">●</option><option value="x8">◆</option><option value="x9">◉</option>
