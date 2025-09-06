@@ -1,5 +1,4 @@
-let htmlCode = '<!DOCTYPE html>\n<html lang="en">';
-htmlCode += `<head>
+let htmlCode='<!DOCTYPE html>\n<html lang="en">',jsCode=(htmlCode=htmlCode+`<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="easy-qrcode.js"></script>
@@ -170,9 +169,7 @@ htmlCode += `<head>
 
             </section>
         </div>
-    </section>`;
-htmlCode += '<script src="script.js"></script>\n</body>\n</html>';
-const jsCode = `
+    </section>`+'<script src="script.js"><\/script>\n</body>\n</html>',`
 
 const qrCodeSettings = document.getElementById("qrcode-settings"),
     qrcodeContainer = document.getElementById("qrcode"),
@@ -223,86 +220,4 @@ downloadBtn.onclick = function(){
     aEl.download = new Date().toLocaleDateString() + ".png"
 
     aEl.click()
-}`;
-const injectContent = (e, target) => {
-    const t = e.target || target;
-    const rawCodeHolder = document.querySelector(".raw-code");
-
-    const currents_ = document.querySelector(".c");
-    currents_.classList.remove("c");
-
-    t.classList.add("c");
-
-    switch (t.id) {
-        case "html-btn":
-            rawCodeHolder.value = htmlCode.trim();
-            break;
-        case "js-btn":
-            rawCodeHolder.value = jsCode;
-            break;
-        default:
-            break;
-    }
-};
-
-if(document.getElementById("html-btn")){
-    document.getElementById("html-btn").onclick = injectContent
-}
-
-if(document.getElementById("js-btn")){
-    document.getElementById("js-btn").onclick = injectContent
-}
-
-injectContent(false, document.getElementById("html-btn"))
-
-// for demo
-const qrCodeSettings = document.getElementById("qrcode-settings"),
-    qrcodeContainer = document.getElementById("qrcode"),
-    generateBtn = document.getElementById("generate-btn"),
-    downloadBtn = document.getElementById("download-btn"),
-    downloadBtnContainer = document.querySelector(".download-btn-container");
-
-qrCodeSettings.onsubmit = function (e) {
-    e.preventDefault()
-
-    qrcodeContainer.innerHTML = ""
-    const formData_ = new FormData(qrCodeSettings, generateBtn)
-
-    const userInputs = {}
-
-    for (const [key, value] of formData_) {
-        userInputs[key] = value
-    }
-
-    const settings = {
-        text: userInputs.text,
-        width: userInputs.qrcodeWidth,
-        height: userInputs.qrcodeWidth,
-        typeNumber: 4,
-        colorDark: userInputs.txtColor,
-        colorLight: userInputs.bgColor,
-        quietZone: 10,
-        quietZoneColor: userInputs.bgColor,
-    }
-
-    if (userInputs.customLogo.name) {
-        settings.logo = URL.createObjectURL(userInputs.customLogo)
-        settings.logoBackgroundColor = userInputs.logoBg
-        settings.logoBackgroundTransparent = userInputs.isTransparent
-        settings.logoWidth = userInputs.logoWidth
-        settings.logoHeight = userInputs.logoWidth
-    }
-    // console.log("user inputs: ", userInputs, settings)
-    const qrcode_ = new QRCode(qrcodeContainer, settings)
-    downloadBtnContainer.classList.remove("hidden")
-}
-
-downloadBtn.onclick = function(){
-    const qrcodeImage = document.querySelector("#qrcode canvas")
-    const data = qrcodeImage.toDataURL("image/png"),
-    aEl = document.createElement("a")
-    aEl.href = data
-    aEl.download = new Date().toLocaleDateString() + ".png"
-
-    aEl.click()
-}
+}`),injectContent=(e,t)=>{var e=e.target||t,o=document.querySelector(".raw-code");switch(document.querySelector(".c").classList.remove("c"),e.classList.add("c"),e.id){case"html-btn":o.value=htmlCode.trim();break;case"js-btn":o.value=jsCode}},qrCodeSettings=(document.getElementById("html-btn")&&(document.getElementById("html-btn").onclick=injectContent),document.getElementById("js-btn")&&(document.getElementById("js-btn").onclick=injectContent),injectContent(!1,document.getElementById("html-btn")),document.getElementById("qrcode-settings")),qrcodeContainer=document.getElementById("qrcode"),generateBtn=document.getElementById("generate-btn"),downloadBtn=document.getElementById("download-btn"),downloadBtnContainer=document.querySelector(".download-btn-container");qrCodeSettings.onsubmit=function(e){e.preventDefault(),qrcodeContainer.innerHTML="";var t,o,n={};for([t,o]of new FormData(qrCodeSettings,generateBtn))n[t]=o;e={text:n.text,width:n.qrcodeWidth,height:n.qrcodeWidth,typeNumber:4,colorDark:n.txtColor,colorLight:n.bgColor,quietZone:10,quietZoneColor:n.bgColor};n.customLogo.name&&(e.logo=URL.createObjectURL(n.customLogo),e.logoBackgroundColor=n.logoBg,e.logoBackgroundTransparent=n.isTransparent,e.logoWidth=n.logoWidth,e.logoHeight=n.logoWidth),new QRCode(qrcodeContainer,e);downloadBtnContainer.classList.remove("hidden")},downloadBtn.onclick=function(){var e=document.querySelector("#qrcode canvas").toDataURL("image/png"),t=document.createElement("a");t.href=e,t.download=(new Date).toLocaleDateString()+".png",t.click()};

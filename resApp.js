@@ -1,529 +1,85 @@
-!(function () {
-
-    // Tab functionality
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-    const addExperienceBtn = document.getElementById('add-experience');
-    const experienceFields = document.getElementById('experience-fields');
-    const addEducationBtn = document.getElementById('add-education');
-    const educationFields = document.getElementById('education-fields');
-    const addFoto = document.getElementById("addFoto");
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabId = button.getAttribute('data-tab');
-
-            // Remove active class from all buttons and contents
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
-
-            // Add active class to clicked button and corresponding content
-            button.classList.add('active');
-            document.getElementById(`${tabId}-tab`).classList.add('active');
-        });
-    });
-
-    let f_D = {
-        per: {}, customStl: {},
-        exp: [], edu: [], skills: [], secT: [], secP: [],
-        hasImg: true, selT: 't1', singleCol: false
-    };
-
-    document.querySelectorAll("#skills-tab div.sls").forEach(d_ => {
-        if (d_) {
-            d_.innerHTML = `Select a list style:<select ><option value="x">Select</option>
-<option value="x1">•</option><option value="x2">✓</option><option value="x3">-</option>
-<option value="x4">○</option><option value="x5">⁘</option><option value="x6">■</option>
-<option value="x7">●</option><option value="x8">◆</option><option value="x9">◉</option>
-</select>` }
-    })
-
-    if (localStorage.getItem("resAq")) {
-        f_D = JSON.parse(localStorage.getItem("resAq"))
-        if (f_D.customStl) {
-            genStl(f_D.customStl)
-        }
-
-        if(f_D.per.references) {
-            f_D.per.refs = f_D.per.references;
-        }
-
-        if(f_D.per.birthY) {
-            f_D.per.bDate = f_D.per.birthY;
-        }
-
-        updateOnInputChange()
-        populateData()
-    } else {
-        updateResumePreview();
-    }
-
-    function expHtml(obj, ind) {
-        const x_ = obj || { title: '', company: '', start: '', end: '', description: '' }
-        const newExperience = document.createElement('div');
-        newExperience.className = 'experience-item';
-        newExperience.innerHTML = `
+(()=>{let l=document.querySelectorAll(".tab-btn"),s=document.querySelectorAll(".tab-content");var e=document.getElementById("add-experience");let i=document.getElementById("experience-fields");var t,c=document.getElementById("add-education");let o=document.getElementById("education-fields"),r=document.getElementById("addFoto"),I=(l.forEach(t=>{t.addEventListener("click",()=>{var e=t.getAttribute("data-tab");l.forEach(e=>e.classList.remove("active")),s.forEach(e=>e.classList.remove("active")),t.classList.add("active"),document.getElementById(e+"-tab").classList.add("active")})}),{per:{},customStl:{},exp:[],edu:[],skills:[],secT:[],secP:[],hasImg:!0,selT:"t1",singleCol:!1});function d(e,t){var e=e||{title:"",company:"",start:"",end:"",description:""},l=document.createElement("div");return l.className="experience-item",l.innerHTML=`
             <div class="form-group">
                 <label>Job Title</label>
-                <input type="text" class="exp-title" placeholder="Senior Developer" value="${x_.title || ''}">
+                <input type="text" class="exp-title" placeholder="Senior Developer" value="${e.title||""}">
             </div>
             <div class="form-group">
                 <label>Company</label>
-                <input type="text" class="exp-company" placeholder="Tech Corp Inc." value="${x_.company || ''}">
+                <input type="text" class="exp-company" placeholder="Tech Corp Inc." value="${e.company||""}">
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label>Start Date</label>
-                    <input type="text" class="exp-start" placeholder="MM/YYYY" value="${x_.start || ''}">
+                    <input type="text" class="exp-start" placeholder="MM/YYYY" value="${e.start||""}">
                 </div>
                 <div class="form-group">
                     <label>End Date</label>
-                    <input type="text" class="exp-end" placeholder="MM/YYYY or Present" value="${x_.end || ''}">
+                    <input type="text" class="exp-end" placeholder="MM/YYYY or Present" value="${e.end||""}">
                 </div>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea class="exp-description" rows="3" placeholder="Responsibilities and achievements...">${x_.description || ''}</textarea>
+                <textarea class="exp-description" rows="3" placeholder="Responsibilities and achievements...">${e.description||""}</textarea>
             </div>
-            <button class="remove-btn ${ind === 0 ? ' hidden' : ''}">X</button>
-        `;
-
-        experienceFields.appendChild(newExperience);
-        return newExperience
-    }
-
-    addExperienceBtn.addEventListener('click', () => { eduExpEv(expHtml(0, 2), experienceFields) });
-
-    function eduHtml(obj, ind) {
-        const x_ = obj || { degree: '', institution: '', start: '', end: '', description: '' }
-        const newEducation = document.createElement('div');
-        newEducation.className = 'education-item';
-        newEducation.innerHTML = `
+            <button class="remove-btn ${0===t?" hidden":""}">X</button>
+        `,i.appendChild(l),l}function a(e,t){var e=e||{degree:"",institution:"",start:"",end:"",description:""},l=document.createElement("div");return l.className="education-item",l.innerHTML=`
             <div class="form-group">
                 <label>Degree</label>
-                <input type="text" class="edu-degree" placeholder="Bachelor of Science" value="${x_.degree || ''}">
+                <input type="text" class="edu-degree" placeholder="Bachelor of Science" value="${e.degree||""}">
             </div>
             <div class="form-group">
                 <label>Institution</label>
-                <input type="text" class="edu-institution" placeholder="University of Technology" value="${x_.institution || ''}">
+                <input type="text" class="edu-institution" placeholder="University of Technology" value="${e.institution||""}">
             </div>
             <div class="form-row">
                 <div class="form-group">
                     <label>Start Date</label>
-                    <input type="text" class="edu-start" placeholder="MM/YYYY" value="${x_.start || ''}">
+                    <input type="text" class="edu-start" placeholder="MM/YYYY" value="${e.start||""}">
                 </div>
                 <div class="form-group">
                     <label>End Date</label>
-                    <input type="text" class="edu-end" placeholder="MM/YYYY or Present" value="${x_.end || ''}">
+                    <input type="text" class="edu-end" placeholder="MM/YYYY or Present" value="${e.end||""}">
                 </div>
             </div>
             <div class="form-group">
                 <label>Description</label>
-                <textarea class="edu-description" rows="2" placeholder="Relevant coursework or achievements...">${x_.description || ''}</textarea>
+                <textarea class="edu-description" rows="2" placeholder="Relevant coursework or achievements...">${e.description||""}</textarea>
             </div>
-            <button class="remove-btn ${ind === 0 ? ' hidden' : ''}">X</button>
-        `;
-
-        educationFields.appendChild(newEducation);
-        return newEducation;
-    }
-
-    function eduExpEv(nE, pE) {
-        nE.querySelector('.remove-btn').addEventListener('click', () => {
-            pE.removeChild(nE);
-            updateResumePreview();
-        });
-
-        const inputs = nE.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('input', updateResumePreview);
-        });
-    }
-
-    addEducationBtn.addEventListener('click', () => { eduExpEv(eduHtml(0, 2), educationFields) });
-
-    // Template selection
-    const tOpt = document.querySelectorAll('.template-option');
-    tOpt.forEach(option => {
-        if (option.getAttribute('data-template') === f_D.selT) {
-            option.classList.add("selected")
-        } else {
-            option.classList.remove("selected")
-        }
-
-        option.addEventListener('click', () => {
-            document.querySelector(".template-option.selected").classList.remove('selected')
-            option.classList.add('selected');
-            f_D.selT = option.getAttribute('data-template');
-            f_D.customStl = {}
-            f_D.customStl["foc"] = 0; document.getElementById("ctfoc").value = "0"
-            f_D.customStl["upd"] = 0; document.getElementById("ctupd").value = "0"
-            f_D.customStl["ps"] = true; document.getElementById("ctps").checked = true
-
-            genStl(f_D.customStl)
-            localStorage.setItem("resAq", JSON.stringify(f_D))
-            updateOnInputChange()
-        });
-    });
-
-    // Input event listeners for all form fields
-    const allInputs = document.querySelectorAll('.form-section input, .form-section textarea');
-    allInputs.forEach(input => {
-        input.addEventListener('input', updateResumePreview);
-    });
-
-    const cusInps = document.querySelectorAll('.t-custom-s input, .t-custom-s select');
-    cusInps.forEach(input => {
-        input.addEventListener('input', function (e) {
-            if (e.target.id === "ctps") {
-                f_D.customStl[e.target.id.slice(2)] = e.target.checked
-            } else {
-                f_D.customStl[e.target.id.slice(2)] = e.target.value
-            }
-
-            genStl(f_D.customStl)
-
-            localStorage.setItem("resAq", JSON.stringify(f_D))
-            if (e.target.id === "ctps" || e.target.id === "ctfoc" || e.target.id === "ctupd") {
-                updateOnInputChange()
-            }
-        });
-    });
-
-    addFoto.addEventListener("change", function (e) {
-        f_D.hasImg = e.target.checked
-        localStorage.setItem("resAq", JSON.stringify(f_D))
-        updateOnInputChange()
-    })
-
-    document.querySelector("#personal-tab #photo").onchange = function (e) {
-        if (e.target.files[0]) {
-            f_D.per.photo = URL.createObjectURL(e.target.files[0])
-            // updateResumePreview()
-            localStorage.setItem("resAq", JSON.stringify(f_D))
-            updateOnInputChange()
-        }
-    }
-
-    document.querySelectorAll(".tab-content select").forEach(s => {
-        s.addEventListener("change", updateResumePreview)
-    })
-
-    function updateResumePreview() {
-        f_D.per.name = document.getElementById('name').value;
-        f_D.per.bDate = document.getElementById('bDate').value;
-        f_D.per.title = document.getElementById('title').value;
-        f_D.per.email = document.getElementById('email').value;
-        f_D.per.phone = document.getElementById('phone').value;
-        f_D.per.address = document.getElementById('address').value;
-        f_D.per.summary = document.getElementById('summary').value;
-        f_D.per.linkedin = document.getElementById('linkedin').value;
-        f_D.per.github = document.getElementById('github').value;
-        f_D.per.portfolio = document.getElementById('portfolio').value;
-        f_D.per.hobbies = document.getElementById('hobbies').value;
-        f_D.per.refs = document.getElementById('refs').value;
-
-        f_D.exp = [];
-        f_D.edu = [];
-        f_D.skills = [];
-
-        document.querySelectorAll("#skills-tab .form-group").forEach(f => {
-            const ti_ = f.querySelector(".skt")
-            if (ti_) {
-                f_D.skills.push({
-                    t_: ti_.value,
-                    c_: f.querySelector(".skc").value,
-                    s_: document.querySelector("#" + ti_.id.slice(0, 4) + " select").value,
-                    id: ti_.id[3]
-                })
-            }
-        })
-
-        // get section titles and pos
-        f_D.secT = []; document.querySelectorAll(".i2, .ii2").forEach(t => { f_D.secT.push({ id: t.id, v: t.value }) })
-        f_D.secP = [], f_D.singleCol = document.getElementById("resCol").value === "1";
-        if (f_D.singleCol) {
-            document.querySelectorAll(".cst").forEach(p => { p.classList.add("hidden") })
-        } else {
-            document.querySelectorAll(".cst .i3").forEach(p => { p.parentElement.classList.remove("hidden"); f_D.secP.push({ id: p.id, v: p.value }) })
-        }
-
-        document.querySelectorAll('.experience-item').forEach(item => {
-            if (item.querySelector('.exp-title')) {
-                f_D.exp.push({
-                    title: item.querySelector('.exp-title').value,
-                    company: item.querySelector('.exp-company').value,
-                    start: item.querySelector('.exp-start').value,
-                    end: item.querySelector('.exp-end').value,
-                    description: item.querySelector('.exp-description').value
-                });
-            }
-        });
-
-        document.querySelectorAll('.education-item').forEach(item => {
-            if (item.querySelector('.edu-degree')) {
-                f_D.edu.push({
-                    degree: item.querySelector('.edu-degree').value,
-                    institution: item.querySelector('.edu-institution').value,
-                    start: item.querySelector('.edu-start').value,
-                    end: item.querySelector('.edu-end').value,
-                    description: item.querySelector('.edu-description').value
-                });
-            }
-        });
-
-        localStorage.setItem("resAq", JSON.stringify(f_D))
-        updateOnInputChange()
-    }
-
-    function secTv(id) {
-        const x_ = f_D.secT.find(i => i.id === id)
-        return x_ ? x_.v : false
-    }
-
-    function updateOnInputChange() {
-        const resumePreview = document.getElementById('resume-preview'), temX = f_D.selT;
-        const { name, title, bDate, phone, email, address, summary, photo, linkedin, github, portfolio, hobbies, refs } = f_D.per
-        let lS = "", rS = "", resHdr = "";
-        const { ps, upd, foc } = f_D.customStl;
-        const csAr = Object.keys(f_D.customStl);
-        const toL = (l) => `<a href="${l}">${l}</a>`;
-        const isA = upd && upd === "2"
-        const iAf = isA && (!foc || foc !== 2) ;
-
-        const resInfo = `<div class="resume-info ${iAf? ' iAf': ''}"><h1 class="resume-name">${name || 'Your Name'}</h1>
-                                    <p class="resume-title">${title || 'Your Professional Title'}</p></div>`;
-
-        let links_ = linkedin ? ` <div><strong>${secTv("st6") || 'LinkedIn'}</strong>: ${toL(linkedin)} </div>` : '';
-        links_ += github ? ` <div><strong>${secTv("st7") || 'GitHub'}</strong>: ${toL(github)} </div>` : '';
-        links_ += portfolio ? ` <div><strong>${secTv("st8") || 'Portfolio'}</strong>: ${toL(portfolio)} </div>` : '';
-
-        const resCont = `<div class="resume-contact">${bDate || address ? `<p class="my-5">${bDate ? `<span>°  ${bDate}</span>` : ''}
-                        ${bDate && address ? '<span class="mx-20 bold">|</span>' : ''}${address ? `<span> ${address}</span>` : ''}</p>` : ''}
-                        ${email ? `<p> ${email}</p>` : ''}${phone ? `<p> ${phone}</p>` : ''}${f_D.hasImg && (temX === "t5" || temX === "t4") ? links_ : ''}</div>`;
-
-        const ps_ = (!csAr.includes("ps") || ps) && summary ? `<p class="resume-summary">${summary}</p>` : '';
-
-        if (f_D.hasImg) {
-            const resFo = `<img src="${photo || ''}" alt="Select Profile Photo" class="resume-photo">`;
-
-            let customTxt = `<div class="i1">${iAf ? `${resInfo}<div class="photo">${resFo}</div>
-                    `: `<div class="photo">${resFo}</div>${resInfo}`}</div><div class="i1">${resCont + ps_}</div>`
-
-            if (foc && foc === "2") {
-                customTxt = `<div class="i-u-c"><div class="i1"><div class="photo">${resFo}</div></div>
-                                <div class="i1 ${isA ? ' isA':''}">${isA ? resInfo + resCont: resCont + resInfo}</div>
-                              </div><div class="mt-20">${ps_}</div>`}
-
-
-            if (temX === "t1" || temX === "t2" || temX === "t3") {
-                resHdr = `<div class="temp1 ${foc && foc === "2"? ' iUc': ''}  ${temX === "t2" ? ' a' : temX === "t3" ? ' b' : ''}">${customTxt}</div> `
-            }
-
-            if (temX === "t4") {
-                resHdr = `<div class="temp3">${resInfo}<div class="flex xp"><div class="photo i1">${resFo}</div>
-                        <div class="i1">${resCont}</div></div><div class="mt-20">${ps_}</div></div>`
-            }
-
-            if (temX === "t5") {
-                resHdr = `<div class="temp5"><div class="flex xp">
-                        <div class="photo i1">${resFo}</div><div class=" i1 ">${resCont}</div></div>${resInfo + ps_}</div> `
-            }
-        } else {
-            resHdr = `<div class="no-img">${resInfo + ps_ + resCont}</div>`
-        }
-
-        const workExp = f_D.exp.length > 0 ? `<div class="resume-section">
-                    <h2 class="section-title">${secTv("st1") || 'Work Experience'} </h2>${f_D.exp.map(exp => `
-                    <div class="experience-item"><div class="experience-header"><div class="experience-title">${exp.title || 'Job Title'}</div>
-                    <div class="flex spc-btw"><div class="experience-company">${exp.company ? exp.company : ''}</div>
-                    <div class="experience-dates">${exp.start || 'Start'} - ${exp.end || 'End'}</div></div></div>
-                    ${exp.description ? `<p class="experience-description">${exp.description.replaceAll("\n", "<br>")}</p>` : ''}
-                        </div>`).join('')}</div>` : '';
-
-        const edu = f_D.edu.length > 0 ? `<div class="resume-section">
-                    <h2 class="section-title">${secTv("st2") || 'Education / Courses'}</h2>${f_D.edu.map(edu => `
-                    <div class="education-item"><div class="education-header"><div class="education-degree">${edu.degree || 'Degree'}</div>
-                    <div class="flex spc-btw"><div class="education-institution">${edu.institution ? edu.institution : ''}</div>
-                    <div class="education-dates">${edu.start || 'Start'} - ${edu.end || 'End'}</div></div></div>${edu.description ?
-                `<p class="education-description">${edu.description.replaceAll("\n", "<br>")}</p>` : ''}</div>`).join('')}</div>` : '';
-
-
-        const skls = `<div class="resume-section">${f_D.skills.filter(i_ => i_.c_.length > 0).map(s =>
-            `<h2 class="section-title">${s.t_}</h2><div class="skills-list  ${s.s_}">${s.c_.split('\n').map(c2 => `<div>${c2.trim()}</div>`).join('')}</div>`).join("")}</div>`;
-
-        const hob_ = hobbies ? `<div class="resume-section"><h2 class="section-title">${secTv("st4") ||
-            'Hobbies & Interests'}</h2><p>${hobbies.replaceAll("\n", "<br>")}</p></div>` : '';
-
-
-        const ref_ = refs || (links_ && temX !== "t4" && temX !== "t5") ? `<div class="resume-section ref-sec"><h2 class="section-title">${secTv("st5") || 'References'}</h2>
-                <div class="cusRef">${refs.replaceAll("\n", "<br>")}</div>
-                ${f_D.hasImg && (temX === "t5" || temX === "t4") ? '' : links_}</div>` : '';
-
-        const noR = f_D.secP.find(f_ => f_.v === "1"), noL = f_D.secP.find(f_ => f_.v === "2");
-
-        f_D.singleCol = f_D.singleCol || Boolean(!noR || !noL)
-
-        if (f_D.singleCol) {
-            lS = workExp + edu + skls + hob_ + ref_
-        } else {
-            const comps = { 1: workExp, 2: edu, 3: skls, 4: hob_, 5: ref_ }
-
-            f_D.secP.forEach(m_ => {
-                const rComp = comps[Number(m_.id[2])]
-                if (m_.v === "1") {
-                    rS = rS + rComp
-                } else {
-                    lS = lS + rComp
-                }
-            })
-        }
-
-        resumePreview.innerHTML = `<div class="resume template-${temX}"><div class="resume-header">${resHdr}</div>
-                ${f_D.singleCol ? `<div class="single-col">${lS}</div>`: `<div class="resume-content flex spc-btw">
-                        <div class="res-left">${lS}</div><div class="res-right">${rS}</div></div></div>`} `;
-
-        const rF = document.querySelector(".resume-photo")
-        if (rF) {rF.style = "width: " + (rF.parentElement.offsetWidth * 0.7) + "px;height:" + (rF.parentElement.offsetWidth * 0.7) + "px;"}
-
-        if (f_D.hasImg) {
-            document.querySelector("#photo").classList.remove("hidden")
-        } else {
-            document.querySelector("#photo").classList.add("hidden")
-        }
-    }
-
-    function genStl(sT) {
-        const sE_ = document.getElementById("customStyle");
-        if (Object.keys(sT).length > 0) {
-            const t_ = ".template-" + f_D.selT, { tc, fc, fs, ff } = sT;
-
-        const tF = (z_) => fs ? `font-size: ${(fs * z_).toFixed(2)}px;` : "";
-        const tCo = (c_) => c_ ? `color:${c_};` : "";
-        sE_.innerHTML = `.resume-preview {${ff ? `font-family:${ff};` : ''}}
-        ${t_} .resume-contact {${tc ? `background: linear-gradient(${tc}, ${tc}91, ${tc});` : ''}${tCo(fc)}${tF(0.9)}}
-        ${t_} .resume-contact a {${tCo(fc)}}
-        ${t_} .resume-header {${tc ? `border-bottom-color: ${tc};` : ''}}
-        ${t_} .section-title {${tc ? `border-bottom-color: ${tc};${tCo(tc)}` : ''}${tF(1.09)}}
-        ${t_} .resume-name {${tCo(tc)}${tF(1.58)}}
-        ${t_} .resume-photo {${tc ? `border-color: ${tc};box-shadow: -9px 0px 2px 6px ${tc}91;` : ''}}
-        .resume-title {${tF(1.25)}}.experience-company,.education-institution {${tF(0.85)}}
-        .experience-dates,.education-dates {${tF(0.8)}}.experience-title,.education-degree{${tF(1)}}
-        .experience-description,.education-description,.skills-list,.resume-summary,.resume-section p,div.cusRef {${tF(0.9)}}
-        .ref-sec div,.resume-contact div {${tF(0.71)}}`;
-        } else {
-            sE_.innerHTML = ""
-        }        
-    }
-
-    function populateData() {
-        // personal info
-        const ks = Object.keys(f_D.per)
-        ks[ks.indexOf("photo")] = ""
-
-        ks.forEach(k => {
-            if (document.getElementById(k)) {
-                document.getElementById(k).value = f_D.per[k]
-            }
-        })
-
-        const al_ = [...f_D.secT, ...f_D.secP]
-        al_.forEach(t => {
-            if (document.getElementById(t.id)) {
-                document.getElementById(t.id).value = t.v
-            }
-        })
-
-        if (f_D.singleCol) {
-            document.querySelectorAll(".cst").forEach(p => { p.classList.add("hidden") })
-        } else {
-            document.querySelectorAll(".cst").forEach(p => { p.classList.remove("hidden") })
-        }
-
-        f_D.skills.forEach(sk => {
-            const tiX = document.getElementById("hs-" + sk.id + "-i")
-            if (tiX) {
-                tiX.value = sk.t_
-                tiX.parentElement.querySelector(".skc").value = sk.c_
-                document.querySelector("#hs-" + sk.id + " select").value = sk.s_
-            }
-        })
-
-        if (f_D.exp.length > 0) {
-            experienceFields.innerHTML = ""
-            f_D.exp.forEach((ex, ind) => {
-                eduExpEv(expHtml(ex, ind), experienceFields)
-            })
-        }
-
-        if (f_D.edu.length > 0) {
-            educationFields.innerHTML = ""
-            f_D.edu.forEach((ed, ind) => {
-                eduExpEv(eduHtml(ed, ind), educationFields)
-            })
-        }
-
-        addFoto.checked = f_D.hasImg
-
-        Object.keys(f_D.customStl).forEach(k_ => {
-            const el_ = document.getElementById("ct" + k_)
-            if (el_) {
-                if (k_ === "ps") {
-                    el_.checked = f_D.customStl[k_]
-                } else {
-                    el_.value = f_D.customStl[k_]
-                }
-            }
-        })
-    }
-
-    const printBtn = document.getElementById('print-resume');
-    printBtn.addEventListener('click', () => {
-        const dT = document.title
-        document.title = "aqyanoos.com-free-online-resume-builder";
-        document.url = "";
-        window.print();
-        document.title = dT
-    });
-
-    const resetBtn = document.getElementById('reset-form');
-
-    resetBtn.addEventListener('click', () => {
-        if (confirm('Are you sure you want to reset all fields?')) {
-            document.querySelectorAll('.tab-content input, .tab-content textarea').forEach(input => {
-                if (input.type !== 'button' || input.type !== "checkbox") {
-                    input.value = '';
-                }
-
-                if (input.type == "checkbox") {
-                    input.checked = true;
-                }
-            });
-
-            // Remove all but the first experience and education items
-            const experienceItems = document.querySelectorAll('.experience-item');
-            const educationItems = document.querySelectorAll('.education-item');
-
-            for (let i = 1; i < experienceItems.length; i++) {
-                experienceItems[i].parentNode.removeChild(experienceItems[i]);
-            }
-
-            for (let i = 1; i < educationItems.length; i++) {
-                educationItems[i].parentNode.removeChild(educationItems[i]);
-            }
-
-            document.querySelectorAll(".tab-content select").forEach(s=> s.selectedIndex = 0)
-
-            f_D.singleCol = false;
-            f_D.hasImg = true;
-            f_D.per = {};
-            f_D.exp = [];
-            f_D.edu = [];
-            f_D.skills = [];
-            f_D.secT = [];
-            f_D.secP = [];
-            localStorage.setItem("resAq", JSON.stringify(f_D))
-            updateOnInputChange()
-        }
-    });
-})();
+            <button class="remove-btn ${0===t?" hidden":""}">X</button>
+        `,o.appendChild(l),l}function n(e,t){e.querySelector(".remove-btn").addEventListener("click",()=>{t.removeChild(e),u()}),e.querySelectorAll("input, textarea").forEach(e=>{e.addEventListener("input",u)})}function u(){I.per.name=document.getElementById("name").value,I.per.bDate=document.getElementById("bDate").value,I.per.title=document.getElementById("title").value,I.per.email=document.getElementById("email").value,I.per.phone=document.getElementById("phone").value,I.per.address=document.getElementById("address").value,I.per.summary=document.getElementById("summary").value,I.per.linkedin=document.getElementById("linkedin").value,I.per.github=document.getElementById("github").value,I.per.portfolio=document.getElementById("portfolio").value,I.per.hobbies=document.getElementById("hobbies").value,I.per.refs=document.getElementById("refs").value,I.exp=[],I.edu=[],I.skills=[],document.querySelectorAll("#skills-tab .form-group").forEach(e=>{var t=e.querySelector(".skt");t&&I.skills.push({t_:t.value,c_:e.querySelector(".skc").value,s_:document.querySelector("#"+t.id.slice(0,4)+" select").value,id:t.id[3]})}),I.secT=[],document.querySelectorAll(".i2, .ii2").forEach(e=>{I.secT.push({id:e.id,v:e.value})}),I.secP=[],I.singleCol="1"===document.getElementById("resCol").value,I.singleCol?document.querySelectorAll(".cst").forEach(e=>{e.classList.add("hidden")}):document.querySelectorAll(".cst .i3").forEach(e=>{e.parentElement.classList.remove("hidden"),I.secP.push({id:e.id,v:e.value})}),document.querySelectorAll(".experience-item").forEach(e=>{e.querySelector(".exp-title")&&I.exp.push({title:e.querySelector(".exp-title").value,company:e.querySelector(".exp-company").value,start:e.querySelector(".exp-start").value,end:e.querySelector(".exp-end").value,description:e.querySelector(".exp-description").value})}),document.querySelectorAll(".education-item").forEach(e=>{e.querySelector(".edu-degree")&&I.edu.push({degree:e.querySelector(".edu-degree").value,institution:e.querySelector(".edu-institution").value,start:e.querySelector(".edu-start").value,end:e.querySelector(".edu-end").value,description:e.querySelector(".edu-description").value})}),localStorage.setItem("resAq",JSON.stringify(I)),p()}function q(t){var e=I.secT.find(e=>e.id===t);return!!e&&e.v}function p(){var e=document.getElementById("resume-preview"),t=I.selT,{name:l,title:s,bDate:i,phone:c,email:o,address:r,summary:d,photo:a,linkedin:n,github:u,portfolio:p,hobbies:m,refs:v}=I.per;let h="",g="",y="";var{ps:$,upd:f,foc:b}=I.customStl,S=Object.keys(I.customStl),E=e=>`<a href="${e}">${e}</a>`,f=f&&"2"===f,x=f&&(!b||2!==b),l=`<div class="resume-info ${x?" iAf":""}"><h1 class="resume-name">${l||"Your Name"}</h1>
+                                    <p class="resume-title">${s||"Your Professional Title"}</p></div>`,s=n?` <div><strong>${q("st6")||"LinkedIn"}</strong>: ${E(n)} </div>`:"",n=(s=(s+=u?` <div><strong>${q("st7")||"GitHub"}</strong>: ${E(u)} </div>`:"")+(p?` <div><strong>${q("st8")||"Portfolio"}</strong>: ${E(p)} </div>`:""),`<div class="resume-contact">${i||r?`<p class="my-5">${i?`<span>°  ${i}</span>`:""}
+                        ${i&&r?'<span class="mx-20 bold">|</span>':""}${r?`<span> ${r}</span>`:""}</p>`:""}
+                        ${o?`<p> ${o}</p>`:""}${c?`<p> ${c}</p>`:""}${!I.hasImg||"t5"!==t&&"t4"!==t?"":s}</div>`),u=S.includes("ps")&&!$||!d?"":`<p class="resume-summary">${d}</p>`;if(I.hasImg){E=`<img src="${a||""}" alt="Select Profile Photo" class="resume-photo">`;let e=b&&"2"===b?`<div class="i-u-c"><div class="i1"><div class="photo">${E}</div></div>
+                                <div class="i1 ${f?" isA":""}">${f?l+n:n+l}</div>
+                              </div><div class="mt-20">${u}</div>`:`<div class="i1">${x?l+`<div class="photo">${E}</div>
+                    `:`<div class="photo">${E}</div>`+l}</div><div class="i1">${n+u}</div>`;"t1"!==t&&"t2"!==t&&"t3"!==t||(y=`<div class="temp1 ${b&&"2"===b?" iUc":""}  ${"t2"===t?" a":"t3"===t?" b":""}">${e}</div> `),"t4"===t&&(y=`<div class="temp3">${l}<div class="flex xp"><div class="photo i1">${E}</div>
+                        <div class="i1">${n}</div></div><div class="mt-20">${u}</div></div>`),"t5"===t&&(y=`<div class="temp5"><div class="flex xp">
+                        <div class="photo i1">${E}</div><div class=" i1 ">${n}</div></div>${l+u}</div> `)}else y=`<div class="no-img">${l+u+n}</div>`;p=0<I.exp.length?`<div class="resume-section">
+                    <h2 class="section-title">${q("st1")||"Work Experience"} </h2>${I.exp.map(e=>`
+                    <div class="experience-item"><div class="experience-header"><div class="experience-title">${e.title||"Job Title"}</div>
+                    <div class="flex spc-btw"><div class="experience-company">${e.company||""}</div>
+                    <div class="experience-dates">${e.start||"Start"} - ${e.end||"End"}</div></div></div>
+                    ${e.description?`<p class="experience-description">${e.description.replaceAll("\n","<br>")}</p>`:""}
+                        </div>`).join("")}</div>`:"",i=0<I.edu.length?`<div class="resume-section">
+                    <h2 class="section-title">${q("st2")||"Education / Courses"}</h2>${I.edu.map(e=>`
+                    <div class="education-item"><div class="education-header"><div class="education-degree">${e.degree||"Degree"}</div>
+                    <div class="flex spc-btw"><div class="education-institution">${e.institution||""}</div>
+                    <div class="education-dates">${e.start||"Start"} - ${e.end||"End"}</div></div></div>${e.description?`<p class="education-description">${e.description.replaceAll("\n","<br>")}</p>`:""}</div>`).join("")}</div>`:"",r=`<div class="resume-section">${I.skills.filter(e=>0<e.c_.length).map(e=>`<h2 class="section-title">${e.t_}</h2><div class="skills-list  ${e.s_}">${e.c_.split("\n").map(e=>`<div>${e.trim()}</div>`).join("")}</div>`).join("")}</div>`,o=m?`<div class="resume-section"><h2 class="section-title">${q("st4")||"Hobbies & Interests"}</h2><p>${m.replaceAll("\n","<br>")}</p></div>`:"",c=v||s&&"t4"!==t&&"t5"!==t?`<div class="resume-section ref-sec"><h2 class="section-title">${q("st5")||"References"}</h2>
+                <div class="cusRef">${v.replaceAll("\n","<br>")}</div>
+                ${!I.hasImg||"t5"!==t&&"t4"!==t?s:""}</div>`:"",S=I.secP.find(e=>"1"===e.v),$=I.secP.find(e=>"2"===e.v);if(I.singleCol=I.singleCol||Boolean(!S||!$),I.singleCol)h=p+i+r+o+c;else{let l={1:p,2:i,3:r,4:o,5:c};I.secP.forEach(e=>{var t=l[Number(e.id[2])];"1"===e.v?g+=t:h+=t})}e.innerHTML=`<div class="resume template-${t}"><div class="resume-header">${y}</div>
+                ${I.singleCol?`<div class="single-col">${h}</div>`:`<div class="resume-content flex spc-btw">
+                        <div class="res-left">${h}</div><div class="res-right">${g}</div></div></div>`} `;d=document.querySelector(".resume-photo");d&&(d.style="width: "+.7*d.parentElement.offsetWidth+"px;height:"+.7*d.parentElement.offsetWidth+"px;"),I.hasImg?document.querySelector("#photo").classList.remove("hidden"):document.querySelector("#photo").classList.add("hidden")}function m(c){var o=document.getElementById("customStyle");if(0<Object.keys(c).length){let e=".template-"+I.selT,{tc:t,fc:l,fs:s,ff:i}=c;var c=e=>s?`font-size: ${(s*e).toFixed(2)}px;`:"",r=e=>e?`color:${e};`:"";o.innerHTML=`.resume-preview {${i?`font-family:${i};`:""}}
+        ${e} .resume-contact {${t?`background: linear-gradient(${t}, ${t}91, ${t});`:""}${r(l)}${c(.9)}}
+        ${e} .resume-contact a {${r(l)}}
+        ${e} .resume-header {${t?`border-bottom-color: ${t};`:""}}
+        ${e} .section-title {${t?`border-bottom-color: ${t};`+r(t):""}${c(1.09)}}
+        ${e} .resume-name {${r(t)}${c(1.58)}}
+        ${e} .resume-photo {${t?`border-color: ${t};box-shadow: -9px 0px 2px 6px ${t}91;`:""}}
+        .resume-title {${c(1.25)}}.experience-company,.education-institution {${c(.85)}}
+        .experience-dates,.education-dates {${c(.8)}}.experience-title,.education-degree{${c(1)}}
+        .experience-description,.education-description,.skills-list,.resume-summary,.resume-section p,div.cusRef {${c(.9)}}
+        .ref-sec div,.resume-contact div {${c(.71)}}`}else o.innerHTML=""}document.querySelectorAll("#skills-tab div.sls").forEach(e=>{e&&(e.innerHTML=`Select a list style:<select ><option value="x">Select</option>
+<option value="x1">•</option><option value="x2">✓</option><option value="x3">-</option>
+<option value="x4">○</option><option value="x5">⁘</option><option value="x6">■</option>
+<option value="x7">●</option><option value="x8">◆</option><option value="x9">◉</option>
+</select>`)}),localStorage.getItem("resAq")?((I=JSON.parse(localStorage.getItem("resAq"))).customStl&&m(I.customStl),I.per.references&&(I.per.refs=I.per.references),I.per.birthY&&(I.per.bDate=I.per.birthY),p(),(t=Object.keys(I.per))[t.indexOf("photo")]="",t.forEach(e=>{document.getElementById(e)&&(document.getElementById(e).value=I.per[e])}),(t=[...I.secT,...I.secP]).forEach(e=>{document.getElementById(e.id)&&(document.getElementById(e.id).value=e.v)}),I.singleCol?document.querySelectorAll(".cst").forEach(e=>{e.classList.add("hidden")}):document.querySelectorAll(".cst").forEach(e=>{e.classList.remove("hidden")}),I.skills.forEach(e=>{var t=document.getElementById("hs-"+e.id+"-i");t&&(t.value=e.t_,t.parentElement.querySelector(".skc").value=e.c_,document.querySelector("#hs-"+e.id+" select").value=e.s_)}),0<I.exp.length&&(i.innerHTML="",I.exp.forEach((e,t)=>{n(d(e,t),i)})),0<I.edu.length&&(o.innerHTML="",I.edu.forEach((e,t)=>{n(a(e,t),o)})),r.checked=I.hasImg,Object.keys(I.customStl).forEach(e=>{var t=document.getElementById("ct"+e);t&&("ps"===e?t.checked=I.customStl[e]:t.value=I.customStl[e])})):u(),e.addEventListener("click",()=>{n(d(0,2),i)}),c.addEventListener("click",()=>{n(a(0,2),o)}),document.querySelectorAll(".template-option").forEach(e=>{e.getAttribute("data-template")===I.selT?e.classList.add("selected"):e.classList.remove("selected"),e.addEventListener("click",()=>{document.querySelector(".template-option.selected").classList.remove("selected"),e.classList.add("selected"),I.selT=e.getAttribute("data-template"),I.customStl={},I.customStl.foc=0,document.getElementById("ctfoc").value="0",I.customStl.upd=0,document.getElementById("ctupd").value="0",I.customStl.ps=!0,document.getElementById("ctps").checked=!0,m(I.customStl),localStorage.setItem("resAq",JSON.stringify(I)),p()})}),document.querySelectorAll(".form-section input, .form-section textarea").forEach(e=>{e.addEventListener("input",u)}),document.querySelectorAll(".t-custom-s input, .t-custom-s select").forEach(e=>{e.addEventListener("input",function(e){"ctps"===e.target.id?I.customStl[e.target.id.slice(2)]=e.target.checked:I.customStl[e.target.id.slice(2)]=e.target.value,m(I.customStl),localStorage.setItem("resAq",JSON.stringify(I)),"ctps"!==e.target.id&&"ctfoc"!==e.target.id&&"ctupd"!==e.target.id||p()})}),r.addEventListener("change",function(e){I.hasImg=e.target.checked,localStorage.setItem("resAq",JSON.stringify(I)),p()}),document.querySelector("#personal-tab #photo").onchange=function(e){e.target.files[0]&&(I.per.photo=URL.createObjectURL(e.target.files[0]),localStorage.setItem("resAq",JSON.stringify(I)),p())},document.querySelectorAll(".tab-content select").forEach(e=>{e.addEventListener("change",u)}),document.getElementById("print-resume").addEventListener("click",()=>{var e=document.title;document.title="aqyanoos.com-free-online-resume-builder",document.url="",window.print(),document.title=e}),document.getElementById("reset-form").addEventListener("click",()=>{if(confirm("Are you sure you want to reset all fields?")){document.querySelectorAll(".tab-content input, .tab-content textarea").forEach(e=>{"button"===e.type&&"checkbox"===e.type||(e.value=""),"checkbox"==e.type&&(e.checked=!0)});var t=document.querySelectorAll(".experience-item"),l=document.querySelectorAll(".education-item");for(let e=1;e<t.length;e++)t[e].parentNode.removeChild(t[e]);for(let e=1;e<l.length;e++)l[e].parentNode.removeChild(l[e]);document.querySelectorAll(".tab-content select").forEach(e=>e.selectedIndex=0),I.singleCol=!1,I.hasImg=!0,I.per={},I.exp=[],I.edu=[],I.skills=[],I.secT=[],I.secP=[],localStorage.setItem("resAq",JSON.stringify(I)),p()}})})();
